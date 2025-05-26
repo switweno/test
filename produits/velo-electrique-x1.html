@@ -27,6 +27,7 @@
   
   <link rel="stylesheet" href="../style.css" />
   <link rel="stylesheet" href="../product-details.css" />
+  <link rel="stylesheet" href="../whatsapp-button.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
   <!-- Canonical URL -->
@@ -228,7 +229,7 @@
           
           <div class="product-actions">
             <!-- Modifier les boutons d'action du produit pour afficher directement le bouton Commander maintenant -->
-            <button class="btn order-now-btn" style="background-color: #25d366; width: 100%;">
+            <button class="btn whatsapp-order-btn" style="background-color: #25d366; width: 100%;">
               <i class="fab fa-whatsapp"></i> Commander maintenant
             </button>
           </div>
@@ -607,50 +608,12 @@
   <!-- Ajouter Swiper JS avant les autres scripts -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
+  <!-- Script spécifique pour le bouton de commande - doit être le premier -->
+  <script src="../whatsapp-order.js"></script>
+  
   <script src="../script.js"></script>
   <script src="product-page-init.js"></script>
-
-  <!-- Script d'initialisation de Swiper -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Initialiser le swiper des miniatures
-      const thumbsSwiper = new Swiper('.product-thumbs-swiper', {
-        spaceBetween: 10,
-        slidesPerView: 4,
-        freeMode: true,
-        watchSlidesProgress: true,
-        breakpoints: {
-          // quand la largeur de la fenêtre est <= 576px
-          576: {
-            slidesPerView: 3,
-          },
-          // quand la largeur de la fenêtre est <= 768px
-          768: {
-            slidesPerView: 4,
-          }
-        }
-      });
-      
-      // Initialiser le swiper principal
-      const mainSwiper = new Swiper('.product-swiper', {
-        spaceBetween: 10,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-        thumbs: {
-          swiper: thumbsSwiper,
-        },
-        zoom: {
-          maxRatio: 2,
-          toggle: true,
-        }
-      });
-    });
-  </script>
+  <script src="../product-zoom.js"></script>
+  <script src="../order-button-fix.js"></script>
 </body>
 </html>

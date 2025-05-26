@@ -20,13 +20,18 @@
   <meta name="twitter:title" content="Vélo Électrique X1 | Autonomie 80km">
   <meta name="twitter:description" content="Découvrez notre Vélo Électrique X1 avec 80km d'autonomie. Idéal pour vos déplacements urbains et vos loisirs.">
   
-  <title>Vélo Électrique 11 | Autonomie 80km | Ma Boutique de Vélos</title>
+  <title>Vélo Électrique X1 | Autonomie 80km | Ma Boutique de Vélos</title>
+  
+  <!-- Ajouter Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  
   <link rel="stylesheet" href="../style.css" />
   <link rel="stylesheet" href="../product-details.css" />
+  <link rel="stylesheet" href="../whatsapp-button.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
   <!-- Canonical URL -->
-  <link rel="canonical" href="https://www.maboutiquedevelos.com/produits/trottinette-t1.html" />
+  <link rel="canonical" href="https://www.maboutiquedevelos.com/produits/velo-electrique-x1.html" />
 </head>
 <body>
 
@@ -103,7 +108,7 @@
         },
         "offers": {
           "@type": "Offer",
-          "url": "https://www.maboutiquedevelos.com/produits/trottinette-t1.html",
+          "url": "https://www.maboutiquedevelos.com/produits/velo-electrique-x1.html",
           "priceCurrency": "MAD",
           "price": "2500",
           "priceValidUntil": "2024-12-31",
@@ -117,22 +122,61 @@
       }
       </script>
 
-      <article class="product">
-        <div class="product-gallery">
-          <div class="product-main-image">
-            <img id="current-image" src="../images/slider/likebike-shine-s-09.webp" alt="Vélo Électrique X1 - Vue principale avec batterie amovible" width="500" height="400">
-          </div>
-          <div class="product-thumbnails">
-            <img src="../images/slider/likebike-shine-s-09.webp" alt="Vue avant du Vélo Électrique X1" class="active" onclick="changeImage(this)" width="80" height="80">
-            <img src="../images/slider/likebike-shine-s-09.webp" alt="Vue arrière du Vélo Électrique X1" onclick="changeImage(this)" width="80" height="80">
-            <img src="../images/slider/likebike-shine-s-09.webp" alt="Batterie amovible du Vélo Électrique X1" onclick="changeImage(this)" width="80" height="80">
-            <img src="../images/slider/likebike-shine-s-09.webp" alt="Console de contrôle du Vélo Électrique X1" onclick="changeImage(this)" width="80" height="80">
-          </div>
-          <div class="image-controls">
-            <button class="prev-img" aria-label="Image précédente"><i class="fas fa-chevron-left"></i></button>
-            <button class="next-img" aria-label="Image suivante"><i class="fas fa-chevron-right"></i></button>
+     <article class="product">
+  <div class="product-gallery">
+    <!-- Swiper Container -->
+    <div class="swiper product-swiper">
+      <div class="swiper-wrapper">
+        <!-- Slides مع Zoom -->
+        <div class="swiper-slide">
+          <div class="swiper-zoom-container">
+            <img src="../images/slider/likebike-shine-s-09.webp" alt="Vue avant du Vélo Électrique X1" width="600" height="800">
           </div>
         </div>
+        <div class="swiper-slide">
+          <div class="swiper-zoom-container">
+            <img src="../images/slider/likebike-shine-s-09.webp" alt="Vue arrière du Vélo Électrique X1" width="600" height="800">
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="swiper-zoom-container">
+            <img src="../images/slider/likebike-shine-s-09.webp" alt="Batterie amovible du Vélo Électrique X1" width="600" height="800">
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="swiper-zoom-container">
+            <img src="../images/slider/likebike-shine-s-09.webp" alt="Console de contrôle du Vélo Électrique X1" width="600" height="800">
+          </div>
+        </div>
+      </div>
+
+      <!-- Pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- Navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+
+    <!-- Thumbs Swiper -->
+    <div class="swiper product-thumbs-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="../images/slider/likebike-shine-s-09.webp" alt="Vue avant du Vélo Électrique X1" width="80" height="80">
+        </div>
+        <div class="swiper-slide">
+          <img src="../images/slider/likebike-shine-s-09.webp" alt="Vue arrière du Vélo Électrique X1" width="80" height="80">
+        </div>
+        <div class="swiper-slide">
+          <img src="../images/slider/likebike-shine-s-09.webp" alt="Batterie amovible du Vélo Électrique X1" width="80" height="80">
+        </div>
+        <div class="swiper-slide">
+          <img src="../images/slider/likebike-shine-s-09.webp" alt="Console de contrôle du Vélo Électrique X1" width="80" height="80">
+        </div>
+      </div>
+    </div>
+  </div>
+
 
         <div class="product-info">
           <h1>Vélo Électrique 11</h1>
@@ -150,8 +194,8 @@
           
           <div class="product-price-container">
             <div class="product-price">
-              <span class="current-price">5500 DHS</span>
-              <span class="old-price">2800 DHS</span>
+              <span class="current-price">6500 DHS</span>
+              <span class="old-price">4800 DHS</span>
               <span class="discount-badge">-10%</span>
             </div>
             <div class="product-stock in-stock">
@@ -185,7 +229,7 @@
           
           <div class="product-actions">
             <!-- Modifier les boutons d'action du produit pour afficher directement le bouton Commander maintenant -->
-            <button class="btn order-now-btn" style="background-color: #25d366; width: 100%;">
+            <button class="btn whatsapp-order-btn">
               <i class="fab fa-whatsapp"></i> Commander maintenant
             </button>
           </div>
@@ -209,10 +253,10 @@
           
           <div class="product-share">
             <span>Partager:</span>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.maboutiquedevelos.com/produits/trottinette-t1.html" target="_blank" aria-label="Partager sur Facebook"><i class="fab fa-facebook"></i></a>
-            <a href="https://twitter.com/intent/tweet?url=https://www.maboutiquedevelos.com/produits/trottinette-t1.html" target="_blank" aria-label="Partager sur Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="https://wa.me/?text=Découvrez le Vélo Électrique 11 https://www.maboutiquedevelos.com/produits/trottinette-t1.html" target="_blank" aria-label="Partager sur WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a href="mailto:?subject=Vélo Électrique X1&body=Découvrez le Vélo Électrique 11 https://www.maboutiquedevelos.com/produits/trottinette-t1.html" aria-label="Partager par email"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.maboutiquedevelos.com/produits/velo-electrique-x1.html" target="_blank" aria-label="Partager sur Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/intent/tweet?url=https://www.maboutiquedevelos.com/produits/velo-electrique-x1.html&text=Vélo Électrique X1" target="_blank" aria-label="Partager sur Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://wa.me/?text=Découvrez le Vélo Électrique X1 https://www.maboutiquedevelos.com/produits/velo-electrique-x1.html" target="_blank" aria-label="Partager sur WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="mailto:?subject=Vélo Électrique X1&body=Découvrez le Vélo Électrique X1 https://www.maboutiquedevelos.com/produits/velo-electrique-x1.html" aria-label="Partager par email"><i class="fas fa-envelope"></i></a>
           </div>
         </div>
       </article>
@@ -561,24 +605,15 @@
   </footer>
 
   <!-- Scripts -->
-  <script>
-    // Fonction d'initialisation rapide pour les vignettes (utilisée par les attributs onclick)
-    function changeImage(thumbnail) {
-      const mainImage = document.getElementById('current-image');
-      const thumbnails = document.querySelectorAll('.product-thumbnails img');
-      
-      // Mettre à jour l'image principale
-      mainImage.src = thumbnail.src;
-      mainImage.alt = thumbnail.alt;
-      
-      // Mettre à jour la vignette active
-      thumbnails.forEach(thumb => thumb.classList.remove('active'));
-      thumbnail.classList.add('active');
-    }
-  </script>
+  <!-- Ajouter Swiper JS avant les autres scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+  <!-- Script spécifique pour le bouton de commande - doit être le premier -->
+  <script src="../whatsapp-order.js"></script>
   
-  <!-- Charger les scripts dans le bon ordre -->
   <script src="../script.js"></script>
   <script src="product-page-init.js"></script>
+  <script src="../product-zoom.js"></script>
+  <script src="../order-button-fix.js"></script>
 </body>
 </html>
