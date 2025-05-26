@@ -46,7 +46,45 @@ ul {
 img {
   max-width: 100%;
   height: auto;
+  
 }
+
+/* غلاف سلايدر المصغرات */
+.product-thumbs-swiper {
+  margin-top: 1rem;
+  padding: 0.1rem 0;
+}
+
+/* كل سلايد مصغر */
+.product-thumbs-swiper .swiper-slide {
+  width: auto;
+  opacity: 0.6;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  transition: opacity 0.3s ease, border 0.3s ease;
+  box-sizing: border-box; /* مهم لتفادي تجاوز الإطار */
+}
+
+/* الصور المصغرة */
+.product-thumbs-swiper .swiper-slide img {
+  width: 80px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+  box-sizing: border-box;
+}
+
+/* السلايد النشط */
+.product-thumbs-swiper .swiper-slide-thumb-active {
+  opacity: 1;
+  
+}
+
+
+
+
 
 .btn {
   display: inline-block;
