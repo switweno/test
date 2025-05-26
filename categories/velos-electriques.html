@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Découvrez notre gamme de vélos électriques de haute qualité. Batterie longue durée, design moderne et confort optimal pour vos déplacements urbains.">
+  <meta name="keywords" content="vélos électriques, vélo à assistance électrique, vélo urbain, mobilité électrique">
+  <meta name="author" content="Ma Boutique de Vélos">
+  <meta name="robots" content="index, follow">
+  
+  <title>Vélos Électriques | Assistance électrique et Autonomie | Ma Boutique de Vélos</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="categories.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.maboutiquedevelos.com/categories/velos-electriques.html" />
+</head>
+<body>
+
+  <!-- Header & Navigation -->
+  <header class="navbar">
+    <div class="logo">Ma Boutique de Vélos</div>
+    <button class="mobile-menu-toggle" aria-label="Menu">
+      <span class="hamburger-icon"></span>
+    </button>
+    
+    <div class="search-container desktop-search">
+      <input type="text" placeholder="Rechercher un produit..." class="search-input">
+      <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+    </div>
+    
+    <nav class="main-nav">
+      <div class="search-container mobile-search">
+        <input type="text" placeholder="Rechercher un produit..." class="search-input-mobile">
+        <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+      </div>
+      <ul class="menu">
+        <li><a href="../index.html"><i class="fas fa-home"></i> Accueil</a></li>
+        <li><a href="velos-electriques.html" aria-current="page"><i class="fas fa-bolt"></i> Vélos Électriques</a></li>
+        <li><a href="trottinettes.html"><i class="fas fa-bicycle"></i> Trottinettes</a></li>
+        <li><a href="velos-classiques.html"><i class="fas fa-bicycle"></i> Vélos Classiques</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs">
+    <div class="container">
+      <a href="../index.html">Accueil</a> &gt; 
+      <span>Vélos Électriques</span>
+    </div>
+  </div>
+
+  <!-- Category Header -->
+  <section class="category-header">
+    <div class="container">
+      <h1>Vélos Électriques</h1>
+      <p>Découvrez notre gamme de vélos à assistance électrique pour faciliter vos déplacements urbains. Autonomie étendue, confort optimal et design moderne.</p>
+    </div>
+  </section>
+
+  <!-- Category Filters -->
+  <section class="category-filters">
+    <div class="container">
+      <div class="filter-groups">
+        <div class="filter-group">
+          <h3>Autonomie</h3>
+          <div class="filter-options">
+            <label class="filter-option">
+              <input type="checkbox" name="autonomy" value="50"> Jusqu'à 50km
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" name="autonomy" value="80"> Jusqu'à 80km
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" name="autonomy" value="100"> Jusqu'à 100km
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" name="autonomy" value="100+"> Plus de 100km
+            </label>
+          </div>
+        </div>
+        
+        <div class="filter-group">
+          <h3>Type</h3>
+          <div class="filter-options">
+            <label class="filter-option">
+              <input type="checkbox" name="type" value="urbain"> Urbain
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" name="type" value="vtt"> VTT
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" name="type" value="pliant"> Pliant
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" name="type" value="cargo"> Cargo
+            </label>
+          </div>
+        </div>
+        
+        <div class="filter-group">
+          <h3>Prix</h3>
+          <div class="filter-options">
+            <label class="filter-option">
+              <input type="checkbox" name="price" value="1500"> Moins de 1500 DHS
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" name="price" value="1500-2500"> 1500 - 2500 DHS
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" name="price" value="2500-3500"> 2500 - 3500 DHS
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" name="price" value="3500+"> Plus de 3500 DHS
+            </label>
+          </div>
+        </div>
+        
+        <div class="filter-group">
+          <h3>Trier par</h3>
+          <div class="filter-options">
+            <select class="sort-select" name="sort">
+              <option value="popular">Popularité</option>
+              <option value="price-asc">Prix croissant</option>
+              <option value="price-desc">Prix décroissant</option>
+              <option value="rating">Avis clients</option>
+              <option value="new">Nouveautés</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      
+      <div class="active-filters">
+        <span class="filter-count">0 filtres actifs</span>
+        <button class="clear-filters-btn">Effacer les filtres</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Listing -->
+  <section class="product-listing">
+    <div class="container">
+      <div class="products">
+        <div class="product-card" data-category="electric" data-id="velo-electrique-x1">
+          <span class="product-badge">Populaire</span>
+          <img src="../images/slider/likebike-shine-s-09.webp" alt="Vélo Électrique X1 - Batterie longue durée, autonomie de 80km" loading="lazy" width="250" height="200">
+          <div class="product-info">
+            <h3>Vélo Électrique X1</h3>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(42)</span>
+            </div>
+            <p class="product-price">2500 DHS</p>
+            <div class="product-actions">
+              <a href="../produits/velo-electrique-x1.html" class="btn view-details" style="width: 100%;"><i class="fas fa-eye"></i> Voir les détails</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product-card" data-category="electric" data-id="velo-electrique-x2">
+          <img src="../images/slider/likebike-shine-s-09.webp" alt="Vélo Électrique X2 - VTT électrique tout terrain" loading="lazy" width="250" height="200">
+          <div class="product-info">
+            <h3>Vélo Électrique X2</h3>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span>(28)</span>
+            </div>
+            <p class="product-price">2800 DHS</p>
+            <div class="product-actions">
+              <a href="../produits/velo-electrique-x2.html" class="btn view-details" style="width: 100%;"><i class="fas fa-eye"></i> Voir les détails</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product-card" data-category="electric" data-id="velo-electrique-pliant">
+          <span class="product-badge sale">Promo</span>
+          <img src="../images/slider/likebike-shine-s-09.webp" alt="Vélo Électrique Pliant - Compact et portable" loading="lazy" width="250" height="200">
+          <div class="product-info">
+            <h3>Vélo Électrique Pliant P1</h3>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <span>(15)</span>
+            </div>
+            <p class="product-price"><span class="old-price">2200 DHS</span> 1900 DHS</p>
+            <div class="product-actions">
+              <a href="../produits/velo-electrique-pliant.html" class="btn view-details" style="width: 100%;"><i class="fas fa-eye"></i> Voir les détails</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product-card" data-category="electric" data-id="velo-electrique-cargo">
+          <img src="../images/slider/likebike-shine-s-09.webp" alt="Vélo Électrique Cargo - Transport de charges lourdes" loading="lazy" width="250" height="200">
+          <div class="product-info">
+            <h3>Vélo Électrique Cargo C1</h3>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span>(12)</span>
+            </div>
+            <p class="product-price">3200 DHS</p>
+            <div class="product-actions">
+              <a href="../produits/velo-electrique-cargo.html" class="btn view-details" style="width: 100%;"><i class="fas fa-eye"></i> Voir les détails</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product-card" data-category="electric" data-id="velo-electrique-urbain">
+          <img src="../images/slider/likebike-shine-s-09.webp" alt="Vélo Électrique Urbain - Design élégant pour la ville" loading="lazy" width="250" height="200">
+          <div class="product-info">
+            <h3>Vélo Électrique Urbain U1</h3>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(32)</span>
+            </div>
+            <p class="product-price">2350 DHS</p>
+            <div class="product-actions">
+              <a href="../produits/velo-electrique-urbain.html" class="btn view-details" style="width: 100%;"><i class="fas fa-eye"></i> Voir les détails</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product-card" data-category="electric" data-id="velo-electrique-trekking">
+          <img src="../images/slider/likebike-shine-s-09.webp" alt="Vélo Électrique Trekking - Pour les longues distances" loading="lazy" width="250" height="200">
+          <div class="product-info">
+            <h3>Vélo Électrique Trekking T1</h3>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span>(22)</span>
+            </div>
+            <p class="product-price">2900 DHS</p>
+            <div class="product-actions">
+              <a href="../produits/velo-electrique-trekking.html" class="btn view-details" style="width: 100%;"><i class="fas fa-eye"></i> Voir les détails</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pagination">
+        <button class="pagination-btn active">1</button>
+        <button class="pagination-btn">2</button>
+        <button class="pagination-btn">3</button>
+        <span class="pagination-separator">...</span>
+        <button class="pagination-btn">10</button>
+        <button class="pagination-btn next"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <h2>Restez Informé</h2>
+    <p>Inscrivez-vous à notre newsletter pour recevoir nos offres exclusives</p>
+    <form class="newsletter-form">
+      <input type="email" placeholder="Votre adresse email" required>
+      <button type="submit" class="btn">S'abonner</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Ma Boutique de Vélos</h3>
+        <p>Votre partenaire pour la mobilité urbaine et les loisirs.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Liens Utiles</h3>
+        <ul>
+          <li><a href="#">À propos de nous</a></li>
+          <li><a href="#">Conditions générales</a></li>
+          <li><a href="#">Politique de confidentialité</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p><i class="fas fa-map-marker-alt"></i> 123 Rue du Commerce, Casablanca</p>
+        <p><i class="fas fa-phone"></i> +212 5XX XX XX XX</p>
+        <p><i class="fas fa-envelope"></i> contact@boutiquevelos.com</p>
+        <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/212762609147" target="_blank">WhatsApp</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Ma Boutique de Vélos. Tous droits réservés.</p>
+      <div class="payment-methods">
+        <i class="fab fa-cc-visa"></i>
+        <i class="fab fa-cc-mastercard"></i>
+        <i class="fab fa-cc-paypal"></i>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script src="categories.js"></script>
+</body>
+</html>

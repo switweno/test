@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Découvrez notre collection de vélos classiques de qualité. Des vélos traditionnels robustes pour vos déplacements urbains et vos loisirs.">
+  <meta name="keywords" content="vélos classiques, vélo traditionnel, vélo urbain, vélo de ville, vélo VTT">
+  <meta name="author" content="Ma Boutique de Vélos">
+  <meta name="robots" content="index, follow">
+  
+  <title>Vélos Classiques | Qualité et Robustesse | Ma Boutique de Vélos</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="categories.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.maboutiquedevelos.com/categories/velos-classiques.html" />
+</head>
+<body>
+
+  <!-- Header & Navigation -->
+  <header class="navbar">
+    <div class="logo">Ma Boutique de Vélos</div>
+    <button class="mobile-menu-toggle" aria-label="Menu">
+      <span class="hamburger-icon"></span>
+    </button>
+    
+    <div class="search-container desktop-search">
+      <input type="text" placeholder="Rechercher un produit..." class="search-input">
+      <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+    </div>
+    
+    <nav class="main-nav">
+      <div class="search-container mobile-search">
+        <input type="text" placeholder="Rechercher un produit..." class="search-input-mobile">
+        <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+      </div>
+      <ul class="menu">
+        <li><a href="../index.html"><i class="fas fa-home"></i> Accueil</a></li>
+        <li><a href="velos-electriques.html"><i class="fas fa-bolt"></i> Vélos Électriques</a></li>
+        <li><a href="trottinettes.html"><i class="fas fa-bicycle"></i> Trottinettes</a></li>
+        <li><a href="velos-classiques.html" aria-current="page"><i class="fas fa-bicycle"></i> Vélos Classiques</a></li>
+        <!-- Suppression de l'icône du panier -->
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs">
+    <div class="container">
+      <a href="../index.html">Accueil</a> &gt; 
+      <span>Vélos Classiques</span>
+    </div>
+  </div>
+
+  <!-- Category Header -->
+  <section class="category-header">
+    <div class="container">
+      <h1>Vélos Classiques</h1>
+      <p>Parcourez notre sélection de vélos classiques robustes et confortables. Des vélos traditionnels de qualité pour vos déplacements quotidiens ou vos activités de loisirs.</p>
+    </div>
+  </section>
+
+  <!-- Category Filters -->
+  <section class="category-filters">
+    <div class="container">
+      <div class="filter-groups">
+        <div class="filter-group">
+          <h3>Type</h3>
+          <div class="filter-options">
+            <label class="filter-option">
+              <input type="checkbox" name="type" value="ville"> Vélo de ville
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" name="type" value="vtt"> VTT
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" name="type" value="route"> Vélo de route
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" name="type" value="enfant"> Vélo enfant
+            </label>
+          </div>
+        </div>
+        
+        <div class="filter-group">
+          <h3>Taille</h3>
+          <div class="filter-options">
+            <label class="filter-option">
+              <input type="checkbox" name="size" value="xs"> XS
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" name="size" value="s"> S
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" name="size" value="m"> M
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" name="size" value="l"> L
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" name="size" value="xl"> XL
+            </label>
+          </div>
+        </div>
+        
+        <div class="filter-group">
+          <h3>Prix</h3>
+          <div class="filter-options">
+            <label class="filter-option">
+              <input type="checkbox" name="price" value="800"> Moins de 800 DHS
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" name="price" value="800-1200"> 800 - 1200 DHS
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" name="price" value="1200-1800"> 1200 - 1800 DHS
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" name="price" value="1800+"> Plus de 1800 DHS
+            </label>
+          </div>
+        </div>
+        
+        <div class="filter-group">
+          <h3>Trier par</h3>
+          <div class="filter-options">
+            <select class="sort-select" name="sort">
+              <option value="popular">Popularité</option>
+              <option value="price-asc">Prix croissant</option>
+              <option value="price-desc">Prix décroissant</option>
+              <option value="rating">Avis clients</option>
+              <option value="new">Nouveautés</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      
+      <div class="active-filters">
+        <span class="filter-count">0 filtres actifs</span>
+        <button class="clear-filters-btn">Effacer les filtres</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Listing -->
+  <section class="product-listing">
+    <div class="container">
+      <div class="products">
+        <div class="product-card" data-category="classic" data-id="velo-classique-c1">
+          <span class="product-badge sale">Promo</span>
+          <img src="../images/slider/likebike-shine-s-09.webp" alt="Vélo Classique C1 - Cadre en aluminium, freins à disque" loading="lazy" width="250" height="200">
+          <div class="product-info">
+            <h3>Vélo Classique C1</h3>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <span>(15)</span>
+            </div>
+            <p class="product-price"><span class="old-price">1500 DHS</span> 1200 DHS</p>
+            <div class="product-actions">
+              <!-- Suppression du bouton Ajouter -->
+              <a href="../produits/velo-classique-c1.html" class="btn view-details" style="width: 100%;"><i class="fas fa-eye"></i> Voir les détails</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product-card" data-category="classic" data-id="velo-classique-c2">
+          <img src="../images/slider/likebike-shine-s-09.webp" alt="Vélo Classique C2 - Parfait pour les balades en famille" loading="lazy" width="250" height="200">
+          <div class="product-info">
+            <h3>Vélo Classique C2</h3>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span>(36)</span>
+            </div>
+            <p class="product-price">1200 DHS</p>
+            <div class="product-actions">
+              <!-- Suppression du bouton Ajouter -->
+              <a href="../produits/velo-classique-c2.html" class="btn view-details" style="width: 100%;"><i class="fas fa-eye"></i> Voir les détails</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product-card" data-category="classic" data-id="velo-vtt-m1">
+          <img src="../images/slider/likebike-shine-s-09.webp" alt="VTT M1 - Vélo tout-terrain robuste" loading="lazy" width="250" height="200">
+          <div class="product-info">
+            <h3>VTT M1</h3>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(42)</span>
+            </div>
+            <p class="product-price">1450 DHS</p>
+            <div class="product-actions">
+              <!-- Suppression du bouton Ajouter -->
+              <a href="../produits/velo-vtt-m1.html" class="btn view-details" style="width: 100%;"><i class="fas fa-eye"></i> Voir les détails</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product-card" data-category="classic" data-id="velo-route-r1">
+          <span class="product-badge">Populaire</span>
+          <img src="../images/slider/likebike-shine-s-09.webp" alt="Vélo de Route R1 - Léger et rapide" loading="lazy" width="250" height="200">
+          <div class="product-info">
+            <h3>Vélo de Route R1</h3>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span>(28)</span>
+            </div>
+            <p class="product-price">1800 DHS</p>
+            <div class="product-actions">
+              <!-- Suppression du bouton Ajouter -->
+              <a href="../produits/velo-route-r1.html" class="btn view-details" style="width: 100%;"><i class="fas fa-eye"></i> Voir les détails</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product-card" data-category="classic" data-id="velo-enfant-e1">
+          <span class="product-badge sale">Promo</span>
+          <img src="../images/slider/likebike-shine-s-09.webp" alt="Vélo Enfant E1 - Sécuritaire et coloré" loading="lazy" width="250" height="200">
+          <div class="product-info">
+            <h3>Vélo Enfant E1</h3>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(52)</span>
+            </div>
+            <p class="product-price"><span class="old-price">750 DHS</span> 650 DHS</p>
+            <div class="product-actions">
+              <!-- Suppression du bouton Ajouter -->
+              <a href="../produits/velo-enfant-e1.html" class="btn view-details" style="width: 100%;"><i class="fas fa-eye"></i> Voir les détails</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product-card" data-category="classic" data-id="velo-ville-v1">
+          <img src="../images/slider/likebike-shine-s-09.webp" alt="Vélo de Ville V1 - Confortable et pratique" loading="lazy" width="250" height="200">
+          <div class="product-info">
+            <h3>Vélo de Ville V1</h3>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <i class="far fa-star"></i>
+              <span>(19)</span>
+            </div>
+            <p class="product-price">1350 DHS</p>
+            <div class="product-actions">
+              <!-- Suppression du bouton Ajouter -->
+              <a href="../produits/velo-ville-v1.html" class="btn view-details" style="width: 100%;"><i class="fas fa-eye"></i> Voir les détails</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pagination">
+        <button class="pagination-btn active">1</button>
+        <button class="pagination-btn">2</button>
+        <button class="pagination-btn">3</button>
+        <span class="pagination-separator">...</span>
+        <button class="pagination-btn">8</button>
+        <button class="pagination-btn next"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <h2>Restez Informé</h2>
+    <p>Inscrivez-vous à notre newsletter pour recevoir nos offres exclusives</p>
+    <form class="newsletter-form">
+      <input type="email" placeholder="Votre adresse email" required>
+      <button type="submit" class="btn">S'abonner</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Ma Boutique de Vélos</h3>
+        <p>Votre partenaire pour la mobilité urbaine et les loisirs.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Liens Utiles</h3>
+        <ul>
+          <li><a href="#">À propos de nous</a></li>
+          <li><a href="#">Conditions générales</a></li>
+          <li><a href="#">Politique de confidentialité</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p><i class="fas fa-map-marker-alt"></i> 123 Rue du Commerce, Casablanca</p>
+        <p><i class="fas fa-phone"></i> +212 5XX XX XX XX</p>
+        <p><i class="fas fa-envelope"></i> contact@boutiquevelos.com</p>
+        <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/212762609147" target="_blank">WhatsApp</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Ma Boutique de Vélos. Tous droits réservés.</p>
+      <div class="payment-methods">
+        <i class="fab fa-cc-visa"></i>
+        <i class="fab fa-cc-mastercard"></i>
+        <i class="fab fa-cc-paypal"></i>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script src="categories.js"></script>
+</body>
+</html>
