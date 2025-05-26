@@ -1,0 +1,262 @@
+/* Styles pour la page de commande */
+
+.commande-section {
+  padding: 2rem 0;
+  min-height: 50vh;
+}
+
+.commande-section h1 {
+  margin-bottom: 2rem;
+  color: var(--dark-color);
+  text-align: center;
+}
+
+/* Layout de la commande */
+.commande-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Résumé du produit */
+.product-summary {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+}
+
+.product-summary h2 {
+  margin-bottom: 1.5rem;
+  color: var(--dark-color);
+  font-size: 1.3rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 0.8rem;
+}
+
+.product-summary h2:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: var(--secondary-color);
+  border-radius: 3px;
+}
+
+.product-details {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.product-details img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.product-info {
+  flex: 1;
+}
+
+.product-info h3 {
+  margin-bottom: 0.5rem;
+  color: var(--dark-color);
+}
+
+.product-variant {
+  color: #777;
+  margin-bottom: 0.8rem;
+}
+
+.product-quantity-price {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid #eee;
+}
+
+.product-quantity-price p {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  color: var(--dark-color);
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid #eee;
+}
+
+.price {
+  color: #e74c3c;
+  font-weight: 700;
+}
+
+/* Formulaire client */
+.customer-info {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+}
+
+.customer-info h2 {
+  margin-bottom: 1.5rem;
+  color: var(--dark-color);
+  font-size: 1.3rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 0.8rem;
+}
+
+.customer-info h2:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: var(--secondary-color);
+  border-radius: 3px;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--dark-color);
+}
+
+.required {
+  color: #e74c3c;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+  font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--secondary-color);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.form-actions {
+  margin-top: 2rem;
+}
+
+.primary-btn {
+  background-color: #25d366; /* WhatsApp green */
+  font-size: 1.1rem;
+  padding: 0.8rem 1rem;
+  width: 100%;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.primary-btn:hover {
+  background-color: #128c7e;
+  transform: translateY(-2px);
+}
+
+.primary-btn i {
+  margin-right: 0.5rem;
+}
+
+.form-note {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #777;
+  text-align: center;
+}
+
+/* Message d'erreur */
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+  text-align: center;
+  display: none;
+}
+
+.error-message.show {
+  display: block;
+}
+
+/* Style pour le bouton de retour */
+.back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  border: 1px solid #ddd;
+}
+
+.back-btn:hover {
+  background-color: #e5e5e5;
+  transform: translateY(-2px);
+}
+
+.back-btn i {
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .commande-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .commande-section h1 {
+    font-size: 1.5rem;
+  }
+  
+  .product-details {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .product-quantity-price p,
+  .product-total {
+    flex-direction: column;
+    gap: 0.2rem;
+    align-items: center;
+  }
+  
+  .customer-info {
+    padding: 1.2rem;
+  }
+}

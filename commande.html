@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Finaliser votre commande - Ma Boutique de Vélos">
+  <meta name="author" content="Ma Boutique de Vélos">
+  <title>Finaliser votre commande | Ma Boutique de Vélos</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="commande.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+  <!-- Header & Navigation -->
+  <header class="navbar">
+    <div class="logo">Ma Boutique de Vélos</div>
+    <button class="mobile-menu-toggle" aria-label="Menu">
+      <span class="hamburger-icon"></span>
+    </button>
+    
+    <nav class="main-nav">
+      <ul class="menu">
+        <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+        <li><a href="categories/velos-electriques.html"><i class="fas fa-bolt"></i> Vélos Électriques</a></li>
+        <li><a href="categories/trottinettes.html"><i class="fas fa-bicycle"></i> Trottinettes</a></li>
+        <li><a href="categories/velos-classiques.html"><i class="fas fa-bicycle"></i> Vélos Classiques</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs">
+    <div class="container">
+      <a href="index.html">Accueil</a> &gt; 
+      <span>Finaliser votre commande</span>
+    </div>
+  </div>
+
+  <!-- Commande Section -->
+  <section class="commande-section">
+    <div class="container">
+      <h1>Finaliser votre commande</h1>
+      
+      <div class="commande-content">
+        <!-- Résumé du produit -->
+        <div class="product-summary">
+          <h2>Résumé de votre commande</h2>
+          <div class="product-details">
+            <img id="product-image" src="images/slider/likebike-shine-s-09.webp" alt="Image du produit">
+            <div class="product-info">
+              <h3 id="product-name"></h3>
+              <p id="product-color" class="product-variant"></p>
+              <div class="product-quantity-price">
+                <p><span>Prix unitaire:</span> <span id="product-price" class="price"></span></p>
+                <p><span>Quantité:</span> <span id="product-quantity" style="font-weight: bold; color: #e74c3c;"></span></p>
+              </div>
+              <div class="product-total">
+                <span>Total:</span>
+                <span id="product-total" class="price"></span>
+              </div>
+              <!-- Bouton de retour aux détails du produit -->
+              <button id="back-to-product" class="btn back-btn" style="margin-top: 15px; background-color: #f1f1f1; color: #333; width: 100%;">
+                <i class="fas fa-arrow-left"></i> Retour aux détails du produit
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Formulaire client -->
+        <div class="customer-info">
+          <h2>Vos coordonnées</h2>
+          <form id="customer-form" class="customer-form">
+            <div class="form-group">
+              <label for="fullname">Nom complet <span class="required">*</span></label>
+              <input type="text" id="fullname" name="fullname" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Numéro de téléphone <span class="required">*</span></label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="address">Adresse de livraison <span class="required">*</span></label>
+              <input type="text" id="address" name="address" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="city">Ville <span class="required">*</span></label>
+              <input type="text" id="city" name="city" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="notes">Notes (optionnel)</label>
+              <textarea id="notes" name="notes" rows="3"></textarea>
+            </div>
+            
+            <div class="form-actions">
+              <button type="submit" class="btn primary-btn" id="submit-order" style="background-color: #25d366; font-weight: bold;">
+                <i class="fab fa-whatsapp"></i> Envoyer la commande via WhatsApp
+              </button>
+              <p class="form-note"><span class="required"></span> Après clic, vous serez redirigé vers WhatsApp pour confirmer votre commande</p>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Ma Boutique de Vélos</h3>
+        <p>Votre partenaire pour la mobilité urbaine et les loisirs.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Liens Utiles</h3>
+        <ul>
+          <li><a href="#">À propos de nous</a></li>
+          <li><a href="#">Conditions générales</a></li>
+          <li><a href="#">Politique de confidentialité</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p><i class="fas fa-map-marker-alt"></i> 123 Rue du Commerce, Casablanca</p>
+        <p><i class="fas fa-phone"></i> +212 5XX XX XX XX</p>
+        <p><i class="fas fa-envelope"></i> contact@boutiquevelos.com</p>
+        <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/212762609147" target="_blank">WhatsApp</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Ma Boutique de Vélos. Tous droits réservés.</p>
+      <div class="payment-methods">
+        <i class="fab fa-cc-visa"></i>
+        <i class="fab fa-cc-mastercard"></i>
+        <i class="fab fa-cc-paypal"></i>
+      </div>
+    </div>
+  </footer>
+
+  <script src="commande.js"></script>
+  <script>
+    // Script pour assurer que la page ne soit pas mise en cache
+    if (window.performance && window.performance.navigation.type === 2) {
+      // Si l'utilisateur revient à cette page depuis l'historique
+      window.location.reload();
+    }
+    
+    // Débogage pour vérifier la transmission de quantité
+    document.addEventListener('DOMContentLoaded', function() {
+      // Afficher les données brutes de localStorage pour vérification
+      const rawData = localStorage.getItem('commandeProduct');
+      console.log("DEBUG - Données brutes de localStorage:", rawData);
+      
+      if (rawData) {
+        try {
+          const parsedData = JSON.parse(rawData);
+          console.log("DEBUG - Quantité dans localStorage:", parsedData.quantity);
+          console.log("DEBUG - Image dans localStorage:", parsedData.image);
+          
+          // Vérifier l'image du produit et corriger si nécessaire
+          const productImage = document.getElementById('product-image');
+          if (productImage && parsedData.image) {
+            // Si l'image ne commence pas par http et ne contient pas le chemin complet
+            if (!parsedData.image.startsWith('http') && !parsedData.image.includes('/')) {
+              // Ajouter le chemin relatif
+              productImage.src = 'images/slider/' + parsedData.image;
+            } else {
+              productImage.src = parsedData.image;
+            }
+            console.log("DEBUG - Chemin d'image utilisé:", productImage.src);
+          }
+          
+          // Vérifier l'élément DOM après le rendu
+          setTimeout(() => {
+            const displayedQuantity = document.getElementById('product-quantity').textContent;
+            console.log("DEBUG - Quantité affichée dans le DOM:", displayedQuantity);
+          }, 500);
+        } catch (e) {
+          console.error("DEBUG - Erreur de parsing:", e);
+        }
+      }
+      
+      // Initialisation du menu mobile
+      const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+      const mainNav = document.querySelector('.main-nav');
+      
+      if (mobileMenuToggle && mainNav) {
+        mobileMenuToggle.addEventListener('click', function() {
+          // Toggle active class sur le bouton
+          this.classList.toggle('active');
+          // Toggle show class sur la navigation
+          mainNav.classList.toggle('show');
+          // Empêcher le défilement quand le menu est ouvert
+          document.body.classList.toggle('menu-open');
+        });
+        
+        // Fermer le menu quand on clique sur un lien
+        const menuLinks = mainNav.querySelectorAll('a');
+        menuLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            if (mainNav.classList.contains('show')) {
+              mobileMenuToggle.classList.remove('active');
+              mainNav.classList.remove('show');
+              document.body.classList.remove('menu-open');
+            }
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>

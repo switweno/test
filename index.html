@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Boutique en ligne de vélos électriques et classiques. Trouvez le vélo parfait à des prix compétitifs.">
+  <meta name="keywords" content="vélos électriques, trottinettes, vélos classiques, achat vélo">
+  <meta name="author" content="Ma Boutique de Vélos">
+  <meta name="robots" content="index, follow">
+  <title>Ma Boutique de Vélos | Vélos Électriques et Classiques</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Pour une redirection si nécessaire -->
+  <!-- <meta http-equiv="refresh" content="0;url=https://votresite.com/nouvelle-page"> -->
+</head>
+<body>
+
+  <!-- Header & Navigation -->
+  <header class="navbar">
+    <div class="logo">Ma Boutique de Vélos</div>
+    <button class="mobile-menu-toggle" aria-label="Menu">
+      <span class="hamburger-icon"></span>
+    </button>
+    
+    <!-- La barre de recherche sera visible en desktop et cachée en mobile -->
+    <div class="search-container desktop-search">
+      <input type="text" placeholder="Rechercher un produit..." class="search-input">
+      <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+    </div>
+    
+    <nav class="main-nav">
+      <!-- Ajout de la barre de recherche pour mobile à l'intérieur du menu -->
+      <div class="search-container mobile-search">
+        <input type="text" placeholder="Rechercher un produit..." class="search-input-mobile">
+        <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+      </div>
+      <ul class="menu">
+        <li><a href="#" aria-current="page"><i class="fas fa-home"></i> Accueil</a></li>
+        <li><a href="categories/velos-electriques.html"><i class="fas fa-bolt"></i> Vélos Électriques</a></li>
+        <li><a href="categories/trottinettes.html"><i class="fas fa-bicycle"></i> Trottinettes</a></li>
+        <li><a href="categories/velos-classiques.html"><i class="fas fa-bicycle"></i> Vélos Classiques</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Découvrez Notre Collection de Vélos et Trottinettes</h1>
+    <p>Qualité supérieure, prix imbattables et livraison rapide</p>
+  </section>
+
+  <!-- Main Slider -->
+  <section class="slider">
+    <div class="slides-container">
+      <div class="slides">
+        <div class="slide active">
+          <img src="images/slider/likebike-shine-s-09.webp" alt="Promotion sur vélos électriques - Économisez jusqu'à 20% cette semaine">
+          <div class="slide-content">
+            <h2>Offres Spéciales</h2>
+            <p>Jusqu'à 20% de réduction cette semaine!</p>
+            <a href="#" class="btn">Voir les offres</a>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="images/slider/likebike-shine-s-09.webp" alt="Nouveaux modèles de vélos écologiques pour 2023">
+          <div class="slide-content">
+            <h2>Nouveaux Modèles</h2>
+            <p>Découvrez notre collection 2023</p>
+            <a href="#" class="btn">Explorer</a>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="images/slider/likebike-shine-s-09.webp" alt="Livraison gratuite sur toutes les commandes de plus de 3000 DHS">
+          <div class="slide-content">
+            <h2>Livraison Gratuite</h2>
+            <p>Sur toutes les commandes &gt; 3000 DHS</p>
+            <a href="#" class="btn">Commander</a>
+          </div>
+        </div>
+      </div>
+      <div class="slider-controls">
+        <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+        <div class="slider-dots">
+          <span class="dot active" data-index="0"></span>
+          <span class="dot" data-index="1"></span>
+          <span class="dot" data-index="2"></span>
+        </div>
+        <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catalog Section -->
+  <section class="catalog">
+    <h2>Nos Produits</h2>
+    <div class="category-filter">
+      <button class="filter-btn active" data-category="all">Tous</button>
+      <button class="filter-btn" data-category="electric">Vélos Électriques</button>
+      <button class="filter-btn" data-category="scooter">Trottinettes</button>
+      <button class="filter-btn" data-category="classic">Vélos Classiques</button>
+    </div>
+    <div class="products">
+      <div class="product-card" data-category="electric" data-id="velo-electrique-x1">
+        <span class="product-badge">Populaire</span>
+        <img src="images/slider/likebike-shine-s-09.webp" alt="Vélo Électrique X1 - Batterie longue durée, autonomie de 80km">
+        <div class="product-info">
+          <h3>Vélo Électrique X1</h3>
+          <div class="product-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>(42)</span>
+          </div>
+          <p class="product-price">2500 DHS</p>
+          <div class="product-actions">
+            <a href="produits/velo-electrique-x1.html" class="btn view-details" style="width: 100%;"><i class="fas fa-eye"></i> Voir les détails</a>
+          </div>
+        </div>
+      </div>
+      <div class="product-card" data-category="scooter" data-id="trottinette-t1">
+        <img src="images/slider/likebike-shine-s-09.webp" alt="Trottinette T1 - Légère et pliable, parfaite pour la ville">
+        <div class="product-info">
+          <h3>Trottinette T1</h3>
+          <div class="product-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+            <span>(28)</span>
+          </div>
+          <p class="product-price">1800 DHS</p>
+          <div class="product-actions">
+            <a href="produits/trottinette-t1.html" class="btn view-details" style="width: 100%;"><i class="fas fa-eye"></i> Voir les détails</a>
+          </div>
+        </div>
+      </div>
+      <div class="product-card" data-category="classic" data-id="velo-classique-c1">
+        <span class="product-badge sale">Promo</span>
+        <img src="images/slider/likebike-shine-s-09.webp" alt="Vélo Classique C1 - Cadre en aluminium, freins à disque">
+        <div class="product-info">
+          <h3>Vélo Classique C1</h3>
+          <div class="product-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+            <span>(15)</span>
+          </div>
+          <p class="product-price"><span class="old-price">1500 DHS</span> 1200 DHS</p>
+          <div class="product-actions">
+            <a href="produits/velo-classique-c1.html" class="btn view-details" style="width: 100%;"><i class="fas fa-eye"></i> Voir les détails</a>
+          </div>
+        </div>
+      </div>
+      <div class="product-card" data-category="classic" data-id="velo-classique-c2">
+        <img src="images/slider/likebike-shine-s-09.webp" alt="Vélo Classique C2 - Parfait pour les balades en famille">
+        <div class="product-info">
+          <h3>Vélo Classique C2</h3>
+          <div class="product-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+            <span>(36)</span>
+          </div>
+          <p class="product-price">1200 DHS</p>
+          <div class="product-actions">
+            <a href="produits/velo-classique-c2.html" class="btn view-details" style="width: 100%;"><i class="fas fa-eye"></i> Voir les détails</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="feature">
+      <i class="fas fa-truck"></i>
+      <h3>Livraison Rapide</h3>
+      <p>Livraison en 2-3 jours ouvrables</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-shield-alt"></i>
+      <h3>Garantie 2 Ans</h3>
+      <p>Sur tous nos produits</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-exchange-alt"></i>
+      <h3>Retours Faciles</h3>
+      <p>Retour sous 30 jours</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-headset"></i>
+      <h3>Support 24/7</h3>
+      <p>Assistance client disponible</p>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <h2>Restez Informé</h2>
+    <p>Inscrivez-vous à notre newsletter pour recevoir nos offres exclusives</p>
+    <form class="newsletter-form">
+      <input type="email" placeholder="Votre adresse email" required>
+      <button type="submit" class="btn">S'abonner</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Ma Boutique de Vélos</h3>
+        <p>Votre partenaire pour la mobilité urbaine et les loisirs.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Liens Utiles</h3>
+        <ul>
+          <li><a href="#">À propos de nous</a></li>
+          <li><a href="#">Conditions générales</a></li>
+          <li><a href="#">Politique de confidentialité</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p><i class="fas fa-map-marker-alt"></i> 123 Rue du Commerce, Casablanca</p>
+        <p><i class="fas fa-phone"></i> +212 5XX XX XX XX</p>
+        <p><i class="fas fa-envelope"></i> contact@boutiquevelos.com</p>
+        <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/212762609147" target="_blank">WhatsApp</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Ma Boutique de Vélos. Tous droits réservés.</p>
+      <div class="payment-methods">
+        <i class="fab fa-cc-visa"></i>
+        <i class="fab fa-cc-mastercard"></i>
+        <i class="fab fa-cc-paypal"></i>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <!-- Ajoutons un script de diagnostic avant la fermeture du body -->
+  <script>
+    // Diagnostic pour le panier sur la page d'accueil
+    document.addEventListener('DOMContentLoaded', function() {
+      // Vérification de la fonctionnalité d'ajout au panier
+      const addToCartButtons = document.querySelectorAll('.add-to-cart');
+      
+      addToCartButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+          const card = this.closest('.product-card');
+          if (!card) {
+            console.error('Carte produit non trouvée');
+            return;
+          }
+          
+          const productName = card.querySelector('h3').textContent;
+          console.log(`Ajout au panier: ${productName}`);
+        });
+      });
+      
+      // Vérification du compteur de panier
+      try {
+        const cartData = localStorage.getItem('cartItems');
+        if (cartData) {
+          const cart = JSON.parse(cartData);
+          console.log('État actuel du panier:', cart);
+          
+          // Mettre à jour le compteur
+          const cartCount = document.querySelector('.cart-count');
+          if (cartCount && Array.isArray(cart)) {
+            const itemCount = cart.reduce((total, item) => total + (item.quantity || 1), 0);
+            cartCount.textContent = itemCount;
+            console.log('Compteur du panier mis à jour:', itemCount);
+          }
+        }
+      } catch (error) {
+        console.error('Erreur lors de la vérification du panier:', error);
+      }
+    });
+  </script>
+</body>
+</html>
