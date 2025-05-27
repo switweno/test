@@ -28,6 +28,7 @@
   <link rel="stylesheet" href="../style.css" />
   <link rel="stylesheet" href="../product-details.css" />
   <link rel="stylesheet" href="../whatsapp-button.css" />
+  <link rel="stylesheet" href="../product-cards.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
   <!-- Canonical URL -->
@@ -519,15 +520,18 @@
         </div>
       </div>
       
-      <!-- Related Products -->
-      <section class="related-products">
+      <!-- Related Products - NOUVELLE STRUCTURE -->
+      <section class="related-section related-products">
         <h2>Produits similaires</h2>
-        <div class="products">
-          <div class="product-card" data-category="electric" data-id="velo-electrique-x2">
-            <img src="../images/slider/likebike-shine-s-09.webp" alt="Vélo Électrique X2 - Modèle tout-terrain avec suspension renforcée" loading="lazy" width="250" height="200">
-            <div class="product-info">
-              <h3>Vélo Électrique X2</h3>
-              <div class="product_rating">
+        <div class="related-products-grid">
+          <!-- Carte produit 1 -->
+          <div class="related-card">
+            <div class="related-card-image">
+              <img src="../images/slider/likebike-shine-s-09.webp" alt="Vélo Électrique X2" loading="lazy">
+            </div>
+            <div class="related-card-content">
+              <h3 class="related-card-title">Vélo Électrique X2</h3>
+              <div class="related-card-rating">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -535,17 +539,21 @@
                 <i class="far fa-star"></i>
                 <span>(32)</span>
               </div>
-              <p class="product-price">2800 DH</p>
-              <div class="product-actions">
-                <a href="velo-electrique-x2.html" class="btn view-details" style="width: 100%;"><i class="fas fa-eye"></i> Voir les détails</a>
-              </div>
+              <p class="related-card-price">2800 DH</p>
+              <a href="velo-electrique-x2.html" class="related-card-button">
+                <i class="fas fa-eye"></i> Voir les détails
+              </a>
             </div>
           </div>
-          <div class="product-card" data-category="electric" data-id="velo-electrique-pliant-p1">
-            <img src="../images/slider/likebike-shine-s-09.webp" alt="Vélo Électrique Pliant P1 - Compact et facile à transporter" loading="lazy" width="250" height="200">
-            <div class="product-info">
-              <h3>Vélo Électrique Pliant P1</h3>
-              <div class="product_rating">
+          
+          <!-- Carte produit 2 -->
+          <div class="related-card">
+            <div class="related-card-image">
+              <img src="../images/slider/likebike-shine-s-09.webp" alt="Vélo Électrique Pliant P1" loading="lazy">
+            </div>
+            <div class="related-card-content">
+              <h3 class="related-card-title">Vélo Électrique Pliant P1</h3>
+              <div class="related-card-rating">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -553,20 +561,63 @@
                 <i class="fas fa-star-half-alt"></i>
                 <span>(18)</span>
               </div>
-              <p class="product-price">2300 DH</p>
-              <div class="product-actions">
-                <a href="velo-electrique-pliant-p1.html" class="btn view-details" style="width: 100%;"><i class="fas fa-eye"></i> Voir les détails</a>
-              </div>
+              <p class="related-card-price">2300 DH</p>
+              <a href="velo-electrique-pliant-p1.html" class="related-card-button">
+                <i class="fas fa-eye"></i> Voir les détails
+              </a>
             </div>
           </div>
         </div>
       </section>
       
-      <!-- Recently Viewed -->
-      <section class="recently-viewed">
+      <!-- Recently Viewed - NOUVELLE STRUCTURE -->
+      <section class="related-section recently-viewed">
         <h2>Récemment consultés</h2>
-        <div class="products">
-          <!-- Cette section sera remplie dynamiquement par le JavaScript -->
+        <div class="related-products-grid">
+          <!-- Carte produit 1 -->
+          <div class="related-card">
+            <div class="related-card-image">
+              <img src="../images/slider/likebike-shine-s-09.webp" alt="Trottinette T1" loading="lazy">
+            </div>
+            <div class="related-card-content">
+              <h3 class="related-card-title">Trottinette T1</h3>
+              <div class="related-card-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span>(28)</span>
+              </div>
+              <p class="related-card-price">1800 DH</p>
+              <a href="trottinette-t1.html" class="related-card-button">
+                <i class="fas fa-eye"></i> Voir les détails
+              </a>
+            </div>
+          </div>
+          
+          <!-- Carte produit 2 -->
+          <div class="related-card">
+            <div class="related-card-image">
+              <div class="related-card-badge">Promo</div>
+              <img src="../images/slider/likebike-shine-s-09.webp" alt="Vélo Classique C1" loading="lazy">
+            </div>
+            <div class="related-card-content">
+              <h3 class="related-card-title">Vélo Classique C1</h3>
+              <div class="related-card-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <span>(15)</span>
+              </div>
+              <p class="related-card-price"><span class="old-price">1500 DH</span> 1200 DH</p>
+              <a href="velo-classique-c1.html" class="related-card-button">
+                <i class="fas fa-eye"></i> Voir les détails
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </div>
@@ -615,6 +666,9 @@
   <!-- Scripts -->
   <!-- Ajouter Swiper JS avant les autres scripts -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+  <!-- Ajouter le script de correction des boutons avant les autres scripts -->
+  <script src="fix-buttons.js"></script>
 
   <!-- Script spécifique pour le bouton de commande - doit être le premier -->
   <script src="../whatsapp-order.js"></script>

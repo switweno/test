@@ -462,3 +462,28 @@ const swiper = new Swiper('.product-swiper', {
     }),
   },
 });
+
+// Fonction pour gérer les produits récemment consultés
+function initRecentlyViewed() {
+  // Obtenir l'ID du produit actuel depuis l'URL
+  const currentProductId = window.location.pathname.split('/').pop().replace('.html', '');
+  
+  // Récupérer les produits récemment consultés du localStorage
+  let recentlyViewed = JSON.parse(localStorage.getItem('recentlyViewed') || '[]');
+  
+  // Ajouter le produit actuel au début et éviter les doublons
+  recentlyViewed = recentlyViewed.filter(id => id !== currentProductId);
+  recentlyViewed.unshift(currentProductId);
+  
+  // Limiter à 4 produits maximum
+  recentlyViewed = recentlyViewed.slice(0, 4);
+  
+  // Sauvegarder dans localStorage
+  localStorage.setItem('recentlyViewed', JSON.stringify(recentlyViewed));
+}
+
+// Exécuter la fonction quand la page est chargée
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialiser les produits récemment consultés
+  initRecentlyViewed();
+});
