@@ -385,7 +385,45 @@ function setupEventListeners() {
     });
   }
   
-
+  // Category filter
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      // Remove active from all buttons
+      filterBtns.forEach(b => b.classList.remove('active'));
+      
+      // Add active to current button
+      this.classList.add('active');
+      
+      // Filter products
+      filterProducts(this.dataset.category);
+    });
+  });
+  
+  // Search - Desktop
+  searchButton.addEventListener('click', searchProducts);
+  searchInput.addEventListener('keyup', function(e) {
+    if (e.key === 'Enter') {
+      searchProducts(this.value.toLowerCase().trim());
+    }
+  });
+  
+  // Search - Mobile
+  searchButtonMobile.addEventListener('click', searchProducts);
+  searchInputMobile.addEventListener('keyup', function(e) {
+    if (e.key === 'Enter') {
+      searchProducts(this.value.toLowerCase().trim());
+    }
+  });
+  
+  // View product details - Remove old event handlers
+  /* This code is now replaced by direct links
+  document.querySelectorAll('.view-details').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const productName = this.closest('.product-card').querySelector('h3').textContent;
+      alert(`Détails du produit: ${productName}\nCette fonctionnalité sera disponible prochainement.`);
+    });
+  });
+  */
   
   // Newsletter form
   const newsletterForm = document.querySelector('.newsletter-form');
@@ -478,6 +516,7 @@ function addMobileMenuStyles() {
     
     @media (max-width: 768px) {
       .main-nav.show {
+       
        
       }
       
