@@ -131,6 +131,7 @@
   .related-products-grid {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
+  
 }
 
 @media (max-width: 576px) {
@@ -140,7 +141,25 @@
   }
   
   .related-card-image {
-    height: 226px;
+    height: 200px;
+  }
+  
+  .related-card-title {
+    font-size: 1rem;
+  }
+  
+  .related-card-price {
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 420px) {
+  .related-products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(193px, 1fr));
+    gap: 1rem;
+  }
+  
+  .related-card-image {
+    height: 278px;
   }
   
   .related-card-title {
