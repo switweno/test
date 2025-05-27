@@ -831,6 +831,44 @@
   cursor: pointer;
 }
 
+/* Correction pour les boutons de produits similaires et récemment consultés */
+.related-products .product-actions,
+.recently-viewed .product-actions {
+  display: flex;
+  justify-content: center !important;
+  width: 100%;
+  margin-top: auto;
+}
+
+.related-products .product-actions .btn,
+.recently-viewed .product-actions .btn,
+.related-products .view-details,
+.recently-viewed .view-details {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  margin: 0 auto !important;
+}
+
+/* Correction pour aligner les informations des cartes produits */
+.related-products .product-info,
+.recently-viewed .product-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.related-products .product-rating,
+.recently-viewed .product-rating,
+.related-products .product-price,
+.recently-viewed .product-price {
+  text-align: center;
+  width: 100%;
+}
+
 /* Responsive design */
 @media (max-width: 992px) {
   .product {
