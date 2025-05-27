@@ -1,7 +1,7 @@
 /* Styles dédiés aux cartes produits des sections "Produits similaires" et "Récemment consultés" */
 
 .related-section {
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 .related-section h2 {
@@ -34,7 +34,7 @@
 
 .related-card-image {
   position: relative;
-  height: 180px;
+  height: 244px;
   overflow: hidden;
 }
 
@@ -135,12 +135,12 @@
 
 @media (max-width: 576px) {
   .related-products-grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(193px, 1fr));
     gap: 1rem;
   }
   
   .related-card-image {
-    height: 150px;
+    height: 226px;
   }
   
   .related-card-title {
