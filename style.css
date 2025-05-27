@@ -69,7 +69,7 @@ img {
 /* الصور المصغرة */
 .product-thumbs-swiper .swiper-slide img {
   width: 80px;
-  height: 90px;
+  height: 80px;
   object-fit: cover;
   border-radius: 4px;
   display: block;
