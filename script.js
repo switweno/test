@@ -280,12 +280,47 @@ function searchProducts(searchTerm) {
   });
 }
 
-// Mobile Menu Toggle
-function toggleMobileMenu() {
+// Fonction améliorée pour le menu mobile
+function toggleMobileMenu(event) {
+  console.log("toggleMobileMenu appelé");
+  
+  if (event) {
+    event.preventDefault();
+  }
+  
+  const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+  const mainNav = document.querySelector('.main-nav');
+  
+  if (!mobileMenuToggle || !mainNav) {
+    console.error("Éléments du menu mobile non trouvés");
+    return;
+  }
+  
+  console.log("État du menu avant:", mainNav.classList.contains('show') ? "ouvert" : "fermé");
+  
+  // Toggle active class
   mobileMenuToggle.classList.toggle('active');
   mainNav.classList.toggle('show');
   
-  // Prevent scrolling when menu is open
+  console.log("État du menu après:", mainNav.classList.contains('show') ? "ouvert" : "fermé");
+  
+  // Gérer l'overlay
+  let overlay = document.querySelector('.menu-overlay');
+  
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.className = 'menu-overlay';
+    document.body.appendChild(overlay);
+    
+    // Fermer le menu quand on clique sur l'overlay
+    overlay.addEventListener('click', function() {
+      toggleMobileMenu();
+    });
+  }
+  
+  overlay.classList.toggle('active');
+  
+  // Empêcher le défilement quand le menu est ouvert
   document.body.classList.toggle('menu-open');
 }
 
@@ -321,16 +356,6 @@ function setupEventListeners() {
   // Mobile menu toggle
   if (mobileMenuToggle) {
     mobileMenuToggle.addEventListener('click', toggleMobileMenu);
-    
-    // Close menu when clicking on a link
-    const menuLinks = mainNav.querySelectorAll('a');
-    menuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        if (mainNav.classList.contains('show')) {
-          toggleMobileMenu();
-        }
-      });
-    });
   }
   
   // Slider controls
@@ -374,11 +399,6 @@ function setupEventListeners() {
     });
   });
   
-  // Add to cart buttons
-  addToCartBtns.forEach(btn => {
-    btn.addEventListener('click', addToCart);
-  });
-  
   // Search - Desktop
   searchButton.addEventListener('click', searchProducts);
   searchInput.addEventListener('keyup', function(e) {
@@ -418,6 +438,17 @@ function setupEventListeners() {
       }
     });
   }
+  
+  // Remplacer l'ancienne gestion du menu mobile
+  const menuLinks = document.querySelectorAll('.main-nav a');
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      const mainNav = document.querySelector('.main-nav');
+      if (mainNav.classList.contains('show')) {
+        toggleMobileMenu();
+      }
+    });
+  });
 }
 
 // Reset slider interval when manually changing slides

@@ -169,6 +169,7 @@ img {
   color: var(--secondary-color);
 }
 
+/* Indicateur de page active dans le menu */
 .menu a[aria-current="page"]::after {
   content: "";
   position: absolute;
@@ -177,6 +178,24 @@ img {
   right: 0;
   height: 2px;
   background-color: var(--secondary-color);
+}
+
+.menu a[aria-current="page"] {
+  color: var(--secondary-color); /* Colorer le texte plutôt que de souligner */
+  font-weight: bold; /* Mettre en gras pour plus de visibilité */
+}
+
+.menu a[aria-current="page"]::after {
+  /* Supprimer la ligne de soulignement en mobile */
+  display: none;
+}
+
+/* Alternative: afficher un indicateur latéral plutôt qu'un soulignement */
+.menu a[aria-current="page"]::before {
+  content: "•"; /* Petit point */
+  position: absolute;
+  left: -15px;
+  color: var(--secondary-color);
 }
 
 .cart-icon {
@@ -643,73 +662,81 @@ img {
   cursor: pointer;
   position: relative;
   z-index: 1001;
+  width: 40px;
+  height: 40px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.hamburger-icon {
+.mobile-menu-toggle span {
   display: block;
-  position: relative;
   width: 24px;
-  height: 2px;
+  height: 3px;
   background-color: white;
-  transition: background-color 0.3s;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+  border-radius: 2px;
 }
 
-.hamburger-icon:before,
-.hamburger-icon:after {
-  content: '';
-  position: absolute;
-  width: 24px;
-  height: 2px;
+.mobile-menu-toggle.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Nouveau menu mobile - Solution simple et robuste */
+.menu-btn-container {
+  display: none; /* Caché par défaut على سطح المكتب */
+  order: 3;
+  z-index: 1001;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.menu-btn-bar {
+  width: 100%;
+  height: 3px;
   background-color: white;
-  transition: transform 0.3s;
+  border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
-.hamburger-icon:before {
-  top: -6px;
+.menu-btn.open .menu-btn-bar:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
 }
 
-.hamburger-icon:after {
-  bottom: -6px;
+.menu-btn.open .menu-btn-bar:nth-child(2) {
+  opacity: 0;
 }
 
-/* Hamburger Animation */
-.mobile-menu-toggle.active .hamburger-icon {
-  background-color: transparent;
+.menu-btn.open .menu-btn-bar:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
 }
 
-.mobile-menu-toggle.active .hamburger-icon:before {
-  transform: rotate(45deg);
-  top: 0;
+/* Suppression des anciens styles qui peuvent causer des conflits */
+.mobile-menu-toggle,
+.hamburger-button {
+  display: none !important;
 }
 
-.mobile-menu-toggle.active .hamburger-icon:after {
-  transform: rotate(-45deg);
-  bottom: 0;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 992px) {
-  .slide-content {
-    max-width: 300px;
-  }
-  
-  .slider .prev-btn {
-    left: 10px;
-  }
-  
-  .slider .next-btn {
-    right: 10px;
-  }
-  
-  .product-actions {
-    justify-content: center;
-  }
-  
-  .product-actions .btn {
-    width: 100%;
-  }
-}
-
+/* Correction du menu pour mobile */
 @media (max-width: 768px) {
   .navbar {
     flex-wrap: wrap;
@@ -722,77 +749,85 @@ img {
   }
   
   .mobile-menu-toggle {
-    display: block;
-    order: 2; /* Changer l'ordre pour placer à droite du logo */
-  }
-  
-  /* Cacher la barre de البحث desktop على mobile */
-  .desktop-search {
-    display: none;
-  }
-  
-  /* Afficher la barre de recherche mobile dans le menu */
-  .mobile-search {
     display: flex;
-    order: 1;
+  }
+  
+  .menu-btn-container {
+    display: block; /* Affiché sur mobile */
   }
   
   .main-nav {
-    width: 100%;
-    order: 3;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease;
+    position: fixed;
+    top: 0;
+    right: -280px;
+    width: 280px;
+    height: 100vh;
+    background-color: var(--primary-color);
+    padding-top: 60px;
+    overflow-y: auto;
+    transition: right 0.3s ease;
+    z-index: 1000;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
   }
   
   .main-nav.show {
-    max-height: 350px; /* Augmenter pour accommoder la barre de recherche */
+    right: 0;
   }
   
   .menu {
     flex-direction: column;
     align-items: flex-start;
-    padding: 0.5rem 0;
+    padding: 0.5rem 1.5rem;
   }
   
   .menu li {
-    width: 100%;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
   }
   
   .menu a {
+    font-size: 1.1rem;
+  }
+  
+  /* Adapter l'indicateur de page active pour le menu mobile */
+  .menu a[aria-current="page"] {
+    color: var(--secondary-color); /* Colorer le texte plutôt que de souligner */
+    font-weight: bold; /* Mettre en gras pour plus de visibilité */
+  }
+  
+  .menu a[aria-current="page"]::after {
+    /* Supprimer la ligne de soulignement en mobile */
+    display: none;
+  }
+  
+  /* Ajouter un petit point à gauche du lien actif */
+  .menu a[aria-current="page"]::before {
+    content: "•"; /* Petit point */
+    position: absolute;
+    left: -15px;
+    color: var(--secondary-color);
+  }
+  
+  /* Overlay pour fermer le menu en cliquant à l'extérieur */
+  .menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+  
+  .menu-overlay.active {
     display: block;
-    padding: 0.5rem 0;
   }
   
-  .slide-content {
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    max-width: 80%;
-  }
-  
-  .products {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
-  
-  .newsletter-form {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .newsletter-form input,
-  .newsletter-form .btn {
-    border-radius: 4px;
-  }
-  
-  .footer-bottom {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .payment-methods {
-    justify-content: center;
+  /* Mobile search inside nav */
+  .mobile-search {
+    display: flex;
+    margin: 1rem 1.5rem;
+    width: auto;
   }
 }
 

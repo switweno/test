@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Description du produit ici">
+  <meta name="keywords" content="vélos électriques, trottinettes, vélos classiques, produit spécifique">
+  <meta name="author" content="Ma Boutique de Vélos">
+  <meta name="robots" content="index, follow">
+  <title>Nom du Produit | Ma Boutique de Vélos</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../product-details.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+  <!-- Header & Navigation -->
+  <header class="navbar">
+    <div class="logo">Ma Boutique de Vélos</div>
+    <div class="menu-btn-container">
+      <button id="menu-btn" class="menu-btn">
+        <div class="menu-btn-bar"></div>
+        <div class="menu-btn-bar"></div>
+        <div class="menu-btn-bar"></div>
+      </button>
+    </div>
+    
+    <!-- La barre de recherche sera visible en desktop et cachée en mobile -->
+    <div class="search-container desktop-search">
+      <input type="text" placeholder="Rechercher un produit..." class="search-input">
+      <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+    </div>
+    
+    <nav class="main-nav">
+      <!-- Ajout de la barre de recherche pour mobile à l'intérieur du menu -->
+      <div class="search-container mobile-search">
+        <input type="text" placeholder="Rechercher un produit..." class="search-input-mobile">
+        <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+      </div>
+      <ul class="menu">
+        <li><a href="../index.html"><i class="fas fa-home"></i> Accueil</a></li>
+        <li><a href="../categories/velos-electriques.html"><i class="fas fa-bolt"></i> Vélos Électriques</a></li>
+        <li><a href="../categories/trottinettes.html"><i class="fas fa-bicycle"></i> Trottinettes</a></li>
+        <li><a href="../categories/velos-classiques.html"><i class="fas fa-bicycle"></i> Vélos Classiques</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contenu de la page -->
+  <main>
+    <!-- Le contenu spécifique à la page va ici -->
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <!-- Contenu du footer -->
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../script.js"></script>
+  <script src="../mobile-menu.js"></script>
+  <!-- Autres scripts spécifiques à la page -->
+</body>
+</html>

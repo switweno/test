@@ -15,9 +15,13 @@
   <!-- Header & Navigation -->
   <header class="navbar">
     <div class="logo">Ma Boutique de Vélos</div>
-    <button class="mobile-menu-toggle" aria-label="Menu">
-      <span class="hamburger-icon"></span>
-    </button>
+    <div class="menu-btn-container">
+      <button id="menu-btn" class="menu-btn">
+        <span class="menu-btn-bar"></span>
+        <span class="menu-btn-bar"></span>
+        <span class="menu-btn-bar"></span>
+      </button>
+    </div>
     
     <nav class="main-nav">
       <ul class="menu">
@@ -109,6 +113,16 @@
     </div>
   </section>
 
+   <!-- Newsletter -->
+  <section class="newsletter">
+    <h2>Restez Informé</h2>
+    <p>Inscrivez-vous à notre newsletter pour recevoir nos offres exclusives</p>
+    <form class="newsletter-form">
+      <input type="email" placeholder="Votre adresse email" required>
+      <button type="submit" class="btn">S'abonner</button>
+    </form>
+  </section>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-content">
@@ -150,6 +164,7 @@
   </footer>
 
   <script src="commande.js"></script>
+  <script src="mobile-menu.js"></script>
   <script>
     // Script pour assurer que la page ne soit pas mise en cache
     if (window.performance && window.performance.navigation.type === 2) {
@@ -190,33 +205,6 @@
         } catch (e) {
           console.error("DEBUG - Erreur de parsing:", e);
         }
-      }
-      
-      // Initialisation du menu mobile
-      const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-      const mainNav = document.querySelector('.main-nav');
-      
-      if (mobileMenuToggle && mainNav) {
-        mobileMenuToggle.addEventListener('click', function() {
-          // Toggle active class sur le bouton
-          this.classList.toggle('active');
-          // Toggle show class sur la navigation
-          mainNav.classList.toggle('show');
-          // Empêcher le défilement quand le menu est ouvert
-          document.body.classList.toggle('menu-open');
-        });
-        
-        // Fermer le menu quand on clique sur un lien
-        const menuLinks = mainNav.querySelectorAll('a');
-        menuLinks.forEach(link => {
-          link.addEventListener('click', () => {
-            if (mainNav.classList.contains('show')) {
-              mobileMenuToggle.classList.remove('active');
-              mainNav.classList.remove('show');
-              document.body.classList.remove('menu-open');
-            }
-          });
-        });
       }
     });
   </script>

@@ -200,3 +200,18 @@
     font-size: 0.9rem;
   }
 }
+
+/* Assurez-vous que le menu mobile fonctionne correctement en surchargeant les styles si nécessaire */
+
+/* Style pour s'assurer que le menu mobile est visible */
+.main-nav.show {
+  right: 0 !important; /* Forcer l'affichage */
+  display: block !important;
+}
+
+/* Overlay pour fermer le menu en cliquant à l'extérieur */
+.menu-overlay.active {
+  display: block !important;
+}
+
+/* Autres styles spécifiques aux catégories */

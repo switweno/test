@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Vélo Électrique X1 - Batterie longue durée de 80km, cadre en aluminium léger, freins à disque hydrauliques. Livraison gratuite dès 3000 DHS.">
+  <meta name="description" content="Vélo Électrique X1 - Batterie longue durée de 80km, cadre en aluminium léger, freins à disque hydrauliques, suspension avant. Livraison gratuite.">
   <meta name="keywords" content="vélo électrique, X1, batterie longue durée, vélo urbain, mobilité écologique">
   <meta name="author" content="Ma Boutique de Vélos">
   <meta name="robots" content="index, follow">
@@ -12,50 +12,41 @@
   <meta property="og:type" content="product">
   <meta property="og:title" content="Vélo Électrique X1 | Autonomie 80km | Ma Boutique de Vélos">
   <meta property="og:description" content="Découvrez notre Vélo Électrique X1 avec 80km d'autonomie. Idéal pour vos déplacements urbains et vos loisirs.">
-  <meta property="og:image" content="https://www.maboutiquedevelos.com/images/slider/likebike-shine-s-09.webp">
-  <meta property="og:url" content="https://www.maboutiquedevelos.com/produits/velo-electrique-x1.html">
-  
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Vélo Électrique X1 | Autonomie 80km">
-  <meta name="twitter:description" content="Découvrez notre Vélo Électrique X1 avec 80km d'autonomie. Idéal pour vos déplacements urbains et vos loisirs.">
+  <meta property="og:image" content="https://www.maboutiquedevelos.com/images/products/velo-electrique-x1-main.jpg">
   
   <title>Vélo Électrique X1 | Autonomie 80km | Ma Boutique de Vélos</title>
-  
-  <!-- Ajouter Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-  
-  <link rel="stylesheet" href="../style.css" />
-  <link rel="stylesheet" href="../product-details.css" />
-  <link rel="stylesheet" href="../whatsapp-button.css" />
-  <link rel="stylesheet" href="../product-cards.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="product-details.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
   <!-- Canonical URL -->
-  <link rel="canonical" href="https://www.maboutiquedevelos.com/produits/velo-electrique-x1.html" />
+  <link rel="canonical" href="https://www.maboutiquedevelos.com/produits/velo-electrique-x1" />
 </head>
 <body>
 
   <!-- Header & Navigation -->
   <header class="navbar">
     <div class="logo">Ma Boutique de Vélos</div>
-    <div class="menu-btn-container">
-      <button id="menu-btn" class="menu-btn">
-        <span class="menu-btn-bar"></span>
-        <span class="menu-btn-bar"></span>
-        <span class="menu-btn-bar"></span>
-      </button>
+    <button class="mobile-menu-toggle" aria-label="Menu">
+      <span class="hamburger-icon"></span>
+    </button>
+    
+    <div class="search-container desktop-search">
+      <input type="text" placeholder="Rechercher un produit..." class="search-input">
+      <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
     </div>
     
-    
-    
     <nav class="main-nav">
-      
+      <div class="search-container mobile-search">
+        <input type="text" placeholder="Rechercher un produit..." class="search-input-mobile">
+        <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+      </div>
       <ul class="menu">
-        <li><a href="../index.html"><i class="fas fa-home"></i> Accueil</a></li>
-        <li><a href="../categories/velos-electriques.html"><i class="fas fa-bolt"></i> Vélos Électriques</a></li>
-        <li><a href="../categories/trottinettes.html"><i class="fas fa-bicycle"></i> Trottinettes</a></li>
-        <li><a href="../categories/velos-classiques.html"><i class="fas fa-bicycle"></i> Vélos Classiques</a></li>
+        <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+        <li><a href="#" aria-current="page"><i class="fas fa-bolt"></i> Vélos Électriques</a></li>
+        <li><a href="#"><i class="fas fa-bicycle"></i> Trottinettes</a></li>
+        <li><a href="#"><i class="fas fa-bicycle"></i> Vélos Classiques</a></li>
+        <li><a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a></li>
       </ul>
     </nav>
   </header>
@@ -63,8 +54,8 @@
   <!-- Breadcrumbs -->
   <div class="breadcrumbs">
     <div class="container">
-      <a href="../index.html">Accueil</a> &gt; 
-      <a href="../index.html?category=electric">Vélos Électriques</a> &gt; 
+      <a href="index.html">Accueil</a> &gt; 
+      <a href="#">Vélos Électriques</a> &gt; 
       <span>Vélo Électrique X1</span>
     </div>
   </div>
@@ -79,7 +70,9 @@
         "@type": "Product",
         "name": "Vélo Électrique X1",
         "image": [
-          "https://www.maboutiquedevelos.com/images/slider/likebike-shine-s-09.webp"
+          "https://www.maboutiquedevelos.com/images/products/velo-electrique-x1-1.jpg",
+          "https://www.maboutiquedevelos.com/images/products/velo-electrique-x1-2.jpg",
+          "https://www.maboutiquedevelos.com/images/products/velo-electrique-x1-3.jpg"
         ],
         "description": "Vélo électrique haut de gamme avec batterie longue durée et autonomie de 80km, idéal pour les déplacements urbains et les loisirs.",
         "sku": "VE-X1-2023",
@@ -107,7 +100,7 @@
         },
         "offers": {
           "@type": "Offer",
-          "url": "https://www.maboutiquedevelos.com/produits/velo-electrique-x1.html",
+          "url": "https://www.maboutiquedevelos.com/produits/velo-electrique-x1",
           "priceCurrency": "MAD",
           "price": "2500",
           "priceValidUntil": "2024-12-31",
@@ -121,69 +114,22 @@
       }
       </script>
 
-     <article class="product">
-  <div class="product-gallery">
-    <!-- Swiper Container -->
-    <div class="swiper product-swiper">
-      <div class="swiper-wrapper">
-        <!-- Slides مع Zoom -->
-        <div class="swiper-slide">
-          <div class="swiper-zoom-container">
-            <img src="../images/slider/vélo-éléctrique-likebike-a10-01.webp" alt="Vue avant du Vélo Électrique X1" width="550" height="700">
+      <article class="product">
+        <div class="product-gallery">
+          <div class="product-main-image">
+            <img id="current-image" src="images/slider/likebike-shine-s-09.webp" alt="Vélo Électrique X1 - Vue principale avec batterie amovible">
+          </div>
+          <div class="product-thumbnails">
+            <img src="images/slider/likebike-shine-s-09.webp" alt="Vue avant du Vélo Électrique X1" class="active" onclick="changeImage(this)">
+            <img src="images/slider/likebike-shine-s-09.webp" alt="Vue arrière du Vélo Électrique X1" onclick="changeImage(this)">
+            <img src="images/slider/likebike-shine-s-09.webp" alt="Batterie amovible du Vélo Électrique X1" onclick="changeImage(this)">
+            <img src="images/slider/likebike-shine-s-09.webp" alt="Console de contrôle du Vélo Électrique X1" onclick="changeImage(this)">
+          </div>
+          <div class="image-controls">
+            <button class="prev-img"><i class="fas fa-chevron-left"></i></button>
+            <button class="next-img"><i class="fas fa-chevron-right"></i></button>
           </div>
         </div>
-        <div class="swiper-slide">
-          <div class="swiper-zoom-container">
-            <img src="../images/slider/vélo-éléctrique-likebike-a10-02.webp" alt="Vue arrière du Vélo Électrique X1" width="550" height="700">
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="swiper-zoom-container">
-            <img src="../images/slider/vélo-éléctrique-likebike-a10-03.webp" alt="Batterie amovible du Vélo Électrique X1" width="550" height="700">
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="swiper-zoom-container">
-            <img src="../images/slider/vélo-éléctrique-likebike-a10-04.webp" alt="Console de contrôle du Vélo Électrique X1" width="550" height="700">
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="swiper-zoom-container">
-            <img src="../images/slider/vélo-éléctrique-likebike-a10-05.webp" alt="Console de contrôle du Vélo Électrique X1" width="550" height="700">
-          </div>
-        </div>
-      </div>
-
-      <!-- Pagination -->
-      <div class="swiper-pagination"></div>
-
-      <!-- Navigation buttons -->
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-    </div>
-
-    <!-- Thumbs Swiper -->
-    <div class="swiper product-thumbs-swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="../images/slider/vélo-éléctrique-likebike-a10-01.webp" alt="Vue avant du Vélo Électrique X1" width="80" height="80">
-        </div>
-        <div class="swiper-slide">
-          <img src="../images/slider/vélo-éléctrique-likebike-a10-02.webp" alt="Vue arrière du Vélo Électrique X1" width="80" height="80">
-        </div>
-        <div class="swiper-slide">
-          <img src="../images/slider/vélo-éléctrique-likebike-a10-03.webp" alt="Batterie amovible du Vélo Électrique X1" width="80" height="80">
-        </div>
-        <div class="swiper-slide">
-          <img src="../images/slider/vélo-éléctrique-likebike-a10-04.webp" alt="Console de contrôle du Vélo Électrique X1" width="80" height="80">
-        </div>
-        <div class="swiper-slide">
-          <img src="../images/slider/vélo-éléctrique-likebike-a10-05.webp" alt="Console de contrôle du Vélo Électrique X1" width="80" height="80">
-        </div>
-      </div>
-    </div>
-  </div>
-
 
         <div class="product-info">
           <h1>Vélo Électrique X1</h1>
@@ -201,8 +147,8 @@
           
           <div class="product-price-container">
             <div class="product-price">
-              <span class="current-price">2500 DH</span>
-              <span class="old-price">2800 DH</span>
+              <span class="current-price">2500 DHS</span>
+              <span class="old-price">2800 DHS</span>
               <span class="discount-badge">-10%</span>
             </div>
             <div class="product-stock in-stock">
@@ -223,6 +169,16 @@
                 <button class="color-option" style="background-color: #e74c3c;" data-color="Rouge" aria-label="Couleur Rouge"></button>
               </div>
             </div>
+            
+            <div class="variant-group">
+              <label>Taille du cadre:</label>
+              <div class="size-options">
+                <button class="size-option" data-size="S">S</button>
+                <button class="size-option active" data-size="M">M</button>
+                <button class="size-option" data-size="L">L</button>
+                <button class="size-option" data-size="XL">XL</button>
+              </div>
+            </div>
           </div>
           
           <div class="product-quantity">
@@ -235,10 +191,9 @@
           </div>
           
           <div class="product-actions">
-            <!-- Modifier les boutons d'action du produit pour afficher directement le bouton Commander maintenant -->
-            <button class="btn whatsapp-order-btn" style="background-color: #25d366; width: 100%;">
-              <i class="fab fa-whatsapp"></i> Commander maintenant
-            </button>
+            <button class="btn buy-now-btn"><i class="fas fa-bolt"></i> Acheter maintenant</button>
+            <button class="btn add-to-cart-btn"><i class="fas fa-cart-plus"></i> Ajouter au panier</button>
+            <button class="btn wishlist-btn"><i class="far fa-heart"></i></button>
           </div>
           
           <div class="product-delivery">
@@ -246,7 +201,7 @@
               <i class="fas fa-truck"></i>
               <div>
                 <strong>Livraison gratuite</strong>
-                <p>Pour les commandes supérieures à 3000 DH</p>
+                <p>Pour les commandes supérieures à 3000 DHS</p>
               </div>
             </div>
             <div class="delivery-option">
@@ -260,10 +215,10 @@
           
           <div class="product-share">
             <span>Partager:</span>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.maboutiquedevelos.com/produits/velo-electrique-x1.html" target="_blank" aria-label="Partager sur Facebook"><i class="fab fa-facebook"></i></a>
-            <a href="https://twitter.com/intent/tweet?url=https://www.maboutiquedevelos.com/produits/velo-electrique-x1.html&text=Vélo Électrique X1" target="_blank" aria-label="Partager sur Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="https://wa.me/?text=Découvrez le Vélo Électrique X1 https://www.maboutiquedevelos.com/produits/velo-electrique-x1.html" target="_blank" aria-label="Partager sur WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a href="mailto:?subject=Vélo Électrique X1&body=Découvrez le Vélo Électrique X1 https://www.maboutiquedevelos.com/produits/velo-electrique-x1.html" aria-label="Partager par email"><i class="fas fa-envelope"></i></a>
+            <a href="#" aria-label="Partager sur Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Partager sur Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Partager sur WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" aria-label="Partager par email"><i class="fas fa-envelope"></i></a>
           </div>
         </div>
       </article>
@@ -353,7 +308,12 @@
               </tr>
             </table>
             
-            
+            <div class="download-section">
+              <h3>Documents à télécharger</h3>
+              <a href="#" class="download-link"><i class="fas fa-file-pdf"></i> Manuel d'utilisateur (PDF, 2.5 MB)</a>
+              <a href="#" class="download-link"><i class="fas fa-file-pdf"></i> Fiche technique détaillée (PDF, 1.2 MB)</a>
+              <a href="#" class="download-link"><i class="fas fa-file-pdf"></i> Guide d'entretien (PDF, 1.8 MB)</a>
+            </div>
           </div>
           
           <div class="tab-pane" id="reviews">
@@ -410,36 +370,118 @@
                 </div>
               </div>
             </div>
+            
+            <div class="reviews-list">
+              <div class="review-item">
+                <div class="review-header">
+                  <div class="reviewer-info">
+                    <img src="images/avatar-placeholder.jpg" alt="Avatar de l'utilisateur" class="reviewer-avatar">
+                    <div>
+                      <strong>Mohamed A.</strong>
+                      <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="review-date">20 juin 2023</div>
+                </div>
+                <div class="review-content">
+                  <p>Excellent vélo électrique ! Je l'utilise tous les jours pour aller au travail et c'est un vrai plaisir. La batterie tient vraiment la charge comme promis et le confort de conduite est au rendez-vous. Je recommande vivement.</p>
+                </div>
               </div>
-      </div>
-         </div>   
               
-                  
-                
-               
+              <div class="review-item">
+                <div class="review-header">
+                  <div class="reviewer-info">
+                    <img src="images/avatar-placeholder.jpg" alt="Avatar de l'utilisateur" class="reviewer-avatar">
+                    <div>
+                      <strong>Fatima L.</strong>
+                      <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="review-date">15 mai 2023</div>
+                </div>
+                <div class="review-content">
+                  <p>Très bon rapport qualité-prix. Le vélo est robuste et facile à utiliser. L'assistance électrique est progressive et naturelle. Seul petit bémol : le porte-bagages n'est pas inclus et doit être acheté séparément.</p>
+                </div>
+              </div>
               
+              <div class="review-item">
+                <div class="review-header">
+                  <div class="reviewer-info">
+                    <img src="images/avatar-placeholder.jpg" alt="Avatar de l'utilisateur" class="reviewer-avatar">
+                    <div>
+                      <strong>Karim B.</strong>
+                      <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="review-date">2 avril 2023</div>
+                </div>
+                <div class="review-content">
+                  <p>Je suis très satisfait de mon achat. Le vélo est livré presque entièrement monté, il suffit d'ajuster le guidon et les pédales. La batterie se charge rapidement et l'autonomie est impressionnante. Je redécouvre le plaisir de faire du vélo sans effort !</p>
+                </div>
+              </div>
               
-                
-             
-              
-              
-     
-            
-            
-      
-      
-      <!-- Related Products - NOUVELLE STRUCTURE -->
-      <section class="related-section related-products">
-        <h2>Produits similaires</h2>
-        <div class="related-products-grid">
-          <!-- Carte produit 1 -->
-          <div class="related-card">
-            <div class="related-card-image">
-              <img src="../images/slider/likebike-shine-s-09.webp" alt="Vélo Électrique X2" loading="lazy">
+              <button class="btn load-more-reviews">Voir plus d'avis</button>
             </div>
-            <div class="related-card-content">
-              <h3 class="related-card-title">Vélo Électrique X2</h3>
-              <div class="related-card-rating">
+            
+            <div class="write-review">
+              <h3>Donnez votre avis</h3>
+              <form class="review-form">
+                <div class="form-group">
+                  <label for="review-rating">Votre note:</label>
+                  <div class="rating-select">
+                    <i class="far fa-star rating-star" data-value="1"></i>
+                    <i class="far fa-star rating-star" data-value="2"></i>
+                    <i class="far fa-star rating-star" data-value="3"></i>
+                    <i class="far fa-star rating-star" data-value="4"></i>
+                    <i class="far fa-star rating-star" data-value="5"></i>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="review-name">Votre nom:</label>
+                  <input type="text" id="review-name" required>
+                </div>
+                <div class="form-group">
+                  <label for="review-email">Votre email:</label>
+                  <input type="email" id="review-email" required>
+                </div>
+                <div class="form-group">
+                  <label for="review-content">Votre avis:</label>
+                  <textarea id="review-content" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn submit-review">Soumettre votre avis</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Related Products -->
+      <section class="related-products">
+        <h2>Produits similaires</h2>
+        <div class="products">
+          <div class="product-card" data-category="electric">
+            <img src="images/slider/likebike-shine-s-09.webp" alt="Vélo Électrique X2 - Modèle tout-terrain avec suspension renforcée">
+            <div class="product-info">
+              <h3>Vélo Électrique X2</h3>
+              <div class="product-rating">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -447,21 +489,18 @@
                 <i class="far fa-star"></i>
                 <span>(32)</span>
               </div>
-              <p class="related-card-price">2800 DH</p>
-              <a href="velo-electrique-x2.html" class="related-card-button">
-                <i class="fas fa-eye"></i> Voir les détails
-              </a>
+              <p class="product-price">2800 DHS</p>
+              <div class="product-actions">
+                <button class="btn add-to-cart"><i class="fas fa-shopping-cart"></i> Ajouter</button>
+                <button class="btn view-details"><i class="fas fa-eye"></i> Détails</button>
+              </div>
             </div>
           </div>
-          
-          <!-- Carte produit 2 -->
-          <div class="related-card">
-            <div class="related-card-image">
-              <img src="../images/slider/likebike-shine-s-09.webp" alt="Vélo Électrique Pliant P1" loading="lazy">
-            </div>
-            <div class="related-card-content">
-              <h3 class="related-card-title">Vélo Électrique Pliant P1</h3>
-              <div class="related-card-rating">
+          <div class="product-card" data-category="electric">
+            <img src="images/slider/likebike-shine-s-09.webp" alt="Vélo Électrique Pliant P1 - Compact et facile à transporter">
+            <div class="product-info">
+              <h3>Vélo Électrique Pliant P1</h3>
+              <div class="product-rating">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -469,27 +508,44 @@
                 <i class="fas fa-star-half-alt"></i>
                 <span>(18)</span>
               </div>
-              <p class="related-card-price">2300 DH</p>
-              <a href="velo-electrique-pliant-p1.html" class="related-card-button">
-                <i class="fas fa-eye"></i> Voir les détails
-              </a>
+              <p class="product-price">2300 DHS</p>
+              <div class="product-actions">
+                <button class="btn add-to-cart"><i class="fas fa-shopping-cart"></i> Ajouter</button>
+                <button class="btn view-details"><i class="fas fa-eye"></i> Détails</button>
+              </div>
+            </div>
+          </div>
+          <div class="product-card" data-category="electric">
+            <img src="images/slider/likebike-shine-s-09.webp" alt="Vélo Électrique Urbain U1 - Élégant et fonctionnel">
+            <div class="product-info">
+              <h3>Vélo Électrique Urbain U1</h3>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <i class="far fa-star"></i>
+                <span>(25)</span>
+              </div>
+              <p class="product-price">2650 DHS</p>
+              <div class="product-actions">
+                <button class="btn add-to-cart"><i class="fas fa-shopping-cart"></i> Ajouter</button>
+                <button class="btn view-details"><i class="fas fa-eye"></i> Détails</button>
+              </div>
             </div>
           </div>
         </div>
       </section>
       
-      <!-- Recently Viewed - NOUVELLE STRUCTURE -->
-      <section class="related-section recently-viewed">
+      <!-- Recently Viewed -->
+      <section class="recently-viewed">
         <h2>Récemment consultés</h2>
-        <div class="related-products-grid">
-          <!-- Carte produit 1 -->
-          <div class="related-card">
-            <div class="related-card-image">
-              <img src="../images/slider/likebike-shine-s-09.webp" alt="Trottinette T1" loading="lazy">
-            </div>
-            <div class="related-card-content">
-              <h3 class="related-card-title">Trottinette T1</h3>
-              <div class="related-card-rating">
+        <div class="products">
+          <div class="product-card" data-category="scooter">
+            <img src="images/slider/likebike-shine-s-09.webp" alt="Trottinette Électrique T1 - Légère et pliable">
+            <div class="product-info">
+              <h3>Trottinette Électrique T1</h3>
+              <div class="product-rating">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -497,22 +553,18 @@
                 <i class="far fa-star"></i>
                 <span>(28)</span>
               </div>
-              <p class="related-card-price">1800 DH</p>
-              <a href="trottinette-t1.html" class="related-card-button">
-                <i class="fas fa-eye"></i> Voir les détails
-              </a>
+              <p class="product-price">1800 DHS</p>
+              <div class="product-actions">
+                <button class="btn add-to-cart"><i class="fas fa-shopping-cart"></i> Ajouter</button>
+                <button class="btn view-details"><i class="fas fa-eye"></i> Détails</button>
+              </div>
             </div>
           </div>
-          
-          <!-- Carte produit 2 -->
-          <div class="related-card">
-            <div class="related-card-image">
-              <div class="related-card-badge">Promo</div>
-              <img src="../images/slider/likebike-shine-s-09.webp" alt="Vélo Classique C1" loading="lazy">
-            </div>
-            <div class="related-card-content">
-              <h3 class="related-card-title">Vélo Classique C1</h3>
-              <div class="related-card-rating">
+          <div class="product-card" data-category="classic">
+            <img src="images/slider/likebike-shine-s-09.webp" alt="Vélo Classique C1 - Cadre robuste et confortable">
+            <div class="product-info">
+              <h3>Vélo Classique C1</h3>
+              <div class="product-rating">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -520,26 +572,17 @@
                 <i class="far fa-star"></i>
                 <span>(15)</span>
               </div>
-              <p class="related-card-price"><span class="old-price">1500 DH</span> 1200 DH</p>
-              <a href="velo-classique-c1.html" class="related-card-button">
-                <i class="fas fa-eye"></i> Voir les détails
-              </a>
+              <p class="product-price">1200 DHS</p>
+              <div class="product-actions">
+                <button class="btn add-to-cart"><i class="fas fa-shopping-cart"></i> Ajouter</button>
+                <button class="btn view-details"><i class="fas fa-eye"></i> Détails</button>
+              </div>
             </div>
           </div>
         </div>
       </section>
     </div>
   </main>
-
-   <!-- Newsletter -->
-  <section class="newsletter">
-    <h2>Restez Informé</h2>
-    <p>Inscrivez-vous à notre newsletter pour recevoir nos offres exclusives</p>
-    <form class="newsletter-form">
-      <input type="email" placeholder="Votre adresse email" required>
-      <button type="submit" class="btn">S'abonner</button>
-    </form>
-  </section>
 
   <!-- Footer -->
   <footer class="footer">
@@ -568,7 +611,7 @@
         <p><i class="fas fa-map-marker-alt"></i> 123 Rue du Commerce, Casablanca</p>
         <p><i class="fas fa-phone"></i> +212 5XX XX XX XX</p>
         <p><i class="fas fa-envelope"></i> contact@boutiquevelos.com</p>
-        <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/212762609147" target="_blank">WhatsApp</a></p>
+        <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/123456789" target="_blank">WhatsApp</a></p>
       </div>
     </div>
     <div class="footer-bottom">
@@ -581,21 +624,7 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <!-- Ajouter Swiper JS avant les autres scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-
-  <!-- Ajouter le script de correction des boutons avant les autres scripts -->
-  <script src="fix-buttons.js"></script>
-
-  <!-- Script spécifique pour le bouton de commande - doit être le premier -->
-  <script src="../whatsapp-order.js"></script>
-  
-  <script src="../script.js"></script>
-  <script src="product-page-init.js"></script>
-  <script src="../product-zoom.js"></script>
-  <script src="../order-button-fix.js"></script>
-  <!-- Ajouter le script du menu mobile -->
-  <script src="../mobile-menu.js"></script>
+  <script src="script.js"></script>
+  <script src="product-details.js"></script>
 </body>
 </html>

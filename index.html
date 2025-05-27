@@ -18,22 +18,18 @@
   <!-- Header & Navigation -->
   <header class="navbar">
     <div class="logo">Ma Boutique de Vélos</div>
-    <button class="mobile-menu-toggle" aria-label="Menu">
-      <span class="hamburger-icon"></span>
-    </button>
-    
-    <!-- La barre de recherche sera visible en desktop et cachée en mobile -->
-    <div class="search-container desktop-search">
-      <input type="text" placeholder="Rechercher un produit..." class="search-input">
-      <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+    <div class="menu-btn-container">
+      <button id="menu-btn" class="menu-btn">
+        <span class="menu-btn-bar"></span>
+        <span class="menu-btn-bar"></span>
+        <span class="menu-btn-bar"></span>
+      </button>
     </div>
     
+    
+    
     <nav class="main-nav">
-      <!-- Ajout de la barre de recherche pour mobile à l'intérieur du menu -->
-      <div class="search-container mobile-search">
-        <input type="text" placeholder="Rechercher un produit..." class="search-input-mobile">
-        <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
-      </div>
+      
       <ul class="menu">
         <li><a href="#" aria-current="page"><i class="fas fa-home"></i> Accueil</a></li>
         <li><a href="categories/velos-electriques.html"><i class="fas fa-bolt"></i> Vélos Électriques</a></li>
@@ -257,44 +253,51 @@
   </footer>
 
   <script src="script.js"></script>
-  <script src="order-button-fix.js"></script>
-  <!-- Ajoutons un script de diagnostic avant la fermeture du body -->
+  <!-- Script très simple pour le menu mobile -->
   <script>
-    // Diagnostic pour le panier sur la page d'accueil
     document.addEventListener('DOMContentLoaded', function() {
-      // Vérification de la fonctionnalité d'ajout au panier
-      const addToCartButtons = document.querySelectorAll('.add-to-cart');
+      // Sélection des éléments
+      const menuBtn = document.getElementById('menu-btn');
+      const mainNav = document.querySelector('.main-nav');
       
-      addToCartButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-          const card = this.closest('.product-card');
-          if (!card) {
-            console.error('Carte produit non trouvée');
-            return;
+      if (menuBtn && mainNav) {
+        console.log("Menu mobile initialisé");
+        
+        // Gestionnaire d'événement pour le bouton
+        menuBtn.addEventListener('click', function() {
+          console.log("Bouton menu cliqué");
+          this.classList.toggle('open');
+          mainNav.classList.toggle('show');
+          
+          // Créer/gérer l'overlay
+          let overlay = document.querySelector('.menu-overlay');
+          if (!overlay) {
+            overlay = document.createElement('div');
+            overlay.className = 'menu-overlay';
+            document.body.appendChild(overlay);
+            
+            overlay.addEventListener('click', function() {
+              menuBtn.classList.remove('open');
+              mainNav.classList.remove('show');
+              this.classList.remove('active');
+            });
           }
           
-          const productName = card.querySelector('h3').textContent;
-          console.log(`Ajout au panier: ${productName}`);
+          overlay.classList.toggle('active');
         });
-      });
-      
-      // Vérification du compteur de panier
-      try {
-        const cartData = localStorage.getItem('cartItems');
-        if (cartData) {
-          const cart = JSON.parse(cartData);
-          console.log('État actuel du panier:', cart);
-          
-          // Mettre à jour le compteur
-          const cartCount = document.querySelector('.cart-count');
-          if (cartCount && Array.isArray(cart)) {
-            const itemCount = cart.reduce((total, item) => total + (item.quantity || 1), 0);
-            cartCount.textContent = itemCount;
-            console.log('Compteur du panier mis à jour:', itemCount);
-          }
-        }
-      } catch (error) {
-        console.error('Erreur lors de la vérification du panier:', error);
+        
+        // Fermer le menu en cliquant sur les liens
+        const links = mainNav.querySelectorAll('a');
+        links.forEach(link => {
+          link.addEventListener('click', function() {
+            menuBtn.classList.remove('open');
+            mainNav.classList.remove('show');
+            const overlay = document.querySelector('.menu-overlay');
+            if (overlay) overlay.classList.remove('active');
+          });
+        });
+      } else {
+        console.error("Éléments du menu mobile non trouvés");
       }
     });
   </script>

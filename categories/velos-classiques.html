@@ -18,29 +18,24 @@
 </head>
 <body>
 
-  <!-- Header & Navigation -->
+ 
+   <!-- Header & Navigation -->
   <header class="navbar">
     <div class="logo">Ma Boutique de Vélos</div>
-    <button class="mobile-menu-toggle" aria-label="Menu">
-      <span class="hamburger-icon"></span>
-    </button>
-    
-    <div class="search-container desktop-search">
-      <input type="text" placeholder="Rechercher un produit..." class="search-input">
-      <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+    <div class="menu-btn-container">
+      <button id="menu-btn" class="menu-btn">
+        <span class="menu-btn-bar"></span>
+        <span class="menu-btn-bar"></span>
+        <span class="menu-btn-bar"></span>
+      </button>
     </div>
     
     <nav class="main-nav">
-      <div class="search-container mobile-search">
-        <input type="text" placeholder="Rechercher un produit..." class="search-input-mobile">
-        <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
-      </div>
       <ul class="menu">
         <li><a href="../index.html"><i class="fas fa-home"></i> Accueil</a></li>
         <li><a href="velos-electriques.html"><i class="fas fa-bolt"></i> Vélos Électriques</a></li>
         <li><a href="trottinettes.html"><i class="fas fa-bicycle"></i> Trottinettes</a></li>
         <li><a href="velos-classiques.html" aria-current="page"><i class="fas fa-bicycle"></i> Vélos Classiques</a></li>
-        <!-- Suppression de l'icône du panier -->
       </ul>
     </nav>
   </header>
@@ -61,87 +56,7 @@
     </div>
   </section>
 
-  <!-- Category Filters -->
-  <section class="category-filters">
-    <div class="container">
-      <div class="filter-groups">
-        <div class="filter-group">
-          <h3>Type</h3>
-          <div class="filter-options">
-            <label class="filter-option">
-              <input type="checkbox" name="type" value="ville"> Vélo de ville
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" name="type" value="vtt"> VTT
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" name="type" value="route"> Vélo de route
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" name="type" value="enfant"> Vélo enfant
-            </label>
-          </div>
-        </div>
-        
-        <div class="filter-group">
-          <h3>Taille</h3>
-          <div class="filter-options">
-            <label class="filter-option">
-              <input type="checkbox" name="size" value="xs"> XS
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" name="size" value="s"> S
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" name="size" value="m"> M
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" name="size" value="l"> L
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" name="size" value="xl"> XL
-            </label>
-          </div>
-        </div>
-        
-        <div class="filter-group">
-          <h3>Prix</h3>
-          <div class="filter-options">
-            <label class="filter-option">
-              <input type="checkbox" name="price" value="800"> Moins de 800 DHS
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" name="price" value="800-1200"> 800 - 1200 DHS
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" name="price" value="1200-1800"> 1200 - 1800 DHS
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" name="price" value="1800+"> Plus de 1800 DHS
-            </label>
-          </div>
-        </div>
-        
-        <div class="filter-group">
-          <h3>Trier par</h3>
-          <div class="filter-options">
-            <select class="sort-select" name="sort">
-              <option value="popular">Popularité</option>
-              <option value="price-asc">Prix croissant</option>
-              <option value="price-desc">Prix décroissant</option>
-              <option value="rating">Avis clients</option>
-              <option value="new">Nouveautés</option>
-            </select>
-          </div>
-        </div>
-      </div>
-      
-      <div class="active-filters">
-        <span class="filter-count">0 filtres actifs</span>
-        <button class="clear-filters-btn">Effacer les filtres</button>
-      </div>
-    </div>
-  </section>
+ 
 
   <!-- Product Listing -->
   <section class="product-listing">
@@ -160,7 +75,7 @@
               <i class="far fa-star"></i>
               <span>(15)</span>
             </div>
-            <p class="product-price"><span class="old-price">1500 DHS</span> 1200 DHS</p>
+            <p class="product-price"><span class="old-price">1500 DH</span> 1200 DH</p>
             <div class="product-actions">
               <!-- Suppression du bouton Ajouter -->
               <a href="../produits/velo-classique-c1.html" class="btn view-details" style="width: 100%;"><i class="fas fa-eye"></i> Voir les détails</a>
@@ -180,7 +95,7 @@
               <i class="far fa-star"></i>
               <span>(36)</span>
             </div>
-            <p class="product-price">1200 DHS</p>
+            <p class="product-price">1200 DH</p>
             <div class="product-actions">
               <!-- Suppression du bouton Ajouter -->
               <a href="../produits/velo-classique-c2.html" class="btn view-details" style="width: 100%;"><i class="fas fa-eye"></i> Voir les détails</a>
@@ -200,7 +115,7 @@
               <i class="fas fa-star-half-alt"></i>
               <span>(42)</span>
             </div>
-            <p class="product-price">1450 DHS</p>
+            <p class="product-price">1450 DH</p>
             <div class="product-actions">
               <!-- Suppression du bouton Ajouter -->
               <a href="../produits/velo-vtt-m1.html" class="btn view-details" style="width: 100%;"><i class="fas fa-eye"></i> Voir les détails</a>
@@ -221,7 +136,7 @@
               <i class="far fa-star"></i>
               <span>(28)</span>
             </div>
-            <p class="product-price">1800 DHS</p>
+            <p class="product-price">1800 DH</p>
             <div class="product-actions">
               <!-- Suppression du bouton Ajouter -->
               <a href="../produits/velo-route-r1.html" class="btn view-details" style="width: 100%;"><i class="fas fa-eye"></i> Voir les détails</a>
@@ -242,7 +157,7 @@
               <i class="fas fa-star"></i>
               <span>(52)</span>
             </div>
-            <p class="product-price"><span class="old-price">750 DHS</span> 650 DHS</p>
+            <p class="product-price"><span class="old-price">750 DH</span> 650 DH</p>
             <div class="product-actions">
               <!-- Suppression du bouton Ajouter -->
               <a href="../produits/velo-enfant-e1.html" class="btn view-details" style="width: 100%;"><i class="fas fa-eye"></i> Voir les détails</a>
@@ -262,7 +177,7 @@
               <i class="far fa-star"></i>
               <span>(19)</span>
             </div>
-            <p class="product-price">1350 DHS</p>
+            <p class="product-price">1350 DH</p>
             <div class="product-actions">
               <!-- Suppression du bouton Ajouter -->
               <a href="../produits/velo-ville-v1.html" class="btn view-details" style="width: 100%;"><i class="fas fa-eye"></i> Voir les détails</a>
@@ -271,14 +186,7 @@
         </div>
       </div>
       
-      <div class="pagination">
-        <button class="pagination-btn active">1</button>
-        <button class="pagination-btn">2</button>
-        <button class="pagination-btn">3</button>
-        <span class="pagination-separator">...</span>
-        <button class="pagination-btn">8</button>
-        <button class="pagination-btn next"><i class="fas fa-chevron-right"></i></button>
-      </div>
+      
     </div>
   </section>
 
@@ -332,7 +240,90 @@
     </div>
   </footer>
 
-  <script src="../script.js"></script>
-  <script src="categories.js"></script>
+  <script>
+    // Script simple et direct pour le menu mobile
+    document.addEventListener('DOMContentLoaded', function() {
+      // Sélectionner les éléments
+      const menuBtn = document.getElementById('menu-btn');
+      const mainNav = document.querySelector('.main-nav');
+      
+      if (menuBtn && mainNav) {
+        console.log("Menu mobile initialisé avec succès");
+        
+        // Forcer les styles CSS qui pourraient manquer
+        mainNav.style.transition = "right 0.3s ease";
+        
+        // Gestionnaire d'événement pour le bouton
+        menuBtn.addEventListener('click', function(e) {
+          e.preventDefault(); // Empêcher tout comportement par défaut
+          
+          console.log("Bouton menu cliqué");
+          
+          // Toggle classes pour l'animation
+          this.classList.toggle('open');
+          
+          // Toggle classes pour afficher/masquer le menu
+          if (mainNav.classList.contains('show')) {
+            mainNav.classList.remove('show');
+            mainNav.style.right = "-280px";
+            console.log("Menu fermé");
+          } else {
+            mainNav.classList.add('show');
+            mainNav.style.right = "0";
+            console.log("Menu ouvert");
+          }
+          
+          // Gérer l'overlay
+          let overlay = document.querySelector('.menu-overlay');
+          if (!overlay) {
+            overlay = document.createElement('div');
+            overlay.className = 'menu-overlay';
+            overlay.style.position = "fixed";
+            overlay.style.top = "0";
+            overlay.style.left = "0";
+            overlay.style.width = "100%";
+            overlay.style.height = "100%";
+            overlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+            overlay.style.zIndex = "999";
+            overlay.style.display = "none";
+            document.body.appendChild(overlay);
+            
+            overlay.addEventListener('click', function() {
+              menuBtn.classList.remove('open');
+              mainNav.classList.remove('show');
+              mainNav.style.right = "-280px";
+              this.style.display = "none";
+              document.body.style.overflow = "auto";
+            });
+          }
+          
+          if (mainNav.classList.contains('show')) {
+            overlay.style.display = "block";
+            document.body.style.overflow = "hidden";
+          } else {
+            overlay.style.display = "none";
+            document.body.style.overflow = "auto";
+          }
+        });
+        
+        // Fermer le menu en cliquant sur les liens
+        const links = mainNav.querySelectorAll('a');
+        links.forEach(link => {
+          link.addEventListener('click', function() {
+            menuBtn.classList.remove('open');
+            mainNav.classList.remove('show');
+            mainNav.style.right = "-280px";
+            
+            const overlay = document.querySelector('.menu-overlay');
+            if (overlay) overlay.style.display = "none";
+            
+            document.body.style.overflow = "auto";
+          });
+        });
+      } else {
+        console.error("Éléments du menu mobile non trouvés!");
+      }
+    });
+  </script>
 </body>
 </html>
