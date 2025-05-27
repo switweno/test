@@ -114,11 +114,11 @@ function displayProductDetails(product) {
   console.log('Quantité affichée:', productToDisplay.quantity);
   
   // Prix unitaire
-  productPrice.textContent = `${productToDisplay.price.toFixed(2)} DHS`;
+  productPrice.textContent = `${productToDisplay.price.toFixed(2)} DH`;
   
   // Calculer et afficher le total
   const total = productToDisplay.price * productToDisplay.quantity;
-  productTotal.textContent = `${total.toFixed(2)} DHS`;
+  productTotal.textContent = `${total.toFixed(2)} DH`;
   console.log('Total calculé:', total);
 }
 
@@ -241,9 +241,9 @@ function generateWhatsAppMessage(product, customer) {
     message += `- Couleur: ${product.color}\n`;
   }
   
-  message += `- Prix unitaire: ${price.toFixed(2)} DHS\n`;
+  message += `- Prix unitaire: ${price.toFixed(2)} DH\n`;
   message += `- Quantité: ${quantity}\n`;
-  message += `- Total: ${total.toFixed(2)} DHS\n\n`;
+  message += `- Total: ${total.toFixed(2)} DH\n\n`;
   
   // Informations client
   message += '*Informations client:*\n';

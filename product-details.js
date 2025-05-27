@@ -26,8 +26,8 @@ let currentThumbnailIndex = 0;
 const productDatabase = {
   'velo-electrique-x1': {
     name: 'Vélo Électrique X1',
-    price: '2500 DHS',
-    oldPrice: '2800 DHS',
+    price: '2500 DH',
+    oldPrice: '2800 DH',
     rating: 4.5,
     reviewCount: 42,
     description: 'Vélo électrique haut de gamme avec batterie longue durée et autonomie de 80km, idéal pour les déplacements urbains et les loisirs.',
@@ -58,7 +58,7 @@ const productDatabase = {
   },
   'trottinette-t1': {
     name: 'Trottinette T1',
-    price: '1800 DHS',
+    price: '1800 DH',
     oldPrice: '',
     rating: 4.0,
     reviewCount: 28,
@@ -88,8 +88,8 @@ const productDatabase = {
   },
   'velo-classique-c1': {
     name: 'Vélo Classique C1',
-    price: '1200 DHS',
-    oldPrice: '1500 DHS',
+    price: '1200 DH',
+    oldPrice: '1500 DH',
     rating: 3.0,
     reviewCount: 15,
     description: 'Vélo classique avec cadre en aluminium et freins à disque, idéal pour les trajets urbains et les balades tranquilles.',
@@ -115,7 +115,7 @@ const productDatabase = {
   },
   'velo-classique-c2': {
     name: 'Vélo Classique C2',
-    price: '1200 DHS',
+    price: '1200 DH',
     oldPrice: '',
     rating: 4.0,
     reviewCount: 36,
