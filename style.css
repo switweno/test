@@ -865,3 +865,104 @@ img {
     justify-content: center;
   }
 }
+
+/* Suppression des effets de focus et active (contour bleu) */
+*:focus {
+  outline: none !important;
+}
+
+button:focus, 
+a:focus, 
+input:focus, 
+select:focus, 
+textarea:focus,
+.btn:focus,
+.filter-btn:focus,
+.menu-btn:focus,
+.search-button:focus,
+.pagination-btn:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Suppression du contour sur les éléments cliquables */
+button, 
+a, 
+input[type="button"], 
+input[type="submit"],
+.btn,
+.filter-btn,
+.search-button,
+.pagination-btn {
+  -webkit-tap-highlight-color: transparent; /* Pour supprimer le highlight sur mobile */
+}
+
+/* Suppression spécifique du highlight bleu sur les éléments du slider */
+.slider .prev-btn,
+.slider .next-btn,
+.swiper-button-prev,
+.swiper-button-next,
+.swiper-pagination,
+.swiper-pagination-bullet,
+.swiper-slide,
+.product-thumbs-swiper .swiper-slide,
+.tab-btn,
+.dot,
+.color-option,
+.quantity-selector button {
+  -webkit-tap-highlight-color: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
+  user-select: none !important;
+}
+
+/* Empêcher la sélection de texte sur les éléments interactifs pour éviter l'effet bleu */
+.slider,
+.swiper,
+.slider-controls,
+.product-thumbs-swiper,
+.swiper-wrapper,
+.swiper-button-prev,
+.swiper-button-next,
+.swiper-pagination {
+  user-select: none !important;
+}
+
+/* Style alternatif pour le focus (pour l'accessibilité) */
+button:focus-visible, 
+a:focus-visible, 
+input:focus-visible, 
+select:focus-visible, 
+textarea:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid rgba(52, 152, 219, 0.3) !important;
+  outline-offset: 2px;
+}
+
+/* Suppression du contour sur les éléments cliquables */
+button, 
+a, 
+input[type="button"], 
+input[type="submit"],
+.btn,
+.filter-btn,
+.search-button,
+.pagination-btn {
+  -webkit-tap-highlight-color: transparent; /* Pour supprimer le highlight sur mobile */
+}
+
+/* Conserver la fonctionnalité de hover tout en supprimant focus/active */
+.btn:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(-1px); /* Effet subtil au clic sans contour bleu */
+}
+
+/* Assurer que les styles de surbrillance du menu actif restent visibles */
+.menu a[aria-current="page"] {
+  color: var(--secondary-color);
+  font-weight: bold;
+}
