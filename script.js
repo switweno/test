@@ -468,7 +468,28 @@ function addNotificationStyles() {
   document.head.appendChild(style);
 }
 
-
+// Add CSS for mobile menu
+function addMobileMenuStyles() {
+  const style = document.createElement('style');
+  style.textContent = `
+    body.menu-open {
+      overflow: hidden;
+    }
+    
+    @media (max-width: 768px) {
+      .main-nav.show {
+       
+      }
+      
+      .cart-icon {
+        display: inline-flex;
+        align-items: center;
+      }
+    }
+  `;
+  
+  document.head.appendChild(style);
+}
 
 // Initialize on DOM load
 document.addEventListener('DOMContentLoaded', () => {
