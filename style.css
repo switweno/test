@@ -388,6 +388,8 @@ img {
   box-shadow: var(--shadow);
   transition: var(--transition);
   position: relative;
+  display: flex;
+  flex-direction: column; /* Assurez-vous que le contenu est empilé verticalement */
 }
 
 .product-card:hover {
@@ -419,6 +421,9 @@ img {
 
 .product-info {
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Pour que l'info prenne tout l'espace disponible */
 }
 
 .product-info h3 {
@@ -441,7 +446,8 @@ img {
   font-size: 1.2rem;
   font-weight: bold;
   color: var(--dark-color);
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
+  text-align: center; /* Centrer le prix */
 }
 
 .old-price {
@@ -451,15 +457,20 @@ img {
   margin-left: 0.5rem;
 }
 
+/* Réparation des boutons d'action */
 .product-actions {
   display: flex;
   gap: 0.5rem;
+  width: 100%;
+  margin-top: auto; /* Pousse les actions vers le bas */
 }
 
 .product-actions .btn {
   flex: 1;
+  text-align: center;
   font-size: 0.9rem;
-  padding: 0.4rem;
+  padding: 0.5rem;
+  display: inline-block; /* Revenir à l'affichage par défaut */
 }
 
 .add-to-cart {
@@ -468,6 +479,11 @@ img {
 
 .view-details {
   background-color: var(--dark-color);
+}
+
+/* Si un seul bouton dans les actions, lui donner toute la largeur */
+.product-actions .btn:only-child {
+  width: 100%;
 }
 
 /* Features Section */
@@ -684,6 +700,14 @@ img {
   .slider .next-btn {
     right: 10px;
   }
+  
+  .product-actions {
+    justify-content: center;
+  }
+  
+  .product-actions .btn {
+    width: 100%;
+  }
 }
 
 @media (max-width: 768px) {
@@ -702,7 +726,7 @@ img {
     order: 2; /* Changer l'ordre pour placer à droite du logo */
   }
   
-  /* Cacher la barre de recherche desktop sur mobile */
+  /* Cacher la barre de البحث desktop على mobile */
   .desktop-search {
     display: none;
   }
