@@ -386,44 +386,46 @@ function setupEventListeners() {
   }
   
   // Category filter
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', function() {
-      // Remove active from all buttons
-      filterBtns.forEach(b => b.classList.remove('active'));
-      
-      // Add active to current button
-      this.classList.add('active');
-      
-      // Filter products
-      filterProducts(this.dataset.category);
+  if (filterBtns && filterBtns.length > 0) {
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        // Remove active from all buttons
+        filterBtns.forEach(b => b.classList.remove('active'));
+        
+        // Add active to current button
+        this.classList.add('active');
+        
+        // Filter products
+        filterProducts(this.dataset.category);
+      });
     });
-  });
+  }
   
   // Search - Desktop
-  searchButton.addEventListener('click', searchProducts);
-  searchInput.addEventListener('keyup', function(e) {
-    if (e.key === 'Enter') {
-      searchProducts(this.value.toLowerCase().trim());
+  if (searchButton) {
+    searchButton.addEventListener('click', searchProducts);
+    
+    if (searchInput) {
+      searchInput.addEventListener('keyup', function(e) {
+        if (e.key === 'Enter') {
+          searchProducts(this.value.toLowerCase().trim());
+        }
+      });
     }
-  });
+  }
   
   // Search - Mobile
-  searchButtonMobile.addEventListener('click', searchProducts);
-  searchInputMobile.addEventListener('keyup', function(e) {
-    if (e.key === 'Enter') {
-      searchProducts(this.value.toLowerCase().trim());
+  if (searchButtonMobile) {
+    searchButtonMobile.addEventListener('click', searchProducts);
+    
+    if (searchInputMobile) {
+      searchInputMobile.addEventListener('keyup', function(e) {
+        if (e.key === 'Enter') {
+          searchProducts(this.value.toLowerCase().trim());
+        }
+      });
     }
-  });
-  
-  // View product details - Remove old event handlers
-  /* This code is now replaced by direct links
-  document.querySelectorAll('.view-details').forEach(btn => {
-    btn.addEventListener('click', function() {
-      const productName = this.closest('.product-card').querySelector('h3').textContent;
-      alert(`Détails du produit: ${productName}\nCette fonctionnalité sera disponible prochainement.`);
-    });
-  });
-  */
+  }
   
   // Newsletter form
   const newsletterForm = document.querySelector('.newsletter-form');
@@ -439,16 +441,17 @@ function setupEventListeners() {
     });
   }
   
-  // Remplacer l'ancienne gestion du menu mobile
-  const menuLinks = document.querySelectorAll('.main-nav a');
-  menuLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      const mainNav = document.querySelector('.main-nav');
-      if (mainNav.classList.contains('show')) {
-        toggleMobileMenu();
-      }
+  // Menu mobile links
+  if (mainNav) {
+    const menuLinks = mainNav.querySelectorAll('a');
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (mainNav.classList.contains('show')) {
+          toggleMobileMenu();
+        }
+      });
     });
-  });
+  }
 }
 
 // Reset slider interval when manually changing slides
@@ -532,23 +535,24 @@ function addMobileMenuStyles() {
 
 // Initialize on DOM load
 document.addEventListener('DOMContentLoaded', () => {
-  // Check if elements exist before initializing
-  if (typeof slides === 'undefined' || slides === null || slides.length === 0) {
-    // Requery the DOM in case elements weren't available when script first loaded
-    const slidesCollection = document.querySelectorAll('.slide');
-    if (slidesCollection && slidesCollection.length > 0) {
-      slides = slidesCollection; // Maintenant cette réassignation est valide
-    } else {
-      console.log("No slides found on this page");
+  try {
+    // Check if elements exist before initializing
+    if (typeof slides === 'undefined' || slides === null || slides.length === 0) {
+      // Requery the DOM in case elements weren't available when script first loaded
+      const slidesCollection = document.querySelectorAll('.slide');
+      if (slidesCollection && slidesCollection.length > 0) {
+        slides = slidesCollection; // Maintenant cette réassignation est valide
+      } else {
+        console.log("No slides found on this page");
+      }
     }
+    
+    addNotificationStyles();
+    addMobileMenuStyles();
+    init();
+  } catch (error) {
+    console.error("Erreur lors de l'initialisation:", error);
   }
-  
-  addNotificationStyles();
-  addMobileMenuStyles();
-  init();
-  
-  // Mettre à jour le compteur du panier
-  updateCartCount();
 });
 
 // Fonction pour mettre à jour le compteur du panier
