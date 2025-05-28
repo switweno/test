@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
   initColorOptions();
   initSizeOptions();
   initAddToCart();
-  setupStickyBuyBar();
+  // Suppression de l'appel à setupStickyBuyBar() qui n'est pas défini
 });
 
 // Initialisation de la galerie d'images
@@ -336,36 +336,36 @@ function initAddToCart() {
   }
 }
 
-
-
-
-
-
-
-
-
-const swiper = new Swiper('.product-swiper', {
-  loop: true,
-  zoom: {
-    maxRatio: 3,
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  thumbs: {
-    swiper: new Swiper('.product-thumbs-swiper', {
-      slidesPerView: 4,
-      spaceBetween: 10,
-      freeMode: true,
-      watchSlidesProgress: true,
-    }),
-  },
-});
+// Suppression du code Swiper qui cause des erreurs s'il n'est pas correctement chargé
+try {
+  // Vérifier si Swiper est disponible avant de l'initialiser
+  if (typeof Swiper !== 'undefined') {
+    const swiper = new Swiper('.product-swiper', {
+      loop: true,
+      zoom: {
+        maxRatio: 3,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      thumbs: {
+        swiper: new Swiper('.product-thumbs-swiper', {
+          slidesPerView: 4,
+          spaceBetween: 10,
+          freeMode: true,
+          watchSlidesProgress: true,
+        }),
+      },
+    });
+  }
+} catch (error) {
+  console.warn("Swiper n'est pas initialisé correctement:", error);
+}
 
 // Fonction pour gérer les produits récemment consultés
 function initRecentlyViewed() {
