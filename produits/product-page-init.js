@@ -99,26 +99,7 @@ function initProductGallery() {
     }
   }, { passive: true });
   
-  // Initialiser l'effet de zoom
-  const imageContainer = document.querySelector('.product-main-image');
-  
-  if (imageContainer) {
-    imageContainer.addEventListener('mousemove', function(e) {
-      // Activer uniquement sur desktop
-      if (window.innerWidth <= 768) return;
-      
-      const { left, top, width, height } = this.getBoundingClientRect();
-      const x = (e.clientX - left) / width;
-      const y = (e.clientY - top) / height;
-      
-      mainImage.style.transformOrigin = `${x * 100}% ${y * 100}%`;
-      mainImage.style.transform = 'scale(1.5)';
-    });
-    
-    imageContainer.addEventListener('mouseleave', function() {
-      mainImage.style.transform = 'scale(1)';
-    });
-  }
+ 
   
   // Exposer la fonction globalement pour les attributs onclick dans le HTML
   window.changeImage = function(thumbnail) {
@@ -357,89 +338,12 @@ function initAddToCart() {
 
 
 
-// Fonction pour afficher une notification
-function showNotification(message) {
-  // Créer l'élément de notification
-  const notification = document.createElement('div');
-  notification.className = 'notification';
-  notification.innerHTML = `
-    <i class="fas fa-info-circle"></i>
-    <p>${message}</p>
-  `;
-  
-  // Ajouter au DOM
-  document.body.appendChild(notification);
-  
-  // Ajouter les styles CSS pour les notifications
-  const notificationStyle = document.createElement('style');
-  notificationStyle.textContent = `
-    .notification {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      background-color: #2c3e50;
-      color: white;
-      padding: 1rem;
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      transform: translateX(-100%);
-      transition: transform 0.3s ease;
-      z-index: 1000;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      max-width: 300px;
-    }
-    
-    .notification.show {
-      transform: translateX(0);
-    }
-    
-    .notification i {
-      color: #3498db;
-    }
-    
-    @media (max-width: 576px) {
-      .notification {
-        left: 10px;
-        right: 10px;
-        max-width: calc(100% - 20px);
-      }
-    }
-  `;
-  
-  document.head.appendChild(notificationStyle);
-  
-  // Afficher avec animation
-  setTimeout(() => {
-    notification.classList.add('show');
-  }, 10);
-  
-  // Supprimer après l'animation
-  setTimeout(() => {
-    notification.classList.remove('show');
-    setTimeout(() => {
-      document.body.removeChild(notification);
-    }, 500);
-  }, 3000);
-}
 
-// Assurez-vous que les liens du panier fonctionnent correctement
-document.addEventListener('DOMContentLoaded', function() {
-  // Mettre à jour le compteur du panier
-  updateCartCount();
-  
-  // Vérifier que l'icône du panier a un lien correct
-  const cartIcon = document.querySelector('.cart-icon');
-  if (cartIcon && !cartIcon.getAttribute('href')) {
-    cartIcon.setAttribute('href', '../panier.html');
-  }
-});
 
-// Fonction pour mettre à jour le compteur du panier - remplacée par une fonction vide pour éviter les erreurs
-function updateCartCount() {
-  // Fonction vidée car nous n'utilisons plus le panier
-}
+
+
+
+
 const swiper = new Swiper('.product-swiper', {
   loop: true,
   zoom: {
