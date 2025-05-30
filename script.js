@@ -55,7 +55,7 @@ function prevSlide() {
   showSlide(currentSlide);
 }
 
-// Product Filter Functions with animations
+// Product Filter Functions - version simplifiée sans animations
 function filterProducts(category) {
   // Marquer le bouton actif
   filterBtns.forEach(btn => {
@@ -66,48 +66,13 @@ function filterProducts(category) {
     }
   });
 
-  // Garder trace des cartes qui doivent être visibles
-  const visibleCards = [];
-  const hiddenCards = [];
-  
-  // Trier les cartes selon qu'elles doivent être affichées ou masquées
+  // Filtrer les cartes de produits simplement
   productCards.forEach(card => {
     if (category === 'all' || card.dataset.category === category) {
-      visibleCards.push(card);
+      card.style.display = 'flex';
     } else {
-      hiddenCards.push(card);
-    }
-  });
-  
-  // D'abord, animer la disparition des cartes à masquer
-  hiddenCards.forEach(card => {
-    card.classList.add('animate-out');
-    card.classList.remove('animate-in');
-    
-    // Après l'animation, masquer la carte
-    setTimeout(() => {
       card.style.display = 'none';
-      card.classList.remove('animate-out');
-    }, 400);
-  });
-  
-  // Ensuite, animer l'apparition des cartes à afficher avec un délai progressif
-  visibleCards.forEach((card, index) => {
-    // Préparer les cartes à afficher
-    card.style.display = 'flex';
-    card.style.opacity = '0';
-    
-    // Appliquer un délai croissant pour créer un effet cascade
-    setTimeout(() => {
-      card.classList.add('animate-in');
-      card.classList.remove('animate-out');
-      
-      // Nettoyer après l'animation
-      setTimeout(() => {
-        card.classList.remove('animate-in');
-        card.style.opacity = '1';
-      }, 500);
-    }, 30 * index); // Délai progressif entre chaque carte
+    }
   });
 }
 

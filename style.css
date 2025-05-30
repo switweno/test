@@ -402,14 +402,6 @@ img {
   flex-direction: column;
 }
 
-.product-card.animate-in {
-  animation: fadeInScale 0.5s forwards;
-}
-
-.product-card.animate-out {
-  animation: fadeOutScale 0.4s forwards;
-}
-
 .product-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -896,26 +888,5 @@ textarea:focus-visible,
   }
 }
 
-/* Animation pour les cartes de produits lors du filtrage */
-@keyframes fadeInScale {
-  from {
-    opacity: 0;
-    transform: scale(0.9) translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-}
-
-@keyframes fadeOutScale {
-  from {
-    opacity: 1;
-    transform: scale(1);
-  }
-  to {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-}
+/* Suppression des animations pour les cartes de produits lors du filtrage */
 
