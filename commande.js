@@ -19,6 +19,7 @@ const defaultProduct = {
   quantity: 1,
   image: "images/slider/likebike-shine-s-09.webp",
   total: 2500
+  // Suppression de la couleur par défaut
 };
 
 // Initialisation
@@ -88,9 +89,14 @@ function displayProductDetails(product) {
     name: product.name || defaultProduct.name,
     price: Number(product.price || defaultProduct.price),
     quantity: Number(product.quantity || defaultProduct.quantity),
-    image: product.image || defaultProduct.image,
-    color: product.color || '',
+    image: product.image || defaultProduct.image
+    // Couleur uniquement si elle existe et a été explicitement choisie
   };
+  
+  // N'ajouter la couleur que si elle existe vraiment et n'est pas vide
+  if (product.color && typeof product.color === 'string' && product.color.trim() !== '') {
+    productToDisplay.color = product.color.trim();
+  }
   
   console.log('Produit formaté pour affichage:', productToDisplay);
   
@@ -101,12 +107,12 @@ function displayProductDetails(product) {
   // Nom du produit
   productName.textContent = productToDisplay.name;
   
-  // Couleur (si disponible)
+  // Couleur (si disponible) - vérification stricte
   if (productToDisplay.color) {
     productColor.textContent = `Couleur: ${productToDisplay.color}`;
     productColor.style.display = 'block';
   } else {
-    productColor.style.display = 'none';
+    productColor.style.display = 'none'; // Masquer l'élément si pas de couleur
   }
   
   // Quantité - Afficher la valeur numérique explicite
@@ -199,9 +205,6 @@ function setupBackButton() {
   });
 }
 
-
-
-
 // Valider le formulaire
 function validateForm() {
   const fullname = document.getElementById('fullname').value.trim();
@@ -237,11 +240,12 @@ function generateWhatsAppMessage(product, customer) {
   message += '*Produit commandé:*\n';
   message += `*${product.name}*\n`;
   
-  if (product.color) {
+  // N'ajouter la couleur que si elle existe et n'est pas vide - vérification stricte
+  if (product.color && typeof product.color === 'string' && product.color.trim() !== '') {
     message += `- Couleur: ${product.color}\n`;
   }
   
-  message += `- Prix unitaire: ${price.toFixed(2)} DH\n`;
+  message += `- Prix: ${price.toFixed(2)} DH\n`;
   message += `- Quantité: ${quantity}\n`;
   message += `- Total: ${total.toFixed(2)} DH\n\n`;
   

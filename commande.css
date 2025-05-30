@@ -172,7 +172,7 @@
 }
 
 .primary-btn {
-  background-color: #25d366; /* WhatsApp green */
+  background-color: #25d366 !important; /* WhatsApp green */
   font-size: 1.1rem;
   padding: 0.8rem 1rem;
   width: 100%;

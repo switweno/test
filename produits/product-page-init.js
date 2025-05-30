@@ -1,5 +1,6 @@
 // Script d'initialisation pour les pages produit
 
+
 document.addEventListener('DOMContentLoaded', function() {
   // Vérifier si les éléments de la page produit existent
   const productGallery = document.querySelector('.product-gallery');
@@ -239,13 +240,32 @@ function initQuantityControls() {
 // Initialisation des options de couleur
 function initColorOptions() {
   const colorOptions = document.querySelectorAll('.color-option');
+  const selectedColorDisplay = document.getElementById('selected-color');
   
   if (colorOptions.length === 0) return;
   
+  // Variable pour suivre si une couleur a été sélectionnée
+  let colorSelected = false;
+  
   colorOptions.forEach(option => {
+    // Vérifier si une option a déjà la classe 'active' (par défaut)
+    if (option.classList.contains('active')) {
+      colorSelected = true;
+      // Afficher la couleur actuellement sélectionnée
+      if (selectedColorDisplay) {
+        selectedColorDisplay.textContent = `Couleur: ${option.dataset.color}`;
+      }
+    }
+    
     option.addEventListener('click', function() {
       colorOptions.forEach(opt => opt.classList.remove('active'));
       this.classList.add('active');
+      colorSelected = true; // Marquer qu'une couleur a été explicitement sélectionnée
+      
+      // Afficher la couleur sélectionnée
+      if (selectedColorDisplay) {
+        selectedColorDisplay.textContent = `Couleur: ${this.dataset.color}`;
+      }
     });
   });
 }
@@ -285,9 +305,11 @@ function initAddToCart() {
           }
         }
         
-        // Récupérer la couleur sélectionnée
+        // Récupérer la couleur sélectionnée UNIQUEMENT si elle a été explicitement choisie
         const colorOption = document.querySelector('.color-option.active');
         const color = colorOption ? colorOption.dataset.color : '';
+        
+        // Ne pas inclure la couleur si elle n'a pas été explicitement sélectionnée
         
         // Récupérer le prix
         const priceElement = document.querySelector('.current-price');
@@ -312,11 +334,15 @@ function initAddToCart() {
           name: productName || "Vélo Électrique X1",
           price: productPrice,
           quantity: Number(quantity),
-          color: color,
           image: imagePath,
           total: productPrice * Number(quantity),
-          id: 'velo-electrique-x1' // Ajout de l'ID pour le retour à la page produit
+          id: 'velo-electrique-likebike-shine-s'
         };
+        
+        // N'ajouter la couleur à l'objet que si elle a été explicitement sélectionnée
+        if (colorOption) {
+          product.color = color;
+        }
         
         console.log("Produit à enregistrer:", product);
         
@@ -336,29 +362,70 @@ function initAddToCart() {
   }
 }
 
-// Suppression du code Swiper qui cause des erreurs s'il n'est pas correctement chargé
+
+// Initialisation de Swiper sans pagination
 try {
   // Vérifier si Swiper est disponible avant de l'initialiser
   if (typeof Swiper !== 'undefined') {
+    // Supprimer complètement l'élément de pagination s'il existe
+    const paginationContainer = document.querySelector('.swiper-pagination');
+    if (paginationContainer && paginationContainer.parentNode) {
+      paginationContainer.parentNode.removeChild(paginationContainer);
+    }
+    
+    
+
+    
+    
     const swiper = new Swiper('.product-swiper', {
       loop: true,
       zoom: {
         maxRatio: 3,
       },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
+      // Désactiver complètement la pagination
+      pagination: false,
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
       thumbs: {
         swiper: new Swiper('.product-thumbs-swiper', {
-          slidesPerView: 4,
+          // Adapter le nombre de diapositives en fonction de la taille de l'écran
+          slidesPerView: 'auto',
+          // Centre les slides quand il n'y a pas assez pour remplir le conteneur
+          centeredSlides: false,
+          // Espace entre les slides en pixels
           spaceBetween: 10,
           freeMode: true,
           watchSlidesProgress: true,
+          // Responsive breakpoints
+          breakpoints: {
+            // Quand la largeur de la fenêtre est >= 320px
+            320: {
+              slidesPerView: 4,
+              spaceBetween: 5
+            },
+            // Quand la largeur de la fenêtre est >= 480px
+            480: {
+              slidesPerView: 5,
+              spaceBetween: 10
+            },
+            // Quand la largeur de la fenêtre est >= 768px
+            768: {
+              slidesPerView: 5,
+              spaceBetween: 15
+            },
+            // Quand la largeur de la fenêtre est >= 992px
+            992: {
+              slidesPerView: 6,
+              spaceBetween: 15
+            },
+            // Quand la largeur de la fenêtre est >= 1200px
+            2200: {
+              slidesPerView: 7,
+              spaceBetween: 15
+            }
+          }
         }),
       },
     });
@@ -391,3 +458,4 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initialiser les produits récemment consultés
   initRecentlyViewed();
 });
+

@@ -2,29 +2,34 @@
 <html lang="fr" dir="ltr">
 <head>
   <meta charset="UTF-8" />
+  <meta name="geo.region" content="MA">
+  <meta name="geo.placename" content="Morocco">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Boutique en ligne de vélos électriques et classiques. Trouvez le vélo parfait à des prix compétitifs.">
   <meta name="keywords" content="vélos électriques, trottinettes, vélos classiques, achat vélo">
   <meta name="author" content="Ma Boutique de Vélos">
   <meta name="robots" content="index, follow">
   <title>Ma Boutique de Vélos | Vélos Électriques et Classiques</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- Pour une redirection si nécessaire -->
-  <!-- <meta http-equiv="refresh" content="0;url=https://votresite.com/nouvelle-page"> -->
+ 
 </head>
 <body>
 
   <!-- Header & Navigation -->
   <header class="navbar">
-    <div class="logo">Ma Boutique de Vélos</div>
-    <div class="menu-btn-container">
-      <button id="menu-btn" class="menu-btn">
-        <span class="menu-btn-bar"></span>
-        <span class="menu-btn-bar"></span>
-        <span class="menu-btn-bar"></span>
-      </button>
-    </div>
+  <a href="index.html" class="logo">JOUET MAROC</a>
+  
+  <div class="menu-btn-container">
+    <button id="menu-btn" class="menu-btn" aria-label="Menu principal" aria-expanded="false">
+      <span class="menu-btn-bar"></span>
+      <span class="menu-btn-bar"></span>
+      <span class="menu-btn-bar"></span>
+    </button>
+  </div>
+
+
     
     
     
@@ -39,7 +44,7 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero Section avec animations -->
   <section class="hero">
     <h1>Découvrez Notre Collection de Vélos et Trottinettes</h1>
     <p>Qualité supérieure, prix imbattables et livraison rapide</p>
@@ -50,7 +55,7 @@
     <!-- Slides -->
     <div class="slides">
       <div class="slide active">
-        <img src="images/slider/likebike-shine-s-09.webp" alt="Promotion sur vélos électriques">
+        <img src="images/Untitled-2.png" alt="Promotion sur vélos électriques" loading="lazy">
         <div class="slide-content">
           <h2>Offres Spéciales</h2>
           <p>Jusqu'à 20% de réduction cette semaine!</p>
@@ -58,7 +63,7 @@
         </div>
       </div>
       <div class="slide">
-        <img src="images/slider/likebike-shine-s-09.webp" alt="Nouveaux modèles">
+        <img src="images/Untitled-2.png" alt="Nouveaux modèles" loading="lazy">
         <div class="slide-content">
           <h2>Nouveaux Modèles</h2>
           <p>Découvrez notre collection 2023</p>
@@ -66,7 +71,7 @@
         </div>
       </div>
       <div class="slide">
-        <img src="images/slider/likebike-shine-s-09.webp" alt="Livraison gratuite">
+        <img src="images/Untitled-2.png" alt="Livraison gratuite" loading="lazy">
         <div class="slide-content">
           <h2>Livraison Gratuite</h2>
           <p>Sur toutes les commandes &gt; 3000 DH</p>
@@ -76,8 +81,8 @@
     </div>
 
     <!-- Arrows OUTSIDE of slider-controls -->
-    <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
-    <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+    <button class="prev-btn" aria-label="Image précédente"><i class="fas fa-chevron-left"></i></button>
+    <button class="next-btn" aria-label="Image suivante"><i class="fas fa-chevron-right"></i></button>
 
     <!-- Dots -->
     <div class="slider-controls">
@@ -95,17 +100,20 @@
   <section class="catalog">
     <h2>Nos Produits</h2>
     <div class="category-filter">
-      <button class="filter-btn active" data-category="all">Tous</button>
-      <button class="filter-btn" data-category="electric">Vélos Électriques</button>
-      <button class="filter-btn" data-category="scooter">Trottinettes</button>
-      <button class="filter-btn" data-category="classic">Vélos Classiques</button>
+      <button class="filter-btn active" data-category="all" aria-label="Afficher tous les produits">Tous</button>
+      <button class="filter-btn" data-category="electric" aria-label="Filtrer par vélos électriques">Vélos Électriques</button>
+      <button class="filter-btn" data-category="scooter" aria-label="Filtrer par trottinettes">Trottinettes</button>
+      <button class="filter-btn" data-category="classic" aria-label="Filtrer par vélos classiques">Vélos Classiques</button>
     </div>
     <div class="products">
-      <div class="product-card" data-category="electric" data-id="velo-electrique-x1">
+      <div class="product-card" data-category="electric" data-id="velo-electrique-likebike-shine-s">
         <span class="product-badge">Populaire</span>
-        <img src="images/slider/likebike-shine-s-09.webp" alt="Vélo Électrique X1 - Batterie longue durée, autonomie de 80km">
+         <a href="produits/velo-electrique-likebike-shine-s.html">
+        <img src="images/slider/likebike-shine-s-01.webp" alt="VÉLO ÉLECTRIQUE LIKEBIKE SHINE S - Batterie longue durée, autonomie de 50km" loading="lazy">
+           </a>
+        <div class="card-divider"></div>
         <div class="product-info">
-          <h3>Vélo Électrique X1</h3>
+          <h3>VÉLO ÉLECTRIQUE LIKEBIKE SHINE S</h3>
           <div class="product-rating">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -114,14 +122,41 @@
             <i class="fas fa-star-half-alt"></i>
             <span>(42)</span>
           </div>
-          <p class="product-price">2500 DH</p>
+          <p class="product-price"><span class="old-price">10999 DH</span> 7199 DH</p>
           <div class="product-actions">
-            <a href="produits/velo-electrique-x1.html" class="btn view-details" style="width: 100%;"><i class="fas fa-eye"></i> Voir les détails</a>
+            <a href="produits/velo-electrique-likebike-shine-s.html" class="btn view-details" style="width: 100%;"><i class="fas fa-eye"></i> Voir les détails</a>
           </div>
         </div>
       </div>
+      
+      <div class="product-card" data-category="scooter" data-id="tank-m41-ultimate-trottinette-electrique">
+  <span class="product-badge sale">Promo</span>
+  <a href="produits/tank-m41-ultimate-trottinette-electrique.html">
+    <img src="images/slider/tank-m41-ultimate-01.webp" alt="Tank M41 Ultimate – Trottinette puissante tout-terrain 2025" loading="lazy">
+  </a>
+  <div class="card-divider"></div>  
+  <div class="product-info">
+    <h3>TROTTINETTE Tank M41 Ultimate</h3>
+    <div class="product-rating">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="far fa-star"></i>
+      <i class="far fa-star"></i>
+      <span>(15)</span>
+    </div>
+    <p class="product-price"><span class="old-price">7400 DH</span> 6399 DH</p>
+    <div class="product-actions">
+      <a href="produits/tank-m41-ultimate-trottinette-electrique.html" class="btn view-details" style="width: 100%;"><i class="fas fa-eye"></i> Voir les détails</a>
+    </div>
+  </div>
+</div>
+
+      
       <div class="product-card" data-category="scooter" data-id="trottinette-t1">
-        <img src="images/slider/likebike-shine-s-09.webp" alt="Trottinette T1 - Légère et pliable, parfaite pour la ville">
+        <a href="produits/velo-electrique-likebike-shine-s.html">
+        <img src="images/slider/tank-m41-ultimate-01.webp" alt="Trottinette T1 - Légère et pliable, parfaite pour la ville" loading="lazy">
+          </a>
         <div class="product-info">
           <h3>Trottinette T1</h3>
           <div class="product-rating">
@@ -138,27 +173,11 @@
           </div>
         </div>
       </div>
-      <div class="product-card" data-category="classic" data-id="velo-classique-c1">
-        <span class="product-badge sale">Promo</span>
-        <img src="images/slider/likebike-shine-s-09.webp" alt="Vélo Classique C1 - Cadre en aluminium, freins à disque">
-        <div class="product-info">
-          <h3>Vélo Classique C1</h3>
-          <div class="product-rating">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="far fa-star"></i>
-            <i class="far fa-star"></i>
-            <span>(15)</span>
-          </div>
-          <p class="product-price"><span class="old-price">1500 DH</span> 1200 DH</p>
-          <div class="product-actions">
-            <a href="produits/velo-classique-c1.html" class="btn view-details" style="width: 100%;"><i class="fas fa-eye"></i> Voir les détails</a>
-          </div>
-        </div>
-      </div>
+      
       <div class="product-card" data-category="classic" data-id="velo-classique-c2">
-        <img src="images/slider/likebike-shine-s-09.webp" alt="Vélo Classique C2 - Parfait pour les balades en famille">
+        <a href="produits/velo-electrique-likebike-shine-s.html">
+        <img src="images/slider/likebike-shine-s-09.webp" alt="Vélo Classique C2 - Parfait pour les balades en famille" loading="lazy">
+          </a>
         <div class="product-info">
           <h3>Vélo Classique C2</h3>
           <div class="product-rating">
@@ -183,18 +202,19 @@
     <div class="feature">
       <i class="fas fa-truck"></i>
       <h3>Livraison Rapide</h3>
-      <p>Livraison en 2-3 jours ouvrables</p>
+      <p>Livraison en 1-3 jours ouvrables</p>
     </div>
     <div class="feature">
-      <i class="fas fa-shield-alt"></i>
-      <h3>Garantie 2 Ans</h3>
-      <p>Sur tous nos produits</p>
-    </div>
-    <div class="feature">
-      <i class="fas fa-exchange-alt"></i>
-      <h3>Retours Faciles</h3>
-      <p>Retour sous 30 jours</p>
-    </div>
+  <i class="fas fa-star"></i>
+  <h3>Qualité</h3>
+  <p>Nous proposons des produits de haute qualité qui répondent aux besoins de nos clients.</p>
+</div>
+<div class="feature">
+  <i class="fas fa-handshake"></i>
+  <h3>Intégrité</h3>
+  <p>Nous agissons avec honnêteté et transparence envers tous nos clients et partenaires.</p>
+</div>
+
     <div class="feature">
       <i class="fas fa-headset"></i>
       <h3>Support 24/7</h3>
@@ -213,37 +233,36 @@
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>Ma Boutique de Vélos</h3>
-        <p>Votre partenaire pour la mobilité urbaine et les loisirs.</p>
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>À propos de JOUET MAROC</h3>
+      <p>JOUET MAROC est une entreprise leader dans la vente de jouets et de produits innovants au Maroc. Basée à Casablanca, notre mission est d'offrir des produits de haute qualité répondant aux besoins de nos clients, tout en garantissant une expérience d'achat agréable et sécurisée.</p>
         <div class="social-icons">
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
-        </div>
+  <a href="https://www.facebook.com/jouetmaroc2" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
+  <a href="https://www.instagram.com/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+  <a href="https://twitter.com/" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+  <a href="https://www.youtube.com/" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+       </div>
       </div>
       <div class="footer-section">
         <h3>Liens Utiles</h3>
         <ul>
-          <li><a href="#">À propos de nous</a></li>
-          <li><a href="#">Conditions générales</a></li>
-          <li><a href="#">Politique de confidentialité</a></li>
-          <li><a href="#">FAQ</a></li>
+          <li><a href="faq.html">Questions fréquentes</a></li>
+          <li><a href="livraison.html">Expédition et livraison</a></li>
+          <li><a href="privacy-policy.html">Politique de confidentialité</a></li>
+          <li><a href="about.html">À propos de nous</a></li>
         </ul>
       </div>
       <div class="footer-section">
         <h3>Contact</h3>
-        <p><i class="fas fa-map-marker-alt"></i> 123 Rue du Commerce, Casablanca</p>
-        <p><i class="fas fa-phone"></i> +212 5XX XX XX XX</p>
-        <p><i class="fas fa-envelope"></i> contact@boutiquevelos.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> Riad Oulfa, Casablanca</p>
+        <p><i class="fas fa-envelope"></i> contact@jouet-maroc.com</p>
         <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/212762609147" target="_blank">WhatsApp</a></p>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 Ma Boutique de Vélos. Tous droits réservés.</p>
+      <p>© 2025 Jouet Maroc. Tous les droits sont réservés</p>
       <div class="payment-methods">
         <i class="fab fa-cc-visa"></i>
         <i class="fab fa-cc-mastercard"></i>
@@ -268,6 +287,10 @@
           console.log("Bouton menu cliqué");
           this.classList.toggle('open');
           mainNav.classList.toggle('show');
+          
+          // Mise à jour de l'attribut aria-expanded pour l'accessibilité
+          const isExpanded = mainNav.classList.contains('show');
+          this.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
           
           // Créer/gérer l'overlay
           let overlay = document.querySelector('.menu-overlay');

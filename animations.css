@@ -1,0 +1,112 @@
+/* Fichier d'animations pour ajouter du dynamisme au site */
+
+/* Animation de fondu pour les transitions d'éléments */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulseLight {
+  0% { box-shadow: 0 0 0 0 rgba(255, 5, 85, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 5, 85, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 5, 85, 0); }
+}
+
+/* Animations pour les éléments spécifiques */
+.hero h1 {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.hero p {
+  animation: fadeIn 1s ease-out 0.2s forwards;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.filter-btn {
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  transform: scale(1.05);
+}
+
+.filter-btn.active {
+  animation: pulseLight 2s infinite;
+}
+
+.product-card {
+  animation: fadeIn 0.5s ease-out forwards;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+/* Délai progressif pour l'apparition des cartes de produits */
+.product-card:nth-child(1) { animation-delay: 0.1s; }
+.product-card:nth-child(2) { animation-delay: 0.2s; }
+.product-card:nth-child(3) { animation-delay: 0.3s; }
+.product-card:nth-child(4) { animation-delay: 0.4s; }
+
+.feature {
+  transition: transform 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-10px);
+}
+
+.feature i {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.feature:hover i {
+  transform: scale(1.2);
+  color: #FF0555;
+}
+
+/* Effet de transition pour le menu mobile */
+.main-nav {
+  transition: transform 0.4s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+}
+
+.menu-btn-bar {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Animation pour les notifications */
+@keyframes slideInBottom {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.notification {
+  animation: slideInBottom 0.5s forwards, slideInBottom 0.5s reverse forwards 2.5s;
+}
+
+/* Animation pour les résultats de recherche */
+.search-result-item {
+  transition: background-color 0.2s ease;
+}
+
+.search-result-item:hover {
+  background-color: #f8f8f8;
+}
+
+/* Animation pour le pied de page */
+.social-icons a {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: translateY(-5px) rotate(5deg);
+}

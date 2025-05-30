@@ -1,0 +1,353 @@
+/* Styles spécifiques pour la page de livraison */
+
+.shipping-hero {
+  background-color: #f5f7fa;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.shipping-hero h1 {
+  color: var(--dark-color);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.shipping-hero p {
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+.shipping-section {
+  padding: 3rem 0;
+  background-color: #fff;
+}
+
+.shipping-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Introduction avec icône */
+.shipping-intro {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #eee;
+}
+
+.intro-icon {
+  flex: 0 0 100px;
+  height: 100px;
+  background-color: #f5f7fa;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-icon i {
+  font-size: 3rem;
+  color: #FF0555;
+}
+
+.intro-text h2 {
+  color: var(--dark-color);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.intro-text p {
+  line-height: 1.7;
+  color: #555;
+}
+
+/* Cartes pour chaque section */
+.shipping-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.shipping-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  background-color: #f5f7fa;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.card-header i {
+  font-size: 1.5rem;
+  color: #FF0555;
+}
+
+.card-header h3 {
+  color: var(--dark-color);
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-body p {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.card-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* Méthodes d'expédition */
+.shipping-method {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #eee;
+}
+
+.shipping-method:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.method-icon {
+  flex: 0 0 60px;
+  height: 60px;
+  background-color: #f5f7fa;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.method-icon i {
+  font-size: 1.5rem;
+  color: #FF0555;
+}
+
+.method-details h4 {
+  color: var(--dark-color);
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.method-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.method-highlights span {
+  background-color: #f5f7fa;
+  padding: 0.5rem 0.8rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.method-highlights span i {
+  color: #27ae60;
+}
+
+/* Délais de livraison */
+.delivery-times {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.city-group {
+  background-color: #f5f7fa;
+  padding: 1.2rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.city-group:hover {
+  transform: translateY(-5px);
+}
+
+.city-group h4 {
+  color: var(--dark-color);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.city-group h4 i {
+  color: #FF0555;
+}
+
+.city-group p {
+  color: #555;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.delivery-note {
+  background-color: #fff8e1;
+  padding: 1rem;
+  border-left: 4px solid #ffc107;
+  border-radius: 0 8px 8px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.delivery-note i {
+  color: #ffc107;
+  font-size: 1.2rem;
+  margin-top: 0.2rem;
+}
+
+.delivery-note p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Information sur les frais de livraison */
+.shipping-fee-info {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  background-color: #f0f9ff;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.shipping-fee-info i {
+  font-size: 2rem;
+  color: #3498db;
+}
+
+.shipping-fee-info h4 {
+  color: #3498db;
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.shipping-fee-info p {
+  margin-bottom: 0.5rem;
+}
+
+/* Options de contact */
+.contact-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.contact-option {
+  flex: 1;
+  min-width: 120px;
+  background-color: #f5f7fa;
+  padding: 1.2rem 1rem;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--dark-color);
+  transition: all 0.3s ease;
+}
+
+.contact-option:hover {
+  background-color: #FF0555;
+  color: white;
+  transform: translateY(-5px);
+}
+
+.contact-option i {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+.contact-option span {
+  font-weight: 500;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .shipping-intro {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .intro-icon {
+    margin: 0 auto;
+  }
+  
+  .shipping-method {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .method-icon {
+    margin: 0 auto;
+  }
+  
+  .method-highlights {
+    justify-content: center;
+  }
+  
+  .shipping-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .card-header h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .shipping-hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .shipping-content {
+    padding: 0 1rem;
+  }
+  
+  .card-header, .card-body, .shipping-fee-info {
+    padding: 1.2rem;
+  }
+  
+  .delivery-times {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-options {
+    flex-direction: column;
+  }
+}

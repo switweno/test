@@ -1,3 +1,6 @@
+/* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
+
 /* Global Styles */
 * {
   margin: 0;
@@ -11,7 +14,7 @@
   --accent-color: #e74c3c;
   --text-color: #333;
   --light-color: #f9f9f9;
-  --dark-color: #2c3e50;
+  --dark-color: #000000;
   --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   --transition: all 0.3s ease;
 }
@@ -46,48 +49,39 @@ ul {
 img {
   max-width: 100%;
   height: auto;
-  
 }
-
-/* غلاف سلايدر المصغرات */
-.product-thumbs-swiper {
-  margin-top: 1rem;
-  padding: 0.1rem 0;
-}
-
-/* كل سلايد مصغر */
-.product-thumbs-swiper .swiper-slide {
-  width: auto;
-  opacity: 0.6;
-  cursor: pointer;
-  border: 2px solid transparent;
-  border-radius: 6px;
-  transition: opacity 0.3s ease, border 0.3s ease;
-  box-sizing: border-box; /* مهم لتفادي تجاوز الإطار */
-}
-
-/* الصور المصغرة */
-.product-thumbs-swiper .swiper-slide img {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
+.filter-btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #FF0555;
+  color: #000000;
+  border: none;
   border-radius: 4px;
-  display: block;
-  box-sizing: border-box;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
 }
-
-/* السلايد النشط */
-.product-thumbs-swiper .swiper-slide-thumb-active {
-  opacity: 1;
-  
-}
-
+/* Boutons */
 
 .btn {
   display: inline-block;
   padding: 0.5rem 1rem;
-  background-color: var(--secondary-color);
-  color: white;
+  background-color: #FF0555 !important; /* إجباري */
+  color: #ffffff !important;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+
+ 
+ 
+.newsletter-form .btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #FF0555;
+  color: #ffffff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -100,13 +94,17 @@ img {
   transform: translateY(-2px);
 }
 
+.btn:active {
+  transform: translateY(-1px);
+}
+
 /* Header & Navigation */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: var(--primary-color);
+  background-color: #FF0555;
   color: white;
   position: sticky;
   top: 0;
@@ -117,38 +115,6 @@ img {
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-}
-
-/* Search Container */
-.search-container {
-  display: flex;
-  flex: 1;
-  max-width: 400px;
-  margin: 0 2rem;
-}
-
-.mobile-search {
-  display: none;
-  width: 100%;
-  margin: 1rem 0;
-  padding: 0 1rem;
-}
-
-.search-input {
-  width: 100%;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 4px 0 0 4px;
-  outline: none;
-}
-
-.search-button {
-  background-color: var(--secondary-color);
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 0 4px 4px 0;
-  cursor: pointer;
 }
 
 .menu {
@@ -166,62 +132,28 @@ img {
 }
 
 .menu a:hover {
-  color: var(--secondary-color);
+  color: #ffffff;
 }
 
 /* Indicateur de page active dans le menu */
-.menu a[aria-current="page"]::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background-color: var(--secondary-color);
-}
-
 .menu a[aria-current="page"] {
-  color: var(--secondary-color); /* Colorer le texte plutôt que de souligner */
-  font-weight: bold; /* Mettre en gras pour plus de visibilité */
+  color: #ffffff;
+  font-weight: bold;
 }
 
-.menu a[aria-current="page"]::after {
-  /* Supprimer la ligne de soulignement en mobile */
-  display: none;
-}
-
-/* Alternative: afficher un indicateur latéral plutôt qu'un soulignement */
 .menu a[aria-current="page"]::before {
-  content: "•"; /* Petit point */
+  content: "•";
   position: absolute;
   left: -15px;
-  color: var(--secondary-color);
-}
-
-.cart-icon {
-  position: relative;
-}
-
-.cart-count {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  background-color: var(--accent-color);
-  color: white;
-  font-size: 0.7rem;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  color: #ffffff;
 }
 
 /* Hero Section */
 .hero {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 1rem 1rem;
   background-color: #f0f8ff;
+  font-family: 'Montserrat', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .hero h1 {
@@ -237,9 +169,70 @@ img {
   margin: 0 auto;
 }
 
+/* Animations pour les titres de la page d'accueil */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hero h1 {
+  opacity: 0;
+  animation: fadeInUp 1.2s ease forwards;
+  animation-delay: 0.3s;
+}
+
+.hero p {
+  opacity: 0;
+  animation: fadeInRight 1.2s ease forwards;
+  animation-delay: 0.8s;
+}
+
+/* Animation pour l'ensemble de la section hero */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: rgba(255, 5, 85, 0.1);
+  z-index: -1;
+  animation: heroReveal 1.5s ease forwards;
+}
+
+@keyframes heroReveal {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
 /* Slider */
 .slider {
-  margin: 2rem 0;
   position: relative;
   overflow: hidden;
 }
@@ -252,7 +245,7 @@ img {
 
 .slides {
   position: relative;
-  height: 400px;
+  height: 500px;
 }
 
 .slide {
@@ -276,13 +269,12 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 8px;
 }
 
 .slide-content {
   position: absolute;
-  top: 50%;
-  left: 5%;
+  top: 74%;
+  left: 10%;
   transform: translateY(-50%);
   background-color: rgba(0, 0, 0, 0.7);
   color: white;
@@ -290,6 +282,7 @@ img {
   border-radius: 8px;
   max-width: 350px;
   text-align: left;
+  font-family: 'Montserrat', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .slide-content h2 {
@@ -301,6 +294,7 @@ img {
   margin-bottom: 1rem;
 }
 
+/* Contrôles du slider */
 .slider-controls {
   position: absolute;
   bottom: 20px;
@@ -355,11 +349,6 @@ img {
   transform: translateY(-50%) scale(1.1);
 }
 
-
-
-
-
-
 /* Catalog */
 .catalog {
   padding: 3rem 1rem;
@@ -390,14 +379,16 @@ img {
 }
 
 .filter-btn.active {
-  background-color: var(--secondary-color);
+  background-color: #FF0555;
   color: white;
 }
 
+/* Grille de produits */
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 2rem;
+  min-height: 300px; /* Espace minimum pour éviter le saut de page */
 }
 
 .product-card {
@@ -405,10 +396,18 @@ img {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: var(--shadow);
-  transition: var(--transition);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   display: flex;
-  flex-direction: column; /* Assurez-vous que le contenu est empilé verticalement */
+  flex-direction: column;
+}
+
+.product-card.animate-in {
+  animation: fadeInScale 0.5s forwards;
+}
+
+.product-card.animate-out {
+  animation: fadeOutScale 0.4s forwards;
 }
 
 .product-card:hover {
@@ -416,11 +415,17 @@ img {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
+.card-divider {
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 10px 15px 0 15px; /* مسافة من الجوانب ومن الأعلى */
+}
+
 .product-badge {
   position: absolute;
   top: 10px;
   right: 10px;
-  background-color: var(--secondary-color);
+  background-color: #FF0555;
   color: white;
   padding: 0.3rem 0.7rem;
   border-radius: 4px;
@@ -429,20 +434,64 @@ img {
 }
 
 .product-badge.sale {
-  background-color: var(--accent-color);
+  background-color: #004eff;
 }
 
 .product-card img {
   width: 100%;
-  height: 200px;
+  height: 300px;
   object-fit: cover;
+}
+
+/* Effet de fondu pour le lazy loading */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Placeholder pour les images en cours de chargement */
+.product-card img {
+  min-height: 200px;
+  background-color: #f0f0f0;
+  position: relative;
+}
+
+.product-card img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #f0f0f0 0%, #e0e0e0 50%, #f0f0f0 100%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 0% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 .product-info {
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  flex-grow: 1; /* Pour que l'info prenne tout l'espace disponible */
+  flex-grow: 1;
 }
 
 .product-info h3 {
@@ -451,7 +500,7 @@ img {
 }
 
 .product-rating {
-  color: #f39c12;
+  color: #f39c12 ;
   margin-bottom: 0.5rem;
 }
 
@@ -466,7 +515,7 @@ img {
   font-weight: bold;
   color: var(--dark-color);
   margin-bottom: 0.8rem;
-  text-align: center; /* Centrer le prix */
+  text-align: center;
 }
 
 .old-price {
@@ -476,12 +525,11 @@ img {
   margin-left: 0.5rem;
 }
 
-/* Réparation des boutons d'action */
 .product-actions {
   display: flex;
   gap: 0.5rem;
   width: 100%;
-  margin-top: auto; /* Pousse les actions vers le bas */
+  margin-top: auto;
 }
 
 .product-actions .btn {
@@ -489,18 +537,17 @@ img {
   text-align: center;
   font-size: 0.9rem;
   padding: 0.5rem;
-  display: inline-block; /* Revenir à l'affichage par défaut */
+  display: inline-block;
 }
 
 .add-to-cart {
-  background-color: var(--secondary-color);
+  background-color: #FF0555;
 }
 
 .view-details {
   background-color: var(--dark-color);
 }
 
-/* Si un seul bouton dans les actions, lui donner toute la largeur */
 .product-actions .btn:only-child {
   width: 100%;
 }
@@ -521,7 +568,7 @@ img {
 
 .feature i {
   font-size: 2.5rem;
-  color: var(--secondary-color);
+  color: #363636;
   margin-bottom: 1rem;
 }
 
@@ -533,7 +580,7 @@ img {
 .newsletter {
   text-align: center;
   padding: 3rem 1rem;
-  background-color: var(--primary-color);
+  background-color: #363636;
   color: white;
 }
 
@@ -569,7 +616,7 @@ img {
 
 /* Footer */
 .footer {
-  background-color: var(--dark-color);
+  background-color: #363636;
   color: white;
   padding-top: 3rem;
 }
@@ -594,7 +641,7 @@ img {
   left: 0;
   width: 50px;
   height: 2px;
-  background-color: var(--secondary-color);
+  background-color: #FF0555;
 }
 
 .footer-section p {
@@ -619,7 +666,7 @@ img {
 }
 
 .social-icons a:hover {
-  background-color: var(--secondary-color);
+  background-color: #FF0555;
   transform: translateY(-3px);
 }
 
@@ -628,13 +675,17 @@ img {
 }
 
 .footer-section ul li a:hover {
-  color: var(--secondary-color);
+  color: #47e413;
   padding-left: 5px;
 }
 
 .footer-section i {
+  color: white;
+  margin-right: 0;
+}
+
+.footer-section p i:not(.fab) {
   margin-right: 0.5rem;
-  color: var(--secondary-color);
 }
 
 .footer-bottom {
@@ -653,47 +704,9 @@ img {
   font-size: 1.5rem;
 }
 
-/* Mobile Menu Toggle */
-.mobile-menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  position: relative;
-  z-index: 1001;
-  width: 40px;
-  height: 40px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.mobile-menu-toggle span {
-  display: block;
-  width: 24px;
-  height: 3px;
-  background-color: white;
-  margin: 5px 0;
-  transition: all 0.3s ease;
-  border-radius: 2px;
-}
-
-.mobile-menu-toggle.active span:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
-}
-
-.mobile-menu-toggle.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.mobile-menu-toggle.active span:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
-}
-
-/* Nouveau menu mobile - Solution simple et robuste */
+/* Menu mobile */
 .menu-btn-container {
-  display: none; /* Caché par défaut على سطح المكتب */
+  display: none;
   order: 3;
   z-index: 1001;
 }
@@ -730,13 +743,57 @@ img {
   transform: translateY(-10px) rotate(-45deg);
 }
 
-/* Suppression des anciens styles qui peuvent causer des conflits */
-.mobile-menu-toggle,
-.hamburger-button {
-  display: none !important;
+/* Suppression des effets de focus et active (contour bleu) */
+*:focus,
+button:focus, 
+a:focus, 
+input:focus, 
+select:focus, 
+textarea:focus,
+.btn:focus,
+.filter-btn:focus,
+.menu-btn:focus,
+.search-button:focus,
+.pagination-btn:focus {
+  outline: none !important;
+  box-shadow: none !important;
 }
 
-/* Correction du menu pour mobile */
+button, 
+a, 
+input[type="button"], 
+input[type="submit"],
+.btn,
+.filter-btn,
+.search-button,
+.pagination-btn,
+.slider .prev-btn,
+.slider .next-btn,
+.swiper-button-prev,
+.swiper-button-next,
+.swiper-pagination,
+.swiper-pagination-bullet,
+.swiper-slide,
+.product-thumbs-swiper .swiper-slide,
+.tab-btn,
+.dot,
+.color-option,
+.quantity-selector button {
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+/* Style alternatif pour le focus (pour l'accessibilité) */
+button:focus-visible, 
+a:focus-visible, 
+input:focus-visible, 
+select:focus-visible, 
+textarea:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid rgba(52, 152, 219, 0.3) !important;
+  outline-offset: 2px;
+}
+
+/* Responsivité */
 @media (max-width: 768px) {
   .navbar {
     flex-wrap: wrap;
@@ -748,12 +805,8 @@ img {
     flex: 1;
   }
   
-  .mobile-menu-toggle {
-    display: flex;
-  }
-  
   .menu-btn-container {
-    display: block; /* Affiché sur mobile */
+    display: block;
   }
   
   .main-nav {
@@ -762,7 +815,7 @@ img {
     right: -280px;
     width: 280px;
     height: 100vh;
-    background-color: var(--primary-color);
+    background-color: #FF0555;
     padding-top: 60px;
     overflow-y: auto;
     transition: right 0.3s ease;
@@ -788,26 +841,10 @@ img {
     font-size: 1.1rem;
   }
   
-  /* Adapter l'indicateur de page active pour le menu mobile */
   .menu a[aria-current="page"] {
-    color: var(--secondary-color); /* Colorer le texte plutôt que de souligner */
-    font-weight: bold; /* Mettre en gras pour plus de visibilité */
+    color: #f7f2f2;
   }
   
-  .menu a[aria-current="page"]::after {
-    /* Supprimer la ligne de soulignement en mobile */
-    display: none;
-  }
-  
-  /* Ajouter un petit point à gauche du lien actif */
-  .menu a[aria-current="page"]::before {
-    content: "•"; /* Petit point */
-    position: absolute;
-    left: -15px;
-    color: var(--secondary-color);
-  }
-  
-  /* Overlay pour fermer le menu en cliquant à l'extérieur */
   .menu-overlay {
     display: none;
     position: fixed;
@@ -821,13 +858,6 @@ img {
   
   .menu-overlay.active {
     display: block;
-  }
-  
-  /* Mobile search inside nav */
-  .mobile-search {
-    display: flex;
-    margin: 1rem 1.5rem;
-    width: auto;
   }
 }
 
@@ -866,103 +896,26 @@ img {
   }
 }
 
-/* Suppression des effets de focus et active (contour bleu) */
-*:focus {
-  outline: none !important;
+/* Animation pour les cartes de produits lors du filtrage */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 
-button:focus, 
-a:focus, 
-input:focus, 
-select:focus, 
-textarea:focus,
-.btn:focus,
-.filter-btn:focus,
-.menu-btn:focus,
-.search-button:focus,
-.pagination-btn:focus {
-  outline: none !important;
-  box-shadow: none !important;
+@keyframes fadeOutScale {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.9);
+  }
 }
 
-/* Suppression du contour sur les éléments cliquables */
-button, 
-a, 
-input[type="button"], 
-input[type="submit"],
-.btn,
-.filter-btn,
-.search-button,
-.pagination-btn {
-  -webkit-tap-highlight-color: transparent; /* Pour supprimer le highlight sur mobile */
-}
-
-/* Suppression spécifique du highlight bleu sur les éléments du slider */
-.slider .prev-btn,
-.slider .next-btn,
-.swiper-button-prev,
-.swiper-button-next,
-.swiper-pagination,
-.swiper-pagination-bullet,
-.swiper-slide,
-.product-thumbs-swiper .swiper-slide,
-.tab-btn,
-.dot,
-.color-option,
-.quantity-selector button {
-  -webkit-tap-highlight-color: transparent !important;
-  outline: none !important;
-  box-shadow: none !important;
-  user-select: none !important;
-}
-
-/* Empêcher la sélection de texte sur les éléments interactifs pour éviter l'effet bleu */
-.slider,
-.swiper,
-.slider-controls,
-.product-thumbs-swiper,
-.swiper-wrapper,
-.swiper-button-prev,
-.swiper-button-next,
-.swiper-pagination {
-  user-select: none !important;
-}
-
-/* Style alternatif pour le focus (pour l'accessibilité) */
-button:focus-visible, 
-a:focus-visible, 
-input:focus-visible, 
-select:focus-visible, 
-textarea:focus-visible,
-.btn:focus-visible {
-  outline: 2px solid rgba(52, 152, 219, 0.3) !important;
-  outline-offset: 2px;
-}
-
-/* Suppression du contour sur les éléments cliquables */
-button, 
-a, 
-input[type="button"], 
-input[type="submit"],
-.btn,
-.filter-btn,
-.search-button,
-.pagination-btn {
-  -webkit-tap-highlight-color: transparent; /* Pour supprimer le highlight sur mobile */
-}
-
-/* Conserver la fonctionnalité de hover tout en supprimant focus/active */
-.btn:hover {
-  background-color: #2980b9;
-  transform: translateY(-2px);
-}
-
-.btn:active {
-  transform: translateY(-1px); /* Effet subtil au clic sans contour bleu */
-}
-
-/* Assurer que les styles de surbrillance du menu actif restent visibles */
-.menu a[aria-current="page"] {
-  color: var(--secondary-color);
-  font-weight: bold;
-}

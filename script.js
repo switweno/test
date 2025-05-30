@@ -1,42 +1,29 @@
 // DOM Elements
-let slides = document.querySelectorAll('.slide'); // Changé de const à let pour permettre la réassignation
+let slides = document.querySelectorAll('.slide');
 const dots = document.querySelectorAll('.dot');
 const prevBtn = document.querySelector('.prev-btn');
 const nextBtn = document.querySelector('.next-btn');
 const filterBtns = document.querySelectorAll('.filter-btn');
 const productCards = document.querySelectorAll('.product-card');
-const addToCartBtns = document.querySelectorAll('.add-to-cart');
-const cartCount = document.querySelector('.cart-count');
-const searchInput = document.querySelector('.search-input');
-const searchInputMobile = document.querySelector('.search-input-mobile');
-const searchButton = document.querySelector('.desktop-search .search-button');
-const searchButtonMobile = document.querySelector('.mobile-search .search-button');
-const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
 const mainNav = document.querySelector('.main-nav');
 
 // Globals
 let currentSlide = 0;
 let slideInterval;
-let cartItems = 0;
 
 // Initialize the page
 function init() {
-  // Only initialize slider if slides exist
   if (slides && slides.length > 0) {
     startSlider();
-  } else {
-    console.log("No slides found, skipping slider initialization");
   }
   setupEventListeners();
+  setupLazyLoading();
 }
 
 // Slider Functions
 function startSlider() {
-  // Show the first slide
   if (slides && slides.length > 0) {
     showSlide(currentSlide);
-    
-    // Start automatic sliding
     slideInterval = setInterval(() => {
       nextSlide();
     }, 5000);
@@ -44,36 +31,17 @@ function startSlider() {
 }
 
 function showSlide(index) {
-  // Safety check - make sure slides exist and index is valid
-  if (!slides || slides.length === 0) {
-    console.error("No slides found");
-    return;
-  }
+  if (!slides || slides.length === 0) return;
   
-  // Ensure index is within bounds
-  if (index < 0 || index >= slides.length) {
-    console.error(`Invalid slide index: ${index}. Must be between 0 and ${slides.length - 1}.`);
-    return;
-  }
+  if (index < 0 || index >= slides.length) return;
   
-  // Hide all slides
-  slides.forEach(slide => {
-    slide.classList.remove('active');
-  });
+  slides.forEach(slide => slide.classList.remove('active'));
   
-  // Remove active from all dots
   if (dots && dots.length > 0) {
-    dots.forEach(dot => {
-      dot.classList.remove('active');
-    });
-    
-    // Show active dot if it exists
-    if (dots[index]) {
-      dots[index].classList.add('active');
-    }
+    dots.forEach(dot => dot.classList.remove('active'));
+    if (dots[index]) dots[index].classList.add('active');
   }
   
-  // Show current slide
   slides[index].classList.add('active');
 }
 
@@ -87,181 +55,72 @@ function prevSlide() {
   showSlide(currentSlide);
 }
 
-// Product Filter Functions
+// Product Filter Functions with animations
 function filterProducts(category) {
-  productCards.forEach(card => {
-    if (category === 'all' || card.dataset.category === category) {
-      card.style.display = 'block';
+  // Marquer le bouton actif
+  filterBtns.forEach(btn => {
+    if (btn.dataset.category === category) {
+      btn.classList.add('active');
     } else {
-      card.style.display = 'none';
+      btn.classList.remove('active');
     }
   });
-}
 
-// Cart Functions
-function addToCart(e) {
-  // Obtenir la carte produit
-  const btn = e.currentTarget;
-  const card = btn.closest('.product-card');
+  // Garder trace des cartes qui doivent être visibles
+  const visibleCards = [];
+  const hiddenCards = [];
   
-  // Rediriger vers la page de détail du produit
-  const productId = card.dataset.id;
-  window.location.href = `produits/${productId}.html`;
-}
-
-// Fonction pour afficher une confirmation après ajout au panier avec option d'aller au panier
-function showAddToCartConfirmation(productName) {
-  // Créer l'élément de notification
-  const notification = document.createElement('div');
-  notification.className = 'notification cart-notification';
-  notification.innerHTML = `
-    <div class="notification-content">
-      <i class="fas fa-check-circle"></i>
-      <p>${productName} a été ajouté à votre panier</p>
-    </div>
-    <div class="notification-actions">
-      <button class="continue-shopping">Continuer les achats</button>
-      <a href="panier.html" class="go-to-cart">Voir le panier</a>
-    </div>
-  `;
-  
-  // Ajouter au DOM
-  document.body.appendChild(notification);
-  
-  // Ajouter les styles CSS si nécessaire
-  addCartNotificationStyles();
-  
-  // Afficher avec animation
-  setTimeout(() => {
-    notification.classList.add('show');
-  }, 10);
-  
-  // Configurer les boutons
-  const continueBtn = notification.querySelector('.continue-shopping');
-  if (continueBtn) {
-    continueBtn.addEventListener('click', () => {
-      notification.classList.remove('show');
-      setTimeout(() => {
-        document.body.removeChild(notification);
-      }, 300);
-    });
-  }
-  
-  // Fermer automatiquement après un délai
-  setTimeout(() => {
-    if (document.body.contains(notification)) {
-      notification.classList.remove('show');
-      setTimeout(() => {
-        if (document.body.contains(notification)) {
-          document.body.removeChild(notification);
-        }
-      }, 300);
+  // Trier les cartes selon qu'elles doivent être affichées ou masquées
+  productCards.forEach(card => {
+    if (category === 'all' || card.dataset.category === category) {
+      visibleCards.push(card);
+    } else {
+      hiddenCards.push(card);
     }
-  }, 5000);
-}
-
-// Ajouter les styles CSS pour la notification de panier
-function addCartNotificationStyles() {
-  // Vérifier si les styles existent déjà
-  if (!document.getElementById('cart-notification-styles')) {
-    const style = document.createElement('style');
-    style.id = 'cart-notification-styles';
-    style.textContent = `
-      .cart-notification {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background-color: white;
-        color: var(--dark-color);
-        padding: 1rem;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        width: 300px;
-        transform: translateX(110%);
-        transition: transform 0.3s ease;
-        z-index: 1100;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-      }
-      
-      .cart-notification.show {
-        transform: translateX(0);
-      }
-      
-      .notification-content {
-        display: flex;
-        align-items: center;
-        gap: 0.8rem;
-      }
-      
-      .notification-content i {
-        color: #27ae60;
-        font-size: 1.5rem;
-      }
-      
-      .notification-actions {
-        display: flex;
-        gap: 0.5rem;
-      }
-      
-      .continue-shopping, .go-to-cart {
-        padding: 0.5rem;
-        border-radius: 4px;
-        text-align: center;
-        cursor: pointer;
-        flex: 1;
-        font-size: 0.9rem;
-        transition: all 0.2s ease;
-      }
-      
-      .continue-shopping {
-        background-color: #f5f5f5;
-        border: 1px solid #ddd;
-        color: var(--dark-color);
-      }
-      
-      .go-to-cart {
-        background-color: var(--secondary-color);
-        border: none;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      
-      .continue-shopping:hover {
-        background-color: #e5e5e5;
-      }
-      
-      .go-to-cart:hover {
-        background-color: #2980b9;
-      }
-      
-      @media (max-width: 576px) {
-        .cart-notification {
-          width: calc(100% - 40px);
-          bottom: 10px;
-          right: 10px;
-          left: 10px;
-        }
-      }
-    `;
+  });
+  
+  // D'abord, animer la disparition des cartes à masquer
+  hiddenCards.forEach(card => {
+    card.classList.add('animate-out');
+    card.classList.remove('animate-in');
     
-    document.head.appendChild(style);
-  }
+    // Après l'animation, masquer la carte
+    setTimeout(() => {
+      card.style.display = 'none';
+      card.classList.remove('animate-out');
+    }, 400);
+  });
+  
+  // Ensuite, animer l'apparition des cartes à afficher avec un délai progressif
+  visibleCards.forEach((card, index) => {
+    // Préparer les cartes à afficher
+    card.style.display = 'flex';
+    card.style.opacity = '0';
+    
+    // Appliquer un délai croissant pour créer un effet cascade
+    setTimeout(() => {
+      card.classList.add('animate-in');
+      card.classList.remove('animate-out');
+      
+      // Nettoyer après l'animation
+      setTimeout(() => {
+        card.classList.remove('animate-in');
+        card.style.opacity = '1';
+      }, 500);
+    }, 30 * index); // Délai progressif entre chaque carte
+  });
 }
 
 // Search Function
 function searchProducts(searchTerm) {
   if (!searchTerm) {
-    searchTerm = this.previousElementSibling.value.toLowerCase().trim();
+    const inputEl = this.previousElementSibling;
+    if (inputEl) searchTerm = inputEl.value.toLowerCase().trim();
   }
   
-  if (searchTerm === '') return;
+  if (!searchTerm) return;
   
-  // Si le menu mobile est ouvert, le fermer après la recherche
-  if (mainNav.classList.contains('show')) {
+  if (mainNav && mainNav.classList.contains('show')) {
     toggleMobileMenu();
   }
   
@@ -280,53 +139,36 @@ function searchProducts(searchTerm) {
   });
 }
 
-// Fonction améliorée pour le menu mobile
+// Fonction pour le menu mobile
 function toggleMobileMenu(event) {
-  console.log("toggleMobileMenu appelé");
-  
-  if (event) {
-    event.preventDefault();
-  }
+  if (event) event.preventDefault();
   
   const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
   const mainNav = document.querySelector('.main-nav');
   
-  if (!mobileMenuToggle || !mainNav) {
-    console.error("Éléments du menu mobile non trouvés");
-    return;
-  }
+  if (!mobileMenuToggle || !mainNav) return;
   
-  console.log("État du menu avant:", mainNav.classList.contains('show') ? "ouvert" : "fermé");
-  
-  // Toggle active class
   mobileMenuToggle.classList.toggle('active');
   mainNav.classList.toggle('show');
   
-  console.log("État du menu après:", mainNav.classList.contains('show') ? "ouvert" : "fermé");
+  const isExpanded = mainNav.classList.contains('show');
+  mobileMenuToggle.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
   
-  // Gérer l'overlay
   let overlay = document.querySelector('.menu-overlay');
   
   if (!overlay) {
     overlay = document.createElement('div');
     overlay.className = 'menu-overlay';
     document.body.appendChild(overlay);
-    
-    // Fermer le menu quand on clique sur l'overlay
-    overlay.addEventListener('click', function() {
-      toggleMobileMenu();
-    });
+    overlay.addEventListener('click', toggleMobileMenu);
   }
   
   overlay.classList.toggle('active');
-  
-  // Empêcher le défilement quand le menu est ouvert
   document.body.classList.toggle('menu-open');
 }
 
-// Utility Functions
+// Notification pour formulaire newsletter
 function showNotification(message) {
-  // Create notification element
   const notification = document.createElement('div');
   notification.className = 'notification';
   notification.innerHTML = `
@@ -334,30 +176,62 @@ function showNotification(message) {
     <p>${message}</p>
   `;
   
-  // Add to DOM
   document.body.appendChild(notification);
   
-  // Show with animation
-  setTimeout(() => {
-    notification.classList.add('show');
-  }, 10);
+  setTimeout(() => notification.classList.add('show'), 10);
   
-  // Remove after animation
   setTimeout(() => {
     notification.classList.remove('show');
     setTimeout(() => {
-      document.body.removeChild(notification);
+      if (document.body.contains(notification)) {
+        document.body.removeChild(notification);
+      }
     }, 500);
   }, 3000);
 }
 
-// Event Listeners
-function setupEventListeners() {
-  // Mobile menu toggle
-  if (mobileMenuToggle) {
-    mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+// Fonction pour configurer le lazy loading avec Intersection Observer
+function setupLazyLoading() {
+  // Vérifier si IntersectionObserver est supporté
+  if ('IntersectionObserver' in window) {
+    const productCards = document.querySelectorAll('.product-card');
+    
+    const options = {
+      root: null, // utiliser le viewport comme zone d'observation
+      rootMargin: '0px 0px 100px 0px', // marge de 100px en bas pour précharger
+      threshold: 0.1 // 10% de l'élément doit être visible
+    };
+    
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const card = entry.target;
+          const image = card.querySelector('img');
+          
+          // Si l'image a un attribut data-src, utiliser celui-ci comme source
+          if (image && image.dataset.src) {
+            image.src = image.dataset.src;
+            image.removeAttribute('data-src');
+          }
+          
+          // Ajouter une classe pour animer l'entrée de la carte
+          card.classList.add('fade-in');
+          
+          // Arrêter d'observer cet élément
+          observer.unobserve(card);
+        }
+      });
+    }, options);
+    
+    // Observer chaque carte de produit
+    productCards.forEach(card => {
+      observer.observe(card);
+    });
   }
-  
+}
+
+// Configurer les écouteurs d'événements
+function setupEventListeners() {
   // Slider controls
   if (prevBtn && nextBtn) {
     prevBtn.addEventListener('click', () => {
@@ -389,42 +263,11 @@ function setupEventListeners() {
   if (filterBtns && filterBtns.length > 0) {
     filterBtns.forEach(btn => {
       btn.addEventListener('click', function() {
-        // Remove active from all buttons
         filterBtns.forEach(b => b.classList.remove('active'));
-        
-        // Add active to current button
         this.classList.add('active');
-        
-        // Filter products
         filterProducts(this.dataset.category);
       });
     });
-  }
-  
-  // Search - Desktop
-  if (searchButton) {
-    searchButton.addEventListener('click', searchProducts);
-    
-    if (searchInput) {
-      searchInput.addEventListener('keyup', function(e) {
-        if (e.key === 'Enter') {
-          searchProducts(this.value.toLowerCase().trim());
-        }
-      });
-    }
-  }
-  
-  // Search - Mobile
-  if (searchButtonMobile) {
-    searchButtonMobile.addEventListener('click', searchProducts);
-    
-    if (searchInputMobile) {
-      searchInputMobile.addEventListener('keyup', function(e) {
-        if (e.key === 'Enter') {
-          searchProducts(this.value.toLowerCase().trim());
-        }
-      });
-    }
   }
   
   // Newsletter form
@@ -440,21 +283,9 @@ function setupEventListeners() {
       }
     });
   }
-  
-  // Menu mobile links
-  if (mainNav) {
-    const menuLinks = mainNav.querySelectorAll('a');
-    menuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        if (mainNav.classList.contains('show')) {
-          toggleMobileMenu();
-        }
-      });
-    });
-  }
 }
 
-// Reset slider interval when manually changing slides
+// Reset slider interval
 function resetSliderInterval() {
   if (slideInterval) {
     clearInterval(slideInterval);
@@ -462,103 +293,33 @@ function resetSliderInterval() {
   }
 }
 
-// Add CSS for notifications
+// Add styles needed for notifications
 function addNotificationStyles() {
-  const style = document.createElement('style');
-  style.textContent = `
-    .notification {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #2c3e50;
-      color: white;
-      padding: 1rem;
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      transform: translateX(100%);
-      transition: transform 0.3s ease;
-      z-index: 1000;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    
-    .notification.show {
-      transform: translateX(0);
-    }
-    
-    .notification i {
-      color: #3498db;
-    }
-    
-    .added {
-      background-color: #27ae60 !important;
-    }
-    
-    .highlight {
-      animation: highlight 2s;
-    }
-    
-    @keyframes highlight {
-      0% { box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.5); }
-      70% { box-shadow: 0 0 0 10px rgba(52, 152, 219, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(52, 152, 219, 0); }
-    }
-  `;
-  
-  document.head.appendChild(style);
-}
-
-// Add CSS for mobile menu
-function addMobileMenuStyles() {
-  const style = document.createElement('style');
-  style.textContent = `
-    body.menu-open {
-      overflow: hidden;
-    }
-    
-    @media (max-width: 768px) {
-      .main-nav.show {
-       
-       
-      }
-      
-      .cart-icon {
-        display: inline-flex;
-        align-items: center;
-      }
-    }
-  `;
-  
-  document.head.appendChild(style);
+  // ...existing code...
 }
 
 // Initialize on DOM load
 document.addEventListener('DOMContentLoaded', () => {
   try {
-    // Check if elements exist before initializing
-    if (typeof slides === 'undefined' || slides === null || slides.length === 0) {
-      // Requery the DOM in case elements weren't available when script first loaded
-      const slidesCollection = document.querySelectorAll('.slide');
-      if (slidesCollection && slidesCollection.length > 0) {
-        slides = slidesCollection; // Maintenant cette réassignation est valide
-      } else {
-        console.log("No slides found on this page");
-      }
+    // Réinitialiser les animations à chaque visite si nécessaire
+    const hero = document.querySelector('.hero');
+    if (hero) {
+      const heroElements = hero.querySelectorAll('h1, p');
+      heroElements.forEach(el => {
+        // Forcer un redémarrage de l'animation
+        el.style.animation = 'none';
+        el.offsetHeight; // Déclencher un reflow
+        el.style.animation = null;
+      });
     }
     
     addNotificationStyles();
-    addMobileMenuStyles();
     init();
   } catch (error) {
     console.error("Erreur lors de l'initialisation:", error);
   }
 });
 
-// Fonction pour mettre à jour le compteur du panier
-function updateCartCount() {
-  // Fonction vidée car nous n'utilisons plus le panier
-}
 
 
 
