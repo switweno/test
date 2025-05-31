@@ -112,6 +112,13 @@ img {
   box-shadow: var(--shadow);
 }
 
+/* ولكن فالشاشات الصغيرة (الهواتف) تولي عادية */
+@media (max-width: 768px) {
+  .navbar {
+    position: static;
+  }
+}
+
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
