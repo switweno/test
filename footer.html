@@ -56,7 +56,7 @@
   </div>
 
   <div class="status" id="status">🎤 كنستناك تقول: "يمين" أو "يسار"</div>
-  <button onclick="startVoice()">🎙️ بدأ التسجيل</button>
+  <button onclick="startVoice()" id="startBtn">🎙️ بدأ التسجيل</button>
 
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
@@ -69,13 +69,15 @@
     });
 
     const statusText = document.getElementById('status');
+    const startBtn = document.getElementById('startBtn');
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
     if (!SpeechRecognition) {
       statusText.textContent = "🚫 المتصفح ديالك ما كيدعمش Web Speech API";
+      startBtn.style.display = 'none';
     } else {
       const recognition = new SpeechRecognition();
-      recognition.lang = 'ar'; // لغة مدعومة
+      recognition.lang = 'ar';
       recognition.continuous = false;
       recognition.interimResults = false;
 
@@ -103,11 +105,14 @@
       };
 
       recognition.onend = () => {
-        // تقدر تخليه يعاود يبدا أو لا حسب الرغبة
+        // يعاود التشغيل تلقائياً
+        recognition.start();
       };
 
       window.startVoice = () => {
         recognition.start();
+        startBtn.disabled = true;
+        startBtn.textContent = "🎤 كيتسجل...";
       };
     }
   </script>
