@@ -305,6 +305,11 @@
   
   .intro-icon {
     margin: 0 auto;
+    width: 100px; /* Garantir une largeur fixe */
+    min-width: 100px; /* Empêcher le rétrécissement */
+    flex: 0 0 100px; /* Maintenir la taille fixe */
+    aspect-ratio: 1/1; /* Assurer un rapport hauteur/largeur de 1:1 */
+    border-radius: 50%; /* Maintenir la forme circulaire */
   }
   
   .shipping-method {
@@ -315,6 +320,11 @@
   
   .method-icon {
     margin: 0 auto;
+    width: 60px; /* Garantir une largeur fixe */
+    min-width: 60px; /* Empêcher le rétrécissement */
+    flex: 0 0 60px; /* Maintenir la taille fixe */
+    aspect-ratio: 1/1; /* Assurer un rapport hauteur/largeur de 1:1 */
+    border-radius: 50%; /* Maintenir la forme circulaire */
   }
   
   .method-highlights {
@@ -349,5 +359,25 @@
   
   .contact-options {
     flex-direction: column;
+  }
+  
+  /* Assurer que les icônes restent circulaires même sur très petits écrans */
+  .intro-icon,
+  .method-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-sizing: border-box;
+  }
+  
+  .intro-icon {
+    width: 80px; /* Réduire légèrement sur très petits écrans */
+    height: 80px;
+  }
+  
+  .method-icon {
+    width: 50px; /* Réduire légèrement sur très petits écrans */
+    height: 50px;
   }
 }

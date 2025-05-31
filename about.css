@@ -210,18 +210,20 @@
 }
 
 .advantage-icon {
-  flex: 0 0 60px;
-  height: 60px;
-  background-color: white;
+  width: 70px;
+  height: 70px;
+  min-width: 70px; /* Empêcher le rétrécissement */
+  aspect-ratio: 1/1; /* Garantir un rapport hauteur/largeur de 1:1 */
+  background-color: #f5f7fa;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
 }
 
 .advantage-icon i {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: #FF0555;
 }
 
@@ -391,11 +393,17 @@
   .advantage-item {
     flex-direction: column;
     text-align: center;
-    padding: 1.5rem;
+    gap: 1rem;
   }
   
   .advantage-icon {
-    margin: 0 auto 1rem;
+    margin: 0 auto;
+    width: 70px;
+    height: 70px;
+    min-width: 70px;
+    flex: 0 0 70px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
   }
   
   .values-grid {
@@ -426,5 +434,16 @@
   
   .cta-btn {
     width: 100%;
+  }
+  
+  /* Assurer que les icônes restent circulaires même sur très petits écrans */
+  .advantage-icon {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
