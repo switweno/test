@@ -266,11 +266,24 @@ function addNotificationStyles() {
 // Initialize on DOM load
 document.addEventListener('DOMContentLoaded', () => {
   try {
-    // Réinitialiser les animations à chaque visite si nécessaire
+    // Réinitialiser les animations à chaque visite
+    // Pour la page d'accueil
     const hero = document.querySelector('.hero');
     if (hero) {
       const heroElements = hero.querySelectorAll('h1, p');
       heroElements.forEach(el => {
+        // Forcer un redémarrage de l'animation
+        el.style.animation = 'none';
+        el.offsetHeight; // Déclencher un reflow
+        el.style.animation = null;
+      });
+    }
+    
+    // Pour les pages de catégories
+    const categoryHeader = document.querySelector('.category-header');
+    if (categoryHeader) {
+      const headerElements = categoryHeader.querySelectorAll('h1, p');
+      headerElements.forEach(el => {
         // Forcer un redémarrage de l'animation
         el.style.animation = 'none';
         el.offsetHeight; // Déclencher un reflow
