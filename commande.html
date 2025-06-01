@@ -75,38 +75,37 @@
         <!-- Formulaire client -->
         <div class="customer-info">
           <h2>Vos coordonnées</h2>
-          <form id="customer-form" class="customer-form">
+          <form id="customer-form" class="customer-form" name="orderForm" autocomplete="on">
             <div class="form-group">
               <label for="fullname">Nom complet <span class="required">*</span></label>
-              <input type="text" id="fullname" name="fullname" required>
+              <input type="text" id="fullname" name="fullname" autocomplete="name" required>
             </div>
             
             <div class="form-group">
               <label for="phone">Numéro de téléphone <span class="required">*</span></label>
-              <input type="tel" id="phone" name="phone" required>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" required>
             </div>
             
             <div class="form-group">
               <label for="address">Adresse de livraison <span class="required">*</span></label>
-              <input type="text" id="address" name="address" required>
+              <input type="text" id="address" name="address" autocomplete="street-address" required>
             </div>
             
             <div class="form-group">
               <label for="city">Ville <span class="required">*</span></label>
-              <input type="text" id="city" name="city" required>
+              <input type="text" id="city" name="city" autocomplete="address-level2" required>
             </div>
             
             <div class="form-group">
               <label for="notes">Notes (optionnel)</label>
-              <textarea id="notes" name="notes" rows="3"></textarea>
+              <textarea id="notes" name="orderNotes" rows="3"></textarea>
             </div>
             
             <div class="form-actions">
-              <button type="submit" class="btn primary-btn" id="submit-order" style="background-color: #25d366; font-weight: bold;">
+              <button type="submit" class="btn primary-btn" id="submit-order" name="submitOrder" style="background-color: #25d366; font-weight: bold;">
                 <i class="fab fa-whatsapp"></i> Envoyer la commande via WhatsApp
               </button>
               <p class="form-note"><span class="required"></span> Après clic, vous serez redirigé vers WhatsApp pour confirmer votre commande</p>
-
             </div>
           </form>
         </div>
