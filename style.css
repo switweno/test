@@ -7,10 +7,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 html, body {
   width: 100%;
-  overflow-x: hidden; /* مؤقتاً حتى تلقى العنصر لي كيدفع */
+  overflow-x: hidden; 
 }
+
 
 :root {
   --primary-color: #2c3e50;
@@ -31,9 +33,6 @@ body {
   text-align: left;
   direction: ltr;
   padding: 0;
-  overflow-x: hidden; /* Prevent horizontal scroll */
-  width: 100%;
-  min-width: 250px; /* Set minimum width support */
 }
 
 .container {
@@ -41,7 +40,6 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
-  box-sizing: border-box; /* Ensure padding is included in width */
 }
 
 a {
@@ -295,7 +293,7 @@ img {
   color: white;
   padding: 1.5rem;
   border-radius: 8px;
-  max-width: 80%; /* Use percentage instead of fixed width */
+  max-width: 350px;
   text-align: left;
   font-family: 'Montserrat', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -604,9 +602,7 @@ img {
 
 .newsletter-form {
   display: flex;
-  flex-direction: row; /* Explicit direction */
   max-width: 500px;
-  width: 100%;
   margin: 0 auto;
 }
 
@@ -886,13 +882,7 @@ textarea:focus-visible,
   
   .products {
     grid-template-columns: 1fr;
-    max-width: 100%; /* Change from 320px to 100% */
-    margin: 0 auto;
-  }
-  
-  .product-card {
-    width: 100%;
-    max-width: 320px; /* Max width for cards instead of container */
+    max-width: 320px;
     margin: 0 auto;
   }
   

@@ -38,7 +38,7 @@
 /* Style des images dans le slider principal */
 .product-swiper .swiper-slide img {
   width: 550px;
-  height: 700px;
+  height: 687px;
   object-fit: contain;
   display: block;
   background-color: white;
@@ -250,8 +250,8 @@
   }
   
   .product-thumbs-container {
-    margin-bottom: 0.5rem; /* Réduire l'espace après les miniatures */
-    padding: 0 20px; /* Réduire le padding */
+    margin-bottom: -1.3rem; /* Réduire l'espace après les miniatures */
+    padding: 0 6px; /* Réduire le padding */
   }
   
   .product-gallery,
@@ -288,13 +288,13 @@
   }
   
   .product-thumbs-container {
-    margin-top: 3px;
-    margin-bottom: 0.3rem;
-    padding: 0 15px; /* Réduire davantage le padding */
+    margin-top: 1px;
+    margin-bottom: -0.3rem;
+    padding: 0 5px; /* Réduire davantage le padding */
   }
   
   .product-thumbs-swiper {
-    height: 60px; /* Miniatures plus petites */
+    height: 80px; /* Miniatures plus petites */
   }
   
   /* Optimisation pour le zoom sur mobile */
@@ -309,7 +309,7 @@
   }
   
   .product-swiper {
-    height: calc((100vw - 30px) * 1.25); /* Proportion maintenue (750/600 = 1.25) */
+    height: calc((100vw - 45px) * 1.30); /* Proportion maintenue (750/600 = 1.25) */
     border: none;
   }
   
@@ -320,20 +320,26 @@
   
   .product-thumbs-swiper .swiper-slide {
     width: 60px;
-    height: 60px;
+    height: 80px;
   }
   
   .product-swiper .swiper-button-next,
   .product-swiper .swiper-button-prev {
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
   }
 }
 
 /* Responsive - Petits mobiles */
 @media (max-width: 375px) {
   .product-swiper {
-    height: calc((100vw - 30px) * 1.25); /* Proportion maintenue */
+    height: calc((100vw - 45px) * 1.25); /* Proportion maintenue */
+  }
+  
+  .product-thumbs-container {
+    margin-top: 11px;
+    margin-bottom: -2rem;
+    padding: 0 10px; /* Réduire davantage le padding */
   }
   
   .product-thumbs-swiper .swiper-slide {
