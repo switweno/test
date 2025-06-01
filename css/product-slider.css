@@ -321,13 +321,13 @@
   
   .product-thumbs-container {
     margin-top: 11px;
-    margin-bottom: -2rem;
+    margin-bottom: -1rem;
     padding: 0 5px; /* Réduire davantage le padding */
   }
   
   .product-thumbs-swiper .swiper-slide {
     width: 50px;
-    height: 65px;
+    height: 75px;
   }
   
   .product-swiper .swiper-button-next,
