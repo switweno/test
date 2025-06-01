@@ -1,0 +1,354 @@
+/* Styles optimisés pour le slider avec images en format portrait (600x750px) */
+
+/* Container principal de la galerie */
+.product-gallery {
+  width: 100%;
+  max-width: 550px;
+  margin: 0 auto 1.5rem;
+  position: relative;
+}
+
+/* Slider principal - optimisé pour format portrait */
+.product-swiper {
+  width: 100%;
+  max-width: 550px;
+  height: 687px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  border: 1px solid #eee;
+  background-color: white;
+}
+
+/* Conteneur des slides */
+.product-swiper .swiper-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+/* Style des slides individuelles */
+.product-swiper .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Style des images dans le slider principal */
+.product-swiper .swiper-slide img {
+  width: 550px;
+  height: 700px;
+  object-fit: contain;
+  display: block;
+  background-color: white;
+}
+
+/* Container pour le zoom */
+.product-swiper .swiper-zoom-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Boutons de navigation du slider principal */
+.product-swiper .swiper-button-next,
+.product-swiper .swiper-button-prev {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.product-swiper .swiper-button-next:hover,
+.product-swiper .swiper-button-prev:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+
+.product-swiper .swiper-button-next:after,
+.product-swiper .swiper-button-prev:after {
+  font-size: 18px;
+  font-weight: bold;
+}
+.swiper-pagination {
+  opacity: 0;
+  pointer-events: none; /* كيخليهم غير قابلين للنقر */
+  visibility: hidden;
+}
+
+/* Pagination du slider */
+.product-swiper .swiper-pagination {
+  bottom: 10px;
+}
+
+.product-swiper .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  opacity: 0.7;
+}
+
+.product-swiper .swiper-pagination-bullet-active {
+  background-color: #FF0555;
+  opacity: 1;
+}
+
+/* Conteneur des miniatures */
+.product-thumbs-container {
+  width: 100%;
+  max-width: 550px;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 10px;
+}
+
+/* Slider des miniatures */
+.product-thumbs-swiper {
+  width: 100%;
+  height: 80px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Style des miniatures */
+.product-thumbs-swiper .swiper-slide {
+  width: 80px;
+  height: 80px;
+  opacity: 0.6;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.product-thumbs-swiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.product-thumbs-swiper .swiper-slide-thumb-active {
+  opacity: 1;
+  border-color: #FF0555;
+}
+
+/* Navigation des miniatures */
+.thumbs-button-prev,
+.thumbs-button-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.thumbs-button-prev {
+  left: 0;
+}
+
+.thumbs-button-next {
+  right: 0;
+}
+
+.thumbs-button-prev i,
+.thumbs-button-next i {
+  font-size: 12px;
+}
+
+/* Styles pour le lazy loading de Swiper - solution radicale */
+.swiper-lazy-preloader {
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -21px;
+  margin-top: -21px;
+  z-index: 10;
+  transform-origin: 50%;
+  animation: swiper-preloader-spin 1s infinite linear;
+  box-sizing: border-box;
+  border: 4px solid #3498db; /* Couleur fixe au lieu de var(--secondary-color) qui peut être indéfini */
+  border-radius: 50%;
+  border-top-color: transparent;
+}
+
+/* Forcer l'arrêt de l'animation pour économiser les ressources */
+.swiper-slide-active .swiper-lazy-preloader,
+.swiper-lazy-loaded ~ .swiper-lazy-preloader,
+.swiper-lazy-loaded + .swiper-lazy-preloader,
+.swiper-slide:not(.swiper-slide-active) .swiper-lazy-preloader {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  animation: none !important;
+}
+
+/* Masquer tous les préchargeurs après un délai - solution radicale */
+.preloader-hidden {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  animation: none !important;
+}
+
+/* Responsive - Grands écrans */
+@media (min-width: 1200px) {
+  .product-gallery,
+  .product-swiper,
+  .product-thumbs-container {
+    max-width: 550px;
+  }
+  
+  .product-swiper {
+    height: 687px;
+  }
+  
+  .product-swiper .swiper-slide img {
+    width: 550px;
+    height: 700px;
+  }
+}
+
+/* Responsive - Écrans moyens */
+@media (max-width: 992px) {
+  .product-gallery,
+  .product-swiper,
+  .product-thumbs-container {
+    max-width: 500px;
+  }
+  
+  .product-swiper {
+    height: 625px; /* Proportion maintenue 600:750 = 500:625 */
+  }
+  
+  .product-swiper .swiper-slide img {
+    width: 500px;
+    height: 625px;
+  }
+}
+
+/* Responsive - Tablettes */
+@media (max-width: 768px) {
+  .product-gallery {
+    margin-bottom: 0.5rem; /* Réduire l'espace après la galerie */
+  }
+  
+  .product-thumbs-container {
+    margin-bottom: 0.5rem; /* Réduire l'espace après les miniatures */
+    padding: 0 20px; /* Réduire le padding */
+  }
+  
+  .product-gallery,
+  .product-swiper,
+  .product-thumbs-container {
+    max-width: 450px;
+  }
+  
+  .product-swiper {
+    height: 562px; /* Proportion maintenue */
+  }
+  
+  .product-swiper .swiper-slide img {
+    width: 450px;
+    height: 562px;
+  }
+  
+  .product-thumbs-swiper .swiper-slide {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+/* Responsive - Grands mobiles */
+@media (max-width: 576px) {
+  .product-gallery {
+    margin-bottom: 0.3rem; /* Encore moins d'espace */
+  }
+  
+  .product-swiper {
+    margin-bottom: 5px; /* Réduire l'espace entre le slider et les miniatures */
+    height: calc((100vw - 30px) * 1.25); /* Proportion maintenue (750/600 = 1.25) */
+    border: none;
+  }
+  
+  .product-thumbs-container {
+    margin-top: 3px;
+    margin-bottom: 0.3rem;
+    padding: 0 15px; /* Réduire davantage le padding */
+  }
+  
+  .product-thumbs-swiper {
+    height: 60px; /* Miniatures plus petites */
+  }
+  
+  /* Optimisation pour le zoom sur mobile */
+  .swiper-zoom-container {
+    padding: 0;
+  }
+  
+  .product-gallery,
+  .product-swiper,
+  .product-thumbs-container {
+    max-width: 100%;
+  }
+  
+  .product-swiper {
+    height: calc((100vw - 30px) * 1.25); /* Proportion maintenue (750/600 = 1.25) */
+    border: none;
+  }
+  
+  .product-swiper .swiper-slide img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .product-thumbs-swiper .swiper-slide {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .product-swiper .swiper-button-next,
+  .product-swiper .swiper-button-prev {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* Responsive - Petits mobiles */
+@media (max-width: 375px) {
+  .product-swiper {
+    height: calc((100vw - 30px) * 1.25); /* Proportion maintenue */
+  }
+  
+  .product-thumbs-swiper .swiper-slide {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .product-swiper .swiper-button-next,
+  .product-swiper .swiper-button-prev {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .product-swiper .swiper-button-next:after,
+  .product-swiper .swiper-button-prev:after {
+    font-size: 14px;
+  }
+}
