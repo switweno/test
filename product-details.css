@@ -708,11 +708,6 @@
     margin-bottom: 1.7rem; /* Réduire la marge inférieure */
   }
   
-  .product-info {
-    padding-top: 0.1rem; /* Moins d'espace avant le contenu */
-      margin-top: -15px;
-  }
-  
   .product-info h1 {
     font-size: 1.5rem; /* Titre plus petit sur mobile */
     margin-bottom: 0.7rem; /* Réduction de la marge sous le titre */
@@ -741,7 +736,6 @@
   
   .product-info {
     padding-top: 0.1rem; /* Moins d'espace avant le contenu */
-      margin-top: -10px;
   }
   
   .product-info h1 {

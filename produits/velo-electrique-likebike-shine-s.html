@@ -33,6 +33,9 @@
   <link rel="stylesheet" href="../product-cards.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
+  <!-- Préchargement de l'image principale pour améliorer le LCP -->
+  <link rel="preload" href="../images/slider/likebike-shine-s-01.webp" as="image" type="image/webp" fetchpriority="high">
+  
   <!-- Canonical URL -->
   <link rel="canonical" href="https://jouet-maroc.com/produits/velo-electrique-likebike-shine-s" />
   
@@ -100,6 +103,35 @@
       font-size: 2rem;
       margin-bottom: 10px;
       color: #FF0555;
+    }
+    
+    /* Style pour améliorer le chargement de l'image principale */
+    .product-swiper .swiper-slide:first-child img {
+      content-visibility: auto;
+      fetchpriority: high;
+    }
+    
+    /* Placeholder pour l'image pendant le chargement */
+    .image-placeholder {
+      background-color: #f3f3f3;
+      background-image: linear-gradient(to right, #f3f3f3 0%, #e1e1e1 20%, #f3f3f3 40%, #f3f3f3 100%);
+      background-size: 200% 100%;
+      animation: placeholderShimmer 1s linear infinite forwards;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+    
+    @keyframes placeholderShimmer {
+      0% {
+        background-position: -100% 0;
+      }
+      100% {
+        background-position: 100% 0;
+      }
     }
   </style>
 </head>
@@ -202,10 +234,18 @@
     <!-- Slider principal -->
     <div class="swiper product-swiper">
       <div class="swiper-wrapper">
-        <!-- Première slide sans lazy loading - chargement immédiat -->
+        <!-- Première slide optimisée pour un chargement rapide -->
         <div class="swiper-slide">
           <div class="swiper-zoom-container">
-            <img src="../images/slider/likebike-shine-s-01.webp" alt="Vue avant du vélo électrique pliable LIKEBIKE SHINE S" width="600" height="750">
+            <div class="image-placeholder"></div>
+            <img src="../images/slider/likebike-shine-s-01.webp" 
+                 alt="Vue avant du vélo électrique pliable LIKEBIKE SHINE S" 
+                 width="600" 
+                 height="750"
+                 fetchpriority="high"
+                 decoding="async"
+                 importance="high"
+                 loading="eager">
           </div>
         </div>
         <!-- Autres slides avec lazy loading correct -->
@@ -713,8 +753,36 @@
   </footer>
 
   <!-- Scripts -->
+  <!-- Script pour optimiser le chargement de l'image principale -->
+  <script>
+    // Marquer quand l'image principale est chargée pour les analyses de performance
+    document.addEventListener('DOMContentLoaded', function() {
+      const mainImage = document.querySelector('.product-swiper .swiper-slide:first-child img');
+      if (mainImage) {
+        if (mainImage.complete) {
+          markLCPComplete();
+        } else {
+          mainImage.addEventListener('load', markLCPComplete);
+        }
+      }
+      
+      // Masquer le placeholder quand l'image est chargée
+      function markLCPComplete() {
+        const placeholder = document.querySelector('.image-placeholder');
+        if (placeholder) {
+          placeholder.style.display = 'none';
+        }
+        
+        // Signaler au navigateur que le LCP est terminé (pour les métriques Web Vitals)
+        if (window.performance && window.performance.mark) {
+          window.performance.mark('lcp-complete');
+        }
+      }
+    });
+  </script>
+  
   <!-- Ajouter Swiper JS avant les autres scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js" defer></script>
 
   <!-- Script spécifique pour le slider de produit -->
   <script src="../js/product-slider.js"></script>

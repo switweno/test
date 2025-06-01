@@ -1,0 +1,41 @@
+/**
+ * Optimisations pour le chargement des images
+ * Focalisation sur l'amélioration du LCP (Largest Contentful Paint)
+ */
+
+/* Optimisations pour l'image principale */
+.product-swiper .swiper-slide:first-child {
+  contain: layout paint;
+}
+
+.product-swiper .swiper-slide:first-child img {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Garantir une mise en page stable pendant le chargement */
+.product-swiper .swiper-slide {
+  aspect-ratio: 600/750;
+  min-height: 300px;
+}
+
+/* Animation de chargement plus légère pour les appareils à faible puissance */
+@media (prefers-reduced-motion: reduce) {
+  .image-placeholder {
+    animation: none;
+    background: #f3f3f3;
+  }
+}
+
+/* Amélioration de la perception de vitesse pour le premier rendu */
+.product-swiper {
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+  animation-delay: 0.1s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
