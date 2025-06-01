@@ -260,7 +260,36 @@ function resetSliderInterval() {
 
 // Add styles needed for notifications
 function addNotificationStyles() {
-  // ...existing code...
+  // Création et ajout d'un style pour les notifications
+  const style = document.createElement('style');
+  style.textContent = `
+    .notification {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #333;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .notification.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .notification i {
+      font-size: 1.5rem;
+      color: #FF0555;
+    }
+  `;
+  document.head.appendChild(style);
 }
 
 // Initialize on DOM load
@@ -274,7 +303,8 @@ document.addEventListener('DOMContentLoaded', () => {
       heroElements.forEach(el => {
         // Forcer un redémarrage de l'animation
         el.style.animation = 'none';
-        el.offsetHeight; // Déclencher un reflow
+        // Déclencher un reflow (corriger l'erreur JSHint W030)
+        const reflow = el.offsetHeight; // Utiliser dans une variable pour éviter l'erreur
         el.style.animation = null;
       });
     }
@@ -286,7 +316,8 @@ document.addEventListener('DOMContentLoaded', () => {
       headerElements.forEach(el => {
         // Forcer un redémarrage de l'animation
         el.style.animation = 'none';
-        el.offsetHeight; // Déclencher un reflow
+        // Déclencher un reflow (corriger l'erreur JSHint W030)
+        const reflow = el.offsetHeight; // Utiliser dans une variable pour éviter l'erreur
         el.style.animation = null;
       });
     }

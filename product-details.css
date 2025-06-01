@@ -148,27 +148,53 @@
   font-weight: 500;
 }
 
-.color-options, .size-options {
+.color-options {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
 }
 
 .color-option {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  border: 2px solid #555; /* إطار رمادي واضح */
+  border: 2px solid #e0e0e0;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .color-option.active {
-  border-color: var(--dark-color);
+  border-color: #FF0555;
   transform: scale(1.1);
 }
 
 .color-option:hover {
   transform: scale(1.1);
+  border-color: #aaa;
+}
+
+/* Style pour l'option de couleur blanche */
+.color-option[style*="background-color: #ffffff"] {
+  border: 2px solid #cccccc;
+}
+
+.color-option[style*="background-color: #ffffff"].active {
+  border-color: #FF0555;
+}
+
+/* Amélioration de l'affichage de la couleur sélectionnée */
+.selected-color-display {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  min-height: 22px;
+}
+
+.size-options {
+  display: flex;
+  gap: 0.5rem;
 }
 
 .size-option {
@@ -384,29 +410,53 @@
   cursor: pointer;
   color: #777;
   border-bottom: 2px solid transparent;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   white-space: nowrap;
+  position: relative;
 }
 
-.tab-btn.active {
-  color: var(--secondary-color);
-  border-bottom-color: var(--secondary-color);
-}
-
-.tab-btn:hover:not(.active) {
+.tab-btn:hover {
   color: var(--dark-color);
 }
 
-.tab-content {
-  padding: 1rem 0;
+.tab-btn.active {
+  color: #FF0555;
+  border-bottom-color: #FF0555;
 }
 
+/* Ajouter un effet visuel pour indiquer que les onglets sont cliquables */
+.tab-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #FF0555;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.tab-btn:hover::after {
+  width: 70%;
+}
+
+.tab-btn.active::after {
+  width: 100%;
+}
+
+/* Animation de transition pour les panneaux d'onglets */
 .tab-pane {
   display: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .tab-pane.active {
   display: block;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .tab-pane h2 {
@@ -651,436 +701,76 @@
   color: var(--dark-color);
 }
 
-/* Styles pour la galerie de produits */
-.product-gallery {
-  width: 100%;
-  max-width: 600px;
-  margin-right: 2rem;
-  position: relative;
-  flex: 1;
-  min-width: 300px;
-}
-
-/* Image principale */
-.product-main-image {
-  width: 100%;
-  height: 500px;
-  border-radius: 8px;
-  overflow: hidden;
-  margin-bottom: 1rem;
-  position: relative;
-  border: 1px solid #eee;
-  background-color: #fff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
-
-.product-main-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* Garde l'image entière visible sans déformation */
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-
-
-/* Conteneur des vignettes */
-.product-thumbnails {
-  display: flex;
-  gap: 10px;
-  overflow-x: auto;
-  scrollbar-width: thin;
-  padding-bottom: 10px;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  margin-bottom: 1rem;
-}
-
-/* Barres de défilement personnalisées */
-.product-thumbnails::-webkit-scrollbar {
-  height: 5px;
-}
-
-.product-thumbnails::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 10px;
-}
-
-.product-thumbnails::-webkit-scrollbar-thumb {
-  background: #bbb;
-  border-radius: 10px;
-}
-
-.product-thumbnails::-webkit-scrollbar-thumb:hover {
-  background: #999;
-}
-
-/* Style des vignettes */
-.product-thumbnails img {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 4px;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-
-
-/* Correction des bordures des miniatures */
-.product-thumbs-swiper .swiper-slide {
-  width: calc(25% - 8px) !important; /* 4 vignettes par défaut */
-  min-width: 70px !important; /* Taille minimale garantie */
-  max-width: 85px;
-  flex-shrink: 0; /* Empêche le rétrécissement */
-  opacity: 0.6;
-  cursor: pointer;
-  box-sizing: border-box;
-  margin: 0 4px !important;
-  position: relative; /* Pour positionnement absolu de l'overlay */
-  padding: 0; /* Supprime tout padding */
-  background: transparent; /* Fond transparent */
-  border: none !important; /* Supprime toute bordure sur le conteneur */
-  outline: none !important; /* Supprime le outline de focus */
-}
-
-/* Les images à l'intérieur des vignettes s'adaptent au conteneur */
-.product-thumbs-swiper .swiper-slide img {
-  width: 100% !important;
-  height: auto !important;
-  aspect-ratio: 1/1; /* Maintient le ratio carré */
-  object-fit: cover;
-  border-radius: 6px;
-  display: block;
-  box-sizing: border-box;
-  border: 2px solid transparent; /* Bordure sur l'image plutôt que sur le conteneur */
-  transition: border-color 0.3s ease, transform 0.3s ease;
-}
-
-/* Style de la vignette active */
-.product-thumbs-swiper .swiper-slide-thumb-active img {
-  border-color: #aba9a9; /* Bordure colorée sur l'image active */
-  box-shadow: 0 4px 10px rgba(143, 142, 142, 0.3); /* Ombre douce */
-  border-radius: 6px; /* زاوية خفيفة تعطي لمسة راقية */
-}
-
-
-/* Effet de survol pour les images */
-.product-thumbs-swiper .swiper-slide:hover img:not(.swiper-slide-thumb-active img) {
-  border-color: #767676;
-}
-
-/* Suppression des effets de focus pour les miniatures */
-.swiper-slide:focus,
-.swiper-slide:active,
-.swiper-slide:focus-visible,
-.swiper-slide img:focus,
-.swiper-slide img:active,
-.swiper-slide img:focus-visible {
-  outline: none !important;
-  -webkit-tap-highlight-color: transparent !important;
-  box-shadow: none !important;
-}
-
-/* Suppression de l'effet bleu transparent sur les images du slider */
-.swiper-slide,
-.swiper-slide img,
-.swiper-zoom-container,
-.swiper-zoom-container img,
-.swiper-wrapper,
-.product-swiper,
-.product-swiper .swiper-slide,
-.product-swiper .swiper-slide img {
-  -webkit-tap-highlight-color: transparent !important;
-  outline: none !important;
-  user-select: none !important;
-}
-
-/* Empêcher les effets de focus et de sélection */
-.swiper-container,
-.swiper-wrapper,
-.swiper-slide,
-.swiper-slide * {
-  outline: none !important;
-  -webkit-touch-callout: none !important;
-  -webkit-user-select: none !important;
-  -moz-user-select: none !important;
-  -ms-user-select: none !important;
-  user-select: none !important;
-}
-
-/* Correction pour l'effet de survol bleu sur mobile */
-.swiper-slide:active,
-.swiper-slide:focus,
-.swiper-slide:focus-visible,
-.swiper-zoom-container:active,
-.swiper-zoom-container:focus {
-  background-color: transparent !important;
-  background: transparent !important;
-}
-
-/* Suppression des effets de zoom Swiper indésirables */
-.swiper-zoom-container > img {
-  object-fit: contain !important;
-}
-
-/* Neutraliser tous les effets de sélection et de surbrillance par défaut */
-.product-gallery * {
-  -webkit-tap-highlight-color: transparent !important;
-}
-
-/* Désactiver l'affichage de la sélection bleu sur les téléphones et tablettes */
-.product-gallery *::selection,
-.product-gallery *::-moz-selection {
-  background-color: transparent !important;
-}
-
-/* Responsive design */
-@media (max-width: 992px) {
-  .product {
-    flex-direction: column;
-  }
-  
-  .product-gallery {
-    max-width: 100%;
-    margin-right: 0;
-    margin-bottom: 0.5rem;
-  }
-  
-  .product-main-image {
-    height: 450px;
-  }
-}
-
+/* Optimisation des espaces pour les petits écrans */
 @media (max-width: 768px) {
-  .product-main-image {
-    height: 400px;
+  .product {
+    gap: 1rem; /* Réduire l'espace entre les éléments */
+    margin-bottom: 1.7rem; /* Réduire la marge inférieure */
   }
   
-  .product-gallery {
-    margin-bottom: 0.5rem; /* Réduit l'espace après la galerie */
+  .product-info {
+    padding-top: 0.1rem; /* Moins d'espace avant le contenu */
+      margin-top: -15px;
   }
   
-  .product-thumbnails {
-    justify-content: center;
-    margin-bottom: 0.5rem; /* Réduit l'espace après les vignettes */
+  .product-info h1 {
+    font-size: 1.5rem; /* Titre plus petit sur mobile */
+    margin-bottom: 0.7rem; /* Réduction de la marge sous le titre */
   }
   
-  /* Conserver le centrage vertical pour les flèches */
-  .product-gallery .prev-img, 
-  .product-gallery .next-img {
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-  }
-}
-
-@media (max-width: 576px) {
-  .product-main-image {
-    height: 350px;
+  .product-rating {
+    margin-bottom: 0.7rem; /* Réduction de la marge */
   }
   
-  .product-thumbnails {
-    margin-bottom: 0.3rem; /* Espace minimal après les vignettes */
+  .product-price-container {
+    margin-bottom: 1rem; /* Réduction de la marge */
   }
   
-  .product-gallery {
-    margin-bottom: -0.6rem; /* Réduit davantage l'espace après la galerie */
-  }
-  
-  /* Conserver le centrage vertical pour les flèches */
-  .product-gallery .prev-img, 
-  .product-gallery .next-img {
-    top: 50%;
-    transform: translateY(-50%);
-    width: 35px;
-    height: 35px;
-  }
-  
-  .product-gallery .prev-img i, 
-  .product-gallery .next-img i {
-    font-size: 1rem;
-  }
-}
-
-/* Style pour l'affichage de la couleur sélectionnée */
-.selected-color-display {
-  margin-top: 8px;
-  font-size: 0.95rem;
-  color: var(--dark-color);
-  font-weight: 500;
-  padding-left: 5px;
-  min-height: 22px; /* Hauteur minimale pour éviter le saut de contenu */
-}
-
-/* Ajout pour l'accessibilité */
-.visually-hidden {
-  position: absolute !important;
-  height: 1px; 
-  width: 1px;
-  overflow: hidden;
-  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
- 
-  white-space: nowrap;
-}
-
-/* Animation pour les transitions d'image */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.fade-in {
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-/* Amélioration des miniatures de la galerie */
-.product-thumbs-swiper {
-  margin-top: 0.5rem;
-  padding: 0.1rem 0;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* Correction de l'ordre d'affichage des miniatures */
-.product-thumbs-swiper .swiper-wrapper {
-  display: flex;
-  flex-direction: row; /* Force l'affichage de gauche à droite */
-  justify-content: flex-start !important; /* Commence par les premières vignettes */
-  margin: 0;
-  width: 100% !important;
-  flex-wrap: nowrap; /* Empêche le retour à la ligne */
-}
-
-/* Les miniatures doivent avoir une taille fixe pour éviter les problèmes de mise en page */
-.product-thumbs-swiper .swiper-slide {
-  width: calc(25% - 8px) !important; /* 4 vignettes par défaut */
-  min-width: 70px !important; /* Taille minimale garantie */
-  max-width: 85px;
-  flex-shrink: 0; /* Empêche le rétrécissement */
-  opacity: 0.6;
-  cursor: pointer;
-  box-sizing: border-box;
-  margin: 0 4px !important;
-  position: relative; /* Pour positionnement absolu de l'overlay */
-  padding: 0; /* Supprime tout padding */
-  background: transparent; /* Fond transparent */
-  border: none !important; /* Supprime toute bordure sur le conteneur */
-  outline: none !important; /* Supprime le outline de focus */
-}
-
-/* Adaptation pour les écrans très petits - 3 vignettes */
-@media (max-width: 479px) {
-  .product-thumbs-swiper .swiper-slide {
-    width: calc(33.333% - 8px) !important; /* 3 vignettes */
-    min-width: 60px !important;
-  }
-  
-  /* Assurer le bon ordre des vignettes sur mobile */
-  .product-thumbs-swiper .swiper-wrapper {
-    justify-content: flex-start !important;
-  }
-}
-
-/* Adaptation pour les écrans moyens - 4 vignettes */
-@media (min-width: 480px) and (max-width: 767px) {
-  .product-thumbs-swiper .swiper-slide {
-    width: calc(25% - 8px) !important; /* 4 vignettes */
-  }
-}
-
-/* Adaptation pour les écrans larges - 5 vignettes */
-@media (min-width: 768px) and (max-width: 991px) {
-  .product-thumbs-swiper .swiper-slide {
-    width: calc(20% - 8px) !important; /* 5 vignettes */
-  }
-}
-
-/* Correction pour les écrans moyens où les flèches sortent de l'image et les miniatures sont mal alignées */
-@media (min-width: 583px) and (max-width: 990px) {
-  /* Ajustement des flèches de navigation pour les garder dans l'image */
-  .product-gallery .swiper-button-prev,
-  .product-gallery .swiper-button-next,
-  .swiper-button-prev,
-  .swiper-button-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 35px !important;
-    height: 35px !important;
-    background-color: rgba(0, 0, 0, 0.5) !important;
-    color: white !important;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-    opacity: 0.8;
-    margin: 0 10px !important;
-  }
-  
-  .product-gallery .swiper-button-prev::after,
-  .product-gallery .swiper-button-next::after,
-  .swiper-button-prev::after,
-  .swiper-button-next::after {
-    font-size: 18px !important;
-  }
-  
-  .product-gallery .swiper-button-prev,
-  .swiper-button-prev {
-    left: 10px !important;
-  }
-  
-  .product-gallery .swiper-button-next,
-  .swiper-button-next {
-    right: 10px !important;
-  }
-  
-  /* Correction de l'alignement des miniatures */
-  .product-thumbs-swiper .swiper-wrapper {
-    display: flex;
-    justify-content: center !important; /* Centre les vignettes sur les écrans moyens */
-    width: 100% !important;
-    margin: 0 auto !important;
-  }
-  
-  /* Assurer que l'image principale a une hauteur appropriée */
-  .product-main-image {
-    height: 420px; /* Hauteur optimisée pour ces tailles d'écran */
-  }
-  
-  /* Garantir que les miniatures restent bien alignées */
-  .product-thumbs-swiper {
-    width: 100%;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    margin: 0 auto;
+  .breadcrumbs {
     padding: 0.5rem 0;
+    margin-bottom: 0.3rem;
+  }
+}
+
+/* Optimisations supplémentaires pour très petits écrans */
+@media (max-width: 420px) {
+  .product {
+    margin-bottom: 1rem; /* Encore moins d'espace */
+    gap: 0.5rem;
   }
   
-  /* Assurer que la galerie reste propre et bien contenue */
-  .product-gallery {
-    margin-bottom: 1rem;
-    overflow: hidden;
-    width: 100%;
-    max-width: 100%;
+  .product-info {
+    padding-top: 0.1rem; /* Moins d'espace avant le contenu */
+      margin-top: -10px;
   }
-}
-
-/* Style de la vignette active */
-.product-thumbs-swiper .swiper-slide-thumb-active {
-  opacity: 1;
-  border-color: var(--secondary-color);
-  transform: translateY(-2px);
-}
-
-/* Garantir que le conteneur de la galerie principale reste propre */
-.product-gallery {
-  overflow: hidden;
-  width: 100%;
+  
+  .product-info h1 {
+    font-size: 1.7rem; /* Titre encore plus petit */
+    margin-bottom: 0.7rem;
+  }
+  
+  .product-short-description {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+  }
+  
+  .product-tabs {
+    margin-top: 0.5rem; /* Réduire l'espace avant les onglets */
+  }
+  
+  .tab-btn {
+    padding: 0.7rem 1rem; /* Boutons d'onglet plus compacts */
+  }
+  
+  /* Réduire les espaces dans les détails du produit */
+  .product-delivery {
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+  }
+  
+  .product-actions {
+    margin-bottom: 1rem;
+  }
 }
 
 
