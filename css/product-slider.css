@@ -56,24 +56,22 @@
 /* Boutons de navigation du slider principal */
 .product-swiper .swiper-button-next,
 .product-swiper .swiper-button-prev {
-  width: 40px;
-  height: 40px;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
+ 
+  
   border-radius: 50%;
   transition: all 0.3s ease;
 }
 
 .product-swiper .swiper-button-next:hover,
 .product-swiper .swiper-button-prev:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+ 
   transform: scale(1.1);
 }
 
 .product-swiper .swiper-button-next:after,
 .product-swiper .swiper-button-prev:after {
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 49px;
+  
 }
 .swiper-pagination {
   opacity: 0;
@@ -251,7 +249,7 @@
   
   .product-thumbs-container {
     margin-bottom: 0.5rem; /* Réduire l'espace après les miniatures */
-    padding: 0 20px; /* Réduire le padding */
+   padding: 0; 
   }
   
   .product-gallery,
@@ -259,6 +257,12 @@
   .product-thumbs-container {
     max-width: 450px;
   }
+  
+  .product-swiper .swiper-button-next:after,
+.product-swiper .swiper-button-prev:after {
+  font-size: 37px;
+  
+}
   
   .product-swiper {
     height: 562px; /* Proportion maintenue */
@@ -278,23 +282,23 @@
 /* Responsive - Grands mobiles */
 @media (max-width: 576px) {
   .product-gallery {
-    margin-bottom: 0.3rem; /* Encore moins d'espace */
+    margin-bottom: 0.2rem; /* Encore moins d'espace */
   }
   
   .product-swiper {
-    margin-bottom: 5px; /* Réduire l'espace entre le slider et les miniatures */
+    margin-bottom: 10px; /* Réduire l'espace entre le slider et les miniatures */
     height: calc((100vw - 30px) * 1.25); /* Proportion maintenue (750/600 = 1.25) */
     border: none;
   }
   
   .product-thumbs-container {
     margin-top: 3px;
-    margin-bottom: 0.3rem;
-    padding: 0 15px; /* Réduire davantage le padding */
+    margin-bottom: 0.1rem;
+   padding: 0; /* Réduire davantage le padding */
   }
   
   .product-thumbs-swiper {
-    height: 60px; /* Miniatures plus petites */
+    height: 70px; /* Miniatures plus petites */
   }
   
   /* Optimisation pour le zoom sur mobile */
@@ -309,7 +313,7 @@
   }
   
   .product-swiper {
-    height: calc((100vw - 30px) * 1.25); /* Proportion maintenue (750/600 = 1.25) */
+    height: calc((100vw - 30px) * 1.19); /* Proportion maintenue (750/600 = 1.25) */
     border: none;
   }
   
@@ -320,25 +324,27 @@
   
   .product-thumbs-swiper .swiper-slide {
     width: 60px;
-    height: 60px;
+    height: 70px;
   }
   
   .product-swiper .swiper-button-next,
   .product-swiper .swiper-button-prev {
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
   }
 }
+
+
 
 /* Responsive - Petits mobiles */
 @media (max-width: 375px) {
   .product-swiper {
-    height: calc((100vw - 30px) * 1.25); /* Proportion maintenue */
+    height: calc((100vw - 30px) * 1.19); /* Proportion maintenue */
   }
   
   .product-thumbs-swiper .swiper-slide {
     width: 50px;
-    height: 50px;
+    height: 66px;
   }
   
   .product-swiper .swiper-button-next,
