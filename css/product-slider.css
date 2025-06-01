@@ -333,7 +333,7 @@
 /* Responsive - Petits mobiles */
 @media (max-width: 375px) {
   .product-swiper {
-    height: calc((100vw - 45px) * 1.25); /* Proportion maintenue */
+    height: calc((100vw - 40px) * 1.30); /* Proportion maintenue */
   }
   
   .product-thumbs-swiper {
