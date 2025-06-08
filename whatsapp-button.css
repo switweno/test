@@ -4,7 +4,7 @@
 .product-actions .whatsapp-order-btn,
 .whatsapp-order-btn {
   width: 100%;
-  background-color: #25d366 !important; /* Couleur officielle WhatsApp */
+  background-color: #208044 !important; /* Couleur officielle WhatsApp */
   color: white;
   font-size: 1.2rem !important; /* Forcer la taille de police */
   font-weight: 600;
@@ -29,7 +29,7 @@
 /* Surcharger le style du bouton dans les product-actions */
 .product-actions .btn.whatsapp-order-btn {
   font-size: 1.2rem !important; /* Forcer la taille de police */
-  padding: 12px 20px !important; /* Assurer un padding suffisant */
+  padding: 15px 20px !important; /* Assurer un padding suffisant */
 }
 
 .whatsapp-order-btn:before {

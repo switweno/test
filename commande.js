@@ -140,9 +140,7 @@ function loadCustomerData() {
       document.getElementById('address').value = customerInfo.address || '';
       document.getElementById('city').value = customerInfo.city || '';
       
-      if (customerInfo.notes) {
-        document.getElementById('notes').value = customerInfo.notes;
-      }
+      // Suppression de la récupération des notes
     }
   } catch (error) {
     console.error('Erreur lors du chargement des données client:', error);
@@ -166,8 +164,8 @@ function setupForm() {
       fullname: document.getElementById('fullname').value,
       phone: document.getElementById('phone').value,
       address: document.getElementById('address').value,
-      city: document.getElementById('city').value,
-      notes: document.getElementById('notes').value
+      city: document.getElementById('city').value
+      // Suppression de la récupération des notes
     };
     
     // Sauvegarder les données client
@@ -255,10 +253,6 @@ function generateWhatsAppMessage(product, customer) {
   message += `*Téléphone:* ${customer.phone}\n`;
   message += `*Adresse:* ${customer.address}\n`;
   message += `*Ville:* ${customer.city}\n`;
-  
-  if (customer.notes) {
-    message += `\n*Notes:* ${customer.notes}\n`;
-  }
   
   return encodeURIComponent(message);
 }

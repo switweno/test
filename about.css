@@ -54,7 +54,7 @@
   left: 0;
   width: 60px;
   height: 3px;
-  background-color: #FF0555;
+  background-color: #EB004A;
 }
 
 .about-text p {
@@ -101,7 +101,7 @@
   transform: translateX(-50%);
   width: 60px;
   height: 3px;
-  background-color: #FF0555;
+  background-color: #EB004A;
 }
 
 .values-grid {
@@ -138,7 +138,7 @@
 
 .value-icon i {
   font-size: 2rem;
-  color: #FF0555;
+  color: #EB004A;
 }
 
 .value-card h3 {
@@ -179,7 +179,7 @@
   transform: translateX(-50%);
   width: 60px;
   height: 3px;
-  background-color: #FF0555;
+  background-color: #EB004A;
 }
 
 .choose-header p {
@@ -224,7 +224,7 @@
 
 .advantage-icon i {
   font-size: 1.8rem;
-  color: #FF0555;
+  color: #EB004A;
 }
 
 .advantage-content h3 {
@@ -261,7 +261,7 @@
   transform: translateX(-50%);
   width: 60px;
   height: 3px;
-  background-color: #FF0555;
+  background-color: #EB004A;
 }
 
 .team-section > p {
@@ -318,7 +318,7 @@
 }
 
 .member-position {
-  color: #FF0555;
+  color: #EB004A;
   font-weight: 500;
   margin-bottom: 1rem;
 }
@@ -365,7 +365,17 @@
   justify-content: center;
   gap: 0.5rem;
   font-size: 1.1rem;
+  border-radius: 6px;
 }
+
+.cta-btn:hover {
+  background-color: #47e413 !important; /* لون أخضر مثلاً */
+  color: #000000 !important; /* باش يبقى النص باين */
+  transform: translateY(-2px); /* تأثير خفيف كيحرك الزر لفوق */
+  transition: 0.3s ease; /* باش يكون التحول سلس */
+}
+
+
 
 .cta-btn i {
   font-size: 1.2rem;

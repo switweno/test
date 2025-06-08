@@ -3,9 +3,10 @@
 /* Breadcrumbs */
 .breadcrumbs {
   background-color: #f5f5f5;
-  padding: 0.8rem 0;
+  padding: 0.5rem 0;
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .breadcrumbs a {
@@ -14,7 +15,7 @@
 
 .breadcrumbs span {
   color: var(--text-color);
-  font-weight: 500;
+  ;
 }
 
 /* Container */
@@ -23,12 +24,13 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
+  
 }
 
 /* Product Section */
 .product {
   display: flex;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   flex-wrap: wrap;
 }
 
@@ -41,6 +43,17 @@
   display: none;
 }
 
+.product-listing h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center; /* وسط العنوان */
+  border-bottom: 1px solid #ddd; /* خط سفلي أنيق */
+  padding-bottom: 10px;
+  text-transform: uppercase; /* تحويل الأحرف إلى كابيتال */
+  letter-spacing: 1px;
+}
 
 /* Product Info */
 .product-info {
@@ -53,54 +66,33 @@
   margin-bottom: 1rem;
   color: var(--dark-color);
   font-family: 'Montserrat', Tahoma, Geneva, Verdana, sans-serif;
-  
 }
 
-.product-rating {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.stars {
-  color: #f39c12;
-  margin-right: 0.5rem;
-}
-
-.rating-count {
-  color: #777;
-  font-size: 0.9rem;
-}
-
-.product-price-container {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.product-price {
-  display: flex;
-  align-items: center;
-}
 
 .current-price {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  color: var(--dark-color);
-  margin-right: 0.8rem;
+  color: #EB004A;
+  margin-right: 0.4rem;
+  background-color: rgba(255, 235, 59, 0); /* خلفية */
+  
+  border-radius: 6px;         /* زوايا دائرية */
+  display: inline-flex;       /* باش نخلي المحتوى في الوسط */
+  align-items: center;        /* توسيط عمودي */
+  line-height: 1;             /* لتفادي تمدد المحتوى */
 }
+
+
 
 .old-price {
   text-decoration: line-through;
-  color: #777;
-  font-size: 1.1rem;
-  margin-right: 0.8rem;
+  color: #545454;
+  font-size: 1.2rem;
+  margin-right: 0.2rem;
 }
 
 .discount-badge {
-  background-color: var(--accent-color);
+  background-color: #DA2E1B;
   color: white;
   padding: 0.2rem 0.6rem;
   border-radius: 4px;
@@ -112,6 +104,14 @@
   font-size: 0.95rem;
   display: flex;
   align-items: center;
+ 
+}
+
+/* للشاشات اللي عرضها 992px وفوق (كبيرة) */
+@media (min-width: 768px) {
+  .product-stock {
+    margin-bottom: 0.7rem;
+  }
 }
 
 .in-stock {
@@ -128,9 +128,9 @@
 
 .product-short-description {
   margin-bottom: 1.5rem;
-  color: #555;
+  color: #000000;
   line-height: 1.6;
-  
+  font-family: 'Montserrat', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Product Variants */
@@ -166,7 +166,7 @@
 }
 
 .color-option.active {
-  border-color: #FF0555;
+  border-color: #EB004A;
   transform: scale(1.1);
 }
 
@@ -177,11 +177,11 @@
 
 /* Style pour l'option de couleur blanche */
 .color-option[style*="background-color: #ffffff"] {
-  border: 2px solid #cccccc;
+  border: 8px solid #cccccc;
 }
 
 .color-option[style*="background-color: #ffffff"].active {
-  border-color: #FF0555;
+  border-color: #EB004A;
 }
 
 /* Amélioration de l'affichage de la couleur sélectionnée */
@@ -225,12 +225,14 @@
   display: flex;
   align-items: center;
   margin-bottom: 1.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .product-quantity label {
   margin-right: 1rem;
   font-weight: 500;
 }
+
 
 .quantity-selector {
   display: flex;
@@ -327,6 +329,7 @@
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
   padding: 1.5rem 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .delivery-option {
@@ -353,7 +356,7 @@
 
 .delivery-option p {
   font-size: 0.9rem;
-  color: #777;
+  color: #737373;
 }
 
 /* Product Share */
@@ -361,6 +364,7 @@
   display: flex;
   align-items: center;
   gap: 0.8rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .product-share span {
@@ -388,6 +392,7 @@
 /* Product Tabs */
 .product-tabs {
   margin-bottom: 3rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .tabs-header {
@@ -396,6 +401,7 @@
   margin-bottom: 1.5rem;
   overflow-x: auto;
   scrollbar-width: none;
+  
 }
 
 .tabs-header::-webkit-scrollbar {
@@ -420,8 +426,8 @@
 }
 
 .tab-btn.active {
-  color: #FF0555;
-  border-bottom-color: #FF0555;
+  color: #EB004A;
+  border-bottom-color: #EB004A;
 }
 
 /* Ajouter un effet visuel pour indiquer que les onglets sont cliquables */
@@ -432,7 +438,7 @@
   left: 50%;
   width: 0;
   height: 2px;
-  background-color: #FF0555;
+  background-color: #EB004A;
   transition: all 0.3s ease;
   transform: translateX(-50%);
 }
@@ -463,6 +469,7 @@
   font-size: 1.5rem;
   margin-bottom: 1rem;
   color: var(--dark-color);
+  font-family: 'Montserrat', Tahoma, Geneva, Verdana, sans-serif;
  
 }
 
@@ -541,7 +548,14 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+   color: #f39c12;
 }
+
+.average-rating > div > span {
+  color: #777;
+  font-weight: 600;
+}
+
 
 .big-rating {
   font-size: 3rem;
@@ -610,6 +624,7 @@
   height: 40px;
   border-radius: 50%;
   margin-right: 1rem;
+  color: #777
 }
 
 .review-date {
@@ -700,6 +715,11 @@
   margin-bottom: 1.5rem;
   color: var(--dark-color);
 }
+.product-info .product-price-container .product-price {
+  text-align: left;
+  justify-content: flex-start;
+}
+
 
 /* Optimisation des espaces pour les petits écrans */
 @media (max-width: 768px) {
@@ -709,16 +729,18 @@
   }
   
   .product-info h1 {
-    font-size: 1.5rem; /* Titre plus petit sur mobile */
+    font-size: 1.8rem; /* Titre plus petit sur mobile */
     margin-bottom: 0.7rem; /* Réduction de la marge sous le titre */
   }
   
   .product-rating {
     margin-bottom: 0.7rem; /* Réduction de la marge */
+    
   }
   
   .product-price-container {
     margin-bottom: 1rem; /* Réduction de la marge */
+  
   }
   
   .breadcrumbs {
@@ -739,7 +761,7 @@
   }
   
   .product-info h1 {
-    font-size: 1.7rem; /* Titre encore plus petit */
+    font-size: 1.8rem; /* Titre encore plus petit */
     margin-bottom: 0.7rem;
   }
   
@@ -764,6 +786,53 @@
   
   .product-actions {
     margin-bottom: 1rem;
+  }
+}
+
+/* Amélioration de la mise en page sur grands écrans */
+@media (min-width: 720px) {
+  .product {
+    gap: 5px; /* Augmenter l'espace entre le slider et les détails */
+  }
+  
+  .product-gallery {
+    margin-right: 10px; /* Marge à droite de la galerie */
+  }
+  
+  .product-info {
+    margin-left: 10px; /* Marge à gauche des informations */
+    padding-top: 5px; /* Espace en haut des informations */
+  }
+}
+
+/* Amélioration de la mise en page sur grands écrans */
+@media (min-width: 992px) {
+  .product {
+    gap: 6px; /* Augmenter l'espace entre le slider et les détails */
+  }
+  
+  .product-gallery {
+    margin-right: 15px; /* Marge à droite de la galerie */
+  }
+  
+  .product-info {
+    margin-left: 15px; /* Marge à gauche des informations */
+    padding-top: 5px; /* Espace en haut des informations */
+  }
+}
+
+/* Très grands écrans */
+@media (min-width: 1200px) {
+  .product {
+    gap: 10px; /* Encore plus d'espace sur très grands écrans */
+  }
+  
+  .product-gallery {
+    margin-right: 15px;
+  }
+  
+  .product-info {
+    margin-left: 15px;
   }
 }
 

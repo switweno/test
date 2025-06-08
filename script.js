@@ -330,6 +330,16 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+ document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+    e.preventDefault();
 
+    const messageDiv = this.querySelector('.message');
+    messageDiv.textContent = "Vous êtes maintenant abonné !";
+    messageDiv.style.opacity = 1;
+
+    setTimeout(() => {
+      messageDiv.style.opacity = 0;
+    }, 3000); // تخفي بعد 3 ثواني
+  });
 
 

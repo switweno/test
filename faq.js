@@ -28,35 +28,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // Gérer le bouton de menu mobile
-  const menuBtn = document.getElementById('menu-btn');
-  const mainNav = document.querySelector('.main-nav');
-  
-  if (menuBtn && mainNav) {
-    menuBtn.addEventListener('click', function() {
-      this.classList.toggle('open');
-      mainNav.classList.toggle('show');
-      
-      // Overlay pour fermer le menu
-      let overlay = document.querySelector('.menu-overlay');
-      if (!overlay) {
-        overlay = document.createElement('div');
-        overlay.className = 'menu-overlay';
-        document.body.appendChild(overlay);
-        
-        overlay.addEventListener('click', function() {
-          menuBtn.classList.remove('open');
-          mainNav.classList.remove('show');
-          this.classList.remove('active');
-        });
-      }
-      
-      overlay.classList.toggle('active');
-    });
-  }
-  
-  // Ouvrir automatiquement la première question
-  if (faqQuestions.length > 0) {
-    faqQuestions[0].click();
-  }
+
 });

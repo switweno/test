@@ -1,20 +1,84 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="geo.region" content="MA">
-  <meta name="geo.placename" content="Morocco">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Boutique en ligne de vélos électriques et classiques. Trouvez le vélo parfait à des prix compétitifs.">
-  <meta name="keywords" content="vélos électriques, trottinettes, vélos classiques, achat vélo">
-  <meta name="author" content="Ma Boutique de Vélos">
-  <meta name="robots" content="index, follow">
-  <title>Ma Boutique de Vélos | Vélos Électriques et Classiques</title>
+  <!-- SEO Meta Tags -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Jouet Maroc : boutique spécialisée dans les vélos électriques, trottinettes électriques et jouets pour enfants. Livraison rapide partout au Maroc." />
+<meta name="keywords" content="vélos électriques, trottinettes électriques, jouets enfants, Jouet Maroc, vélo électrique Maroc, trottinette électrique Maroc" />
+<meta name="author" content="Jouet Maroc" />
+<meta name="robots" content="index, follow" />
+<meta name="geo.region" content="MA" />
+<meta name="geo.placename" content="Maroc" />
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://jouet-maroc.com/" />
+
+<title>Jouet Maroc | Vélos électriques, Trottinettes électriques & jouets pour enfants</title>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Jouet Maroc | Vélos électriques, Trottinettes électriques & jouets pour enfants" />
+<meta property="og:description" content="Découvrez nos vélos et trottinettes électriques ainsi qu’une large sélection de jouets pour enfants. Livraison partout au Maroc." />
+<meta property="og:image" content="https://jouet-maroc.com/images/about-us.webp" />
+<meta property="og:url" content="https://jouet-maroc.com/" />
+<meta property="og:site_name" content="Jouet Maroc" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Jouet Maroc | Vélos & Trottinettes électriques, Jouets pour enfants" />
+<meta name="twitter:description" content="Boutique marocaine de vélos électriques, trottinettes et jouets enfants. Qualité, prix et livraison rapide." />
+<meta name="twitter:image" content="https://jouet-maroc.com/images/about-us.webp" />
   <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/slider-home.css" />
   <link rel="stylesheet" href="style.css" />
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
- 
+
+  
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "Jouet Maroc",
+  "url": "https://jouet-maroc.com/",
+  "logo": "https://jouet-maroc.com/images/about-us.webp",
+  "image": "https://jouet-maroc.com/images/about-us.webp",
+  "description": "Boutique en ligne marocaine spécialisée dans les vélos électriques, trottinettes électriques et jouets pour enfants. Livraison rapide et service fiable.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "MA",
+    "addressLocality": "Casablanca",
+    "addressRegion": "Casablanca-Settat"
+  },
+  "sameAs": [
+    "https://www.facebook.com/jouetmaroc2"
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "09:00",
+      "closes": "21:00"
+    }
+  ]
+}
+</script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
+  
+  
+  
 <body>
 
   <!-- Header & Navigation -->
@@ -44,56 +108,50 @@
     </nav>
   </header>
 
-  <!-- Hero Section avec animations -->
-  <section class="hero">
-    <h1>Découvrez Notre Collection de Vélos et Trottinettes</h1>
-    <p>Qualité supérieure, prix imbattables et livraison rapide</p>
-  </section>
 
- <section class="slider">
-  <div class="slides-container">
-    <!-- Slides -->
-    <div class="slides">
-      <div class="slide active">
-        <img src="images/Untitled-2.png" alt="Promotion sur vélos électriques" loading="lazy">
-        <div class="slide-content">
-          <h2>Offres Spéciales</h2>
-          <p>Jusqu'à 20% de réduction cette semaine!</p>
-          <a href="#" class="btn">Voir les offres</a>
-        </div>
-      </div>
-      <div class="slide">
-        <img src="images/Untitled-2.png" alt="Nouveaux modèles" loading="lazy">
-        <div class="slide-content">
-          <h2>Nouveaux Modèles</h2>
-          <p>Découvrez notre collection 2023</p>
-          <a href="#" class="btn">Explorer</a>
-        </div>
-      </div>
-      <div class="slide">
-        <img src="images/Untitled-2.png" alt="Livraison gratuite" loading="lazy">
-        <div class="slide-content">
-          <h2>Livraison Gratuite</h2>
-          <p>Sur toutes les commandes &gt; 3000 DH</p>
-          <a href="#" class="btn">Commander</a>
-        </div>
-      </div>
-    </div>
+<!-- سلايدر -->
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
 
-    <!-- Arrows OUTSIDE of slider-controls -->
-    <button class="prev-btn" aria-label="Image précédente"><i class="fas fa-chevron-left"></i></button>
-    <button class="next-btn" aria-label="Image suivante"><i class="fas fa-chevron-right"></i></button>
+    <!-- Slide 1 : عروض trottinettes -->
+<div class="swiper-slide">
+  <a href="categories/trottinettes.html">
+    <picture>
+      <source media="(max-width: 576px)" srcset="images/slide/slide1-mobile.webp" />
+      <img src="images/slide/m41-banner-marruecos.jpg" alt="Offres spéciales sur les trottinettes électriques" />
+    </picture>
+  </a>
+</div>
 
-    <!-- Dots -->
-    <div class="slider-controls">
-      <div class="slider-dots">
-        <span class="dot active" data-index="0"></span>
-        <span class="dot" data-index="1"></span>
-        <span class="dot" data-index="2"></span>
-      </div>
-    </div>
+<!-- Slide 2 : عروض الدراجات الكهربائية -->
+<div class="swiper-slide">
+  <a href="categories/velos-electriques.html">
+    <picture>
+      <source media="(max-width: 576px)" srcset="images/slide/slide2-mobile.png" />
+      <img src="images/slide/bison-franja-min-mod.jpg" alt="Promotions sur les vélos électriques" />
+    </picture>
+  </a>
+</div>
+
+<!-- Slide 3 : عروض الدراجات الكلاسيكية -->
+<div class="swiper-slide">
+  <a href="categories/velos-classiques.html">
+    <picture>
+      <source media="(max-width: 576px)" srcset="images/slide/slide3-mobile.png" />
+      <img src="images/slide/m41-banner-marruecos.jpg" alt="Offres sur les vélos classiques" />
+    </picture>
+  </a>
+</div>
   </div>
-</section>
+
+  <!-- أسهم التنقل -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+
+  <!-- النقاط -->
+  <div class="swiper-pagination"></div>
+</div>
+
 
 
   <!-- Catalog Section -->
@@ -113,14 +171,14 @@
            </a>
         <div class="card-divider"></div>
         <div class="product-info">
-          <h3>VÉLO ÉLECTRIQUE LIKEBIKE SHINE S</h3>
+          <h3>Vélo électrique likebike shine s</h3>
           <div class="product-rating">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="fas fa-star-half-alt"></i>
-            <span>(42)</span>
+            <span>(86)</span>
           </div>
           <p class="product-price"><span class="old-price">10999 DH</span> 7199 DH</p>
           <div class="product-actions">
@@ -132,18 +190,18 @@
       <div class="product-card" data-category="scooter" data-id="tank-m41-ultimate-trottinette-electrique">
   <span class="product-badge sale">Promo</span>
   <a href="produits/tank-m41-ultimate-trottinette-electrique.html">
-    <img src="images/slider/tank-m41-ultimate-01.webp" alt="Tank M41 Ultimate – Trottinette puissante tout-terrain 2025" loading="lazy">
+    <img src="images/slider/trottinette-tank-m41-01.webp" alt="Tank M41 Ultimate – Trottinette puissante tout-terrain 2025" loading="lazy">
   </a>
   <div class="card-divider"></div>  
   <div class="product-info">
-    <h3>TROTTINETTE Tank M41 Ultimate</h3>
+    <h3>Trottinette Tank M41 Ultimate</h3>
     <div class="product-rating">
       <i class="fas fa-star"></i>
       <i class="fas fa-star"></i>
       <i class="fas fa-star"></i>
-      <i class="far fa-star"></i>
-      <i class="far fa-star"></i>
-      <span>(15)</span>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+      <span>(42)</span>
     </div>
     <p class="product-price"><span class="old-price">7400 DH</span> 6399 DH</p>
     <div class="product-actions">
@@ -153,48 +211,52 @@
 </div>
 
       
-      <div class="product-card" data-category="scooter" data-id="trottinette-t1">
-        <a href="produits/velo-electrique-likebike-shine-s.html">
-        <img src="images/slider/tank-m41-ultimate-01.webp" alt="Trottinette T1 - Légère et pliable, parfaite pour la ville" loading="lazy">
+      <div class="product-card" data-category="classic" data-id="Vélo Madame Italiano 28 pouces">
+        <a href="produits/velo-madame-italiano-28.html">
+        <img src="images/slider/madame-italiano-28-01.webp" alt="Vélo Madame Italiano 28 pouces au design élégant" loading="lazy">
           </a>
+        <div class="card-divider"></div> 
         <div class="product-info">
-          <h3>Trottinette T1</h3>
+          <h3>Vélo Madame Italiano 28 pouces</h3>
           <div class="product-rating">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
-            <i class="far fa-star"></i>
-            <span>(28)</span>
+            <i class="fas fa-star-half-alt"></i>
+            <span>(89)</span>
           </div>
-          <p class="product-price">1800 DH</p>
+          <p class="product-price"><span class="old-price">2000 DH</span> 1749 DH</p>
           <div class="product-actions">
-            <a href="produits/trottinette-t1.html" class="btn view-details" style="width: 100%;"><i class="fas fa-eye"></i> Voir les détails</a>
+            <a href="produits/velo-madame-italiano-28.html" class="btn view-details" style="width: 100%;"><i class="fas fa-eye"></i> Voir les détails</a>
           </div>
         </div>
       </div>
       
-      <div class="product-card" data-category="classic" data-id="velo-classique-c2">
-        <a href="produits/velo-electrique-likebike-shine-s.html">
-        <img src="images/slider/likebike-shine-s-09.webp" alt="Vélo Classique C2 - Parfait pour les balades en famille" loading="lazy">
-          </a>
-        <div class="product-info">
-          <h3>Vélo Classique C2</h3>
-          <div class="product-rating">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="far fa-star"></i>
-            <span>(36)</span>
-          </div>
-          <p class="product-price">1200 DH</p>
-          <div class="product-actions">
-            <a href="produits/velo-classique-c2.html" class="btn view-details" style="width: 100%;"><i class="fas fa-eye"></i> Voir les détails</a>
-          </div>
-        </div>
-      </div>
+      <div class="product-card" data-category="scooter" data-id="dualtron-pop-trottinette-electrique">
+  <span class="product-badge sale">Promo</span>
+  <a href="produits/dualtron-pop-trottinette-electrique.html">
+    <img src="images/slider/dualtron-pop-52v-01.webp" alt="Tank M41 Ultimate – Trottinette puissante tout-terrain 2025" loading="lazy">
+  </a>
+  <div class="card-divider"></div>  
+  <div class="product-info">
+    <h3>Trottinette électrique Dualtron Pop</h3>
+    <div class="product-rating">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+      <span>(38)</span>
     </div>
+    <p class="product-price"><span class="old-price">6890 DH</span> 5890 DH</p>
+    <div class="product-actions">
+      <a href="produits/dualtron-pop-trottinette-electrique.html" class="btn view-details" style="width: 100%;"><i class="fas fa-eye"></i> Voir les détails</a>
+    </div>
+  </div>
+</div>
+    </div>
+    <div style="margin-bottom: 6px; clear: both;"></div>
   </section>
 
   <!-- Features Section -->
@@ -232,122 +294,92 @@
     </form>
   </section>
 
-  <!-- Footer -->
+ <!-- Footer -->
 <footer class="footer">
   <div class="footer-content">
-    <div class="footer-section">
-      <h3>À propos de JOUET MAROC</h3>
-      <p>JOUET MAROC est une entreprise leader dans la vente de jouets et de produits innovants au Maroc. Basée à Casablanca, notre mission est d'offrir des produits de haute qualité répondant aux besoins de nos clients, tout en garantissant une expérience d'achat agréable et sécurisée.</p>
-     <div class="social-icons">
-  <a href="https://www.facebook.com/jouetmaroc2" 
-     target="_blank" 
-     rel="noopener" 
-     aria-label="Page Facebook Jouet Maroc">
-    <i class="fab fa-facebook"></i>
-  </a>
-  
-  <a href="https://www.instagram.com/" 
-     target="_blank" 
-     rel="noopener" 
-     aria-label="Compte Instagram Jouet Maroc">
-    <i class="fab fa-instagram"></i>
-  </a>
-  
-  <a href="https://twitter.com/" 
-     target="_blank" 
-     rel="noopener" 
-     aria-label="Profil Twitter Jouet Maroc">
-    <i class="fab fa-twitter"></i>
-  </a>
-  
-  <a href="https://www.youtube.com/" 
-     target="_blank" 
-     rel="noopener" 
-     aria-label="Chaîne YouTube Jouet Maroc">
-    <i class="fab fa-youtube"></i>
-  </a>
- </div>
-</div>
-      <div class="footer-section">
-        <h3>Liens Utiles</h3>
-        <ul>
-          <li><a href="faq.html">Questions fréquentes</a></li>
-          <li><a href="livraison.html">Expédition et livraison</a></li>
-          <li><a href="privacy-policy.html">Politique de confidentialité</a></li>
-          <li><a href="about.html">À propos de nous</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h3>Contact</h3>
-        <p><i class="fas fa-map-marker-alt"></i> Riad Oulfa, Casablanca</p>
-        <p><i class="fas fa-envelope"></i> contact@jouet-maroc.com</p>
-        <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/212762609147" target="_blank">WhatsApp</a></p>
+   <div class="footer-section">
+      <h3>À propos</h3>
+      <p>JOUET MAROC, basée à Casablanca, est spécialisée dans la vente de jouets innovants et de qualité, offrant à ses clients une expérience d'achat fiable et agréable au Maroc.</p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/jouetmaroc2" target="_blank" rel="noopener" aria-label="Page Facebook Jouet Maroc">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Compte Instagram Jouet Maroc">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Profil Twitter Jouet Maroc">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="Chaîne YouTube Jouet Maroc">
+          <i class="fab fa-youtube"></i>
+        </a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2025 Jouet Maroc. Tous les droits sont réservés</p>
-      <div class="payment-methods">
-        <i class="fab fa-cc-visa"></i>
-        <i class="fab fa-cc-mastercard"></i>
-        <i class="fab fa-cc-paypal"></i>
-      </div>
-    </div>
-  </footer>
 
-  <script src="script.js"></script>
-  <!-- Script très simple pour le menu mobile -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Sélection des éléments
-      const menuBtn = document.getElementById('menu-btn');
-      const mainNav = document.querySelector('.main-nav');
-      
-      if (menuBtn && mainNav) {
-        console.log("Menu mobile initialisé");
-        
-        // Gestionnaire d'événement pour le bouton
-        menuBtn.addEventListener('click', function() {
-          console.log("Bouton menu cliqué");
-          this.classList.toggle('open');
-          mainNav.classList.toggle('show');
-          
-          // Mise à jour de l'attribut aria-expanded pour l'accessibilité
-          const isExpanded = mainNav.classList.contains('show');
-          this.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
-          
-          // Créer/gérer l'overlay
-          let overlay = document.querySelector('.menu-overlay');
-          if (!overlay) {
-            overlay = document.createElement('div');
-            overlay.className = 'menu-overlay';
-            document.body.appendChild(overlay);
-            
-            overlay.addEventListener('click', function() {
-              menuBtn.classList.remove('open');
-              mainNav.classList.remove('show');
-              this.classList.remove('active');
-            });
-          }
-          
-          overlay.classList.toggle('active');
-        });
-        
-        // Fermer le menu en cliquant sur les liens
-        const links = mainNav.querySelectorAll('a');
-        links.forEach(function(link) {
-          link.addEventListener('click', function() {
-            menuBtn.classList.remove('open');
-            mainNav.classList.remove('show');
-            const overlay = document.querySelector('.menu-overlay');
-            if (overlay) {
-              overlay.classList.remove('active');
-            }
-          });
-        });
-      } else {
-        console.error("Éléments du menu mobile non trouvés");
-      }
-    });
-  </script>
+    <div class="footer-section">
+      <h3>Liens Utiles</h3>
+      <ul>
+        <li><a href="faq.html"><i class="fas fa-chevron-right"></i> Questions fréquentes</a></li>
+        <li><a href="livraison.html"><i class="fas fa-chevron-right"></i> Expédition et livraison</a></li>
+        <li><a href="privacy-policy.html"><i class="fas fa-chevron-right"></i> Politique de confidentialité</a></li>
+        <li><a href="about.html"><i class="fas fa-chevron-right"></i> À propos de nous</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>Catégories</h3>
+      <ul>
+        <li><a href="categories/velos-electriques.html"><i class="fas fa-chevron-right"></i> Vélos Électriques</a></li>
+        <li><a href="categories/trottinettes.html"><i class="fas fa-chevron-right"></i> Trottinettes Électriques</a></li>
+        <li><a href="categories/velos-classiques.html"><i class="fas fa-chevron-right"></i> Vélos Classiques</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <p><i class="fas fa-map-marker-alt"></i> Riad Oulfa, Casablanca</p>
+      <p><i class="fas fa-envelope"></i> contact@jouet-maroc.com</p>
+      <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/212762609147" target="_blank" rel="noopener">WhatsApp</a></p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Jouet Maroc. Tous les droits sont réservés</p>
+    <div class="payment-methods">
+      <i class="fab fa-cc-visa"></i>
+      <i class="fab fa-cc-mastercard"></i>
+      <i class="fab fa-cc-paypal"></i>
+    </div>
+  </div>
+</footer>
+
+
+<!-- مكتبة Swiper -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
+
+<!-- سكريبتاتك -->
+<script src="script.js" defer></script>
+<script src="mobile-menu.js" defer></script>
+
+<!-- تهيئة السلايدر -->
+<script defer>
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+</script>
+
 </body>
 </html>

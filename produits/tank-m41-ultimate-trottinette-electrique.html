@@ -14,7 +14,7 @@
 <meta property="og:title" content="Trottinette électrique Tank M41 Ultimate 2025 | Puissance 2000W | Jouet Maroc" />
 <meta property="og:description" content="Découvrez la trottinette électrique Tank M41 Ultimate avec une vitesse max de 68 km/h, autonomie jusqu’à 60 km et fonctionnalités avancées comme le NFC et les freins E-ABS." />
 <meta property="og:image" content="https://jouet-maroc.com/images/slider/tank-m41-ultimate-01.webp" />
-<meta property="og:url" content="https://jouet-maroc.com/produits/tank-m41-ultimate-trottinette-electrique" />
+<meta property="og:url" content="https://jouet-maroc.com/produits/tank-m41-ultimate-trottinette-electrique.html" />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
@@ -23,17 +23,48 @@
 <meta name="twitter:image" content="https://jouet-maroc.com/images/slider/tank-m41-ultimate-01.webp" />
 
 <title>Trottinette électrique Tank M41 Ultimate 2025 | Jouet Maroc</title>
-  
-  <!-- Stylesheets -->
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+ <!-- Stylesheets -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
   <link rel="stylesheet" href="../style.css" />
   <link rel="stylesheet" href="../product-details.css" />
+  <link rel="stylesheet" href="../css/product-slider.css" />
   <link rel="stylesheet" href="../whatsapp-button.css" />
   <link rel="stylesheet" href="../product-cards.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-
   <!-- Canonical URL -->
-<link rel="canonical" href="https://jouet-maroc.com/produits/tank-m41-ultimate-trottinette-electrique" />
+<link rel="canonical" href="https://jouet-maroc.com/produits/tank-m41-ultimate-trottinette-electrique.html" />
+
+
+  <!-- Style pour la vidéo responsive -->
+  <style>
+  .responsive-video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 356px; /* عرض ثابت تقريبا للتابث */
+    margin: 20px auto;
+  }
+
+  .fb-video-wrapper {
+    position: relative;
+    width: 100%; /* 100% من max-width للكونتينر */
+    padding-top: 177.78%; /* 16:9 معكوس = 9/16*100% ≈ 56.25% لكن للفيديو العمودي 9:16 => (16/9)*100% = 177.78% */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+
+  .fb-video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+  }
+</style>
 </head>
 
 
@@ -115,7 +146,7 @@
   },
   "offers": {
     "@type": "Offer",
-    "url": "https://jouet-maroc.com/produits/tank-m41-ultimate-trottinette-electrique",
+    "url": "https://jouet-maroc.com/produits/tank-m41-ultimate-trottinette-electrique.html",
     "priceCurrency": "MAD",
     "price": "6399",
     "itemCondition": "https://schema.org/NewCondition",
@@ -128,93 +159,141 @@
 }
 </script>
 
-
-
-
-     <article class="product">
+<article class="product">
   <div class="product-gallery">
-    <!-- Swiper Container -->
+    <!-- Slider principal -->
     <div class="swiper product-swiper">
       <div class="swiper-wrapper">
-        <!-- Slides مع Zoom -->
+        <!-- Première slide sans lazy loading - chargement immédiat -->
         <div class="swiper-slide">
-  <div class="swiper-zoom-container">
-    <img src="../images/slider/tank-m41-ultimate-01.webp" alt="Trottinette électrique TANK M41 ULTIMATE vue avant" width="600" height="700">
-  </div>
-</div>
-<div class="swiper-slide">
-  <div class="swiper-zoom-container">
-    <img src="../images/slider/tank-m41-ultimate-02.webp" alt="Trottinette TANK M41 ULTIMATE avec boîte" width="600" height="700">
-  </div>
-</div>
-<div class="swiper-slide">
-  <div class="swiper-zoom-container">
-    <img src="../images/slider/tank-m41-ultimate-03.webp" alt="Trottinette TANK M41 ULTIMATE pliable" width="600" height="700">
-  </div>
-</div>
-<div class="swiper-slide">
-  <div class="swiper-zoom-container">
-    <img src="../images/slider/tank-m41-ultimate-04.webp" alt="Trottinette TANK M41 ULTIMATE noire" width="600" height="700">
-  </div>
-</div>
-<div class="swiper-slide">
-  <div class="swiper-zoom-container">
-    <img src="../images/slider/tank-m41-ultimate-05.webp" alt="Trottinette TANK M41 ULTIMATE bleue" width="600" height="700">
-  </div>
-</div>
-<div class="swiper-slide">
-  <div class="swiper-zoom-container">
-    <img src="../images/slider/tank-m41-ultimate-06.webp" alt="Trottinette TANK M41 ULTIMATE jaune" width="600" height="700">
-  </div>
-</div>
+          <div class="swiper-zoom-container">
+            <img src="../images/slider/trottinette-tank-m41-01.webp" alt="Trottinette électrique TANK M41 ULTIMATE vue avant" width="600" height="750">
+          </div>
+        </div>
+        <!-- Autres slides avec lazy loading correct -->
+        <div class="swiper-slide">
+          <div class="swiper-zoom-container">
+            <img src="../images/slider/trottinette-tank-m41-02.webp" data-src="../images/slider/trottinette-tank-m41-02.webp" class="swiper-lazy" alt="Trottinette TANK M41 ULTIMATE avec boîte" width="600" height="750">
+            <div class="swiper-lazy-preloader"></div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="swiper-zoom-container">
+            <img src="../images/slider/trottinette-tank-m41-03.webp" data-src="../images/slider/trottinette-tank-m41-03.webp" class="swiper-lazy" alt="Trottinette TANK M41 ULTIMATE pliable" width="600" height="750">
+            <div class="swiper-lazy-preloader"></div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="swiper-zoom-container">
+            <img src="../images/slider/trottinette-tank-m41-04.webp" data-src="../images/slider/trottinette-tank-m41-04.webp" class="swiper-lazy" alt="Trottinette TANK M41 ULTIMATE noire" width="600" height="750">
+            <div class="swiper-lazy-preloader"></div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="swiper-zoom-container">
+            <img src="../images/slider/trottinette-tank-m41-05.webp" data-src="../images/slider/trottinette-tank-m41-05.webp" class="swiper-lazy" alt="Trottinette TANK M41 ULTIMATE bleue" width="600" height="750">
+            <div class="swiper-lazy-preloader"></div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="swiper-zoom-container">
+            <img src="../images/slider/trottinette-tank-m41-06.webp" data-src="../images/slider/trottinette-tank-m41-06.webp" class="swiper-lazy" alt="Trottinette TANK M41 ULTIMATE" width="600" height="750">
+            <div class="swiper-lazy-preloader"></div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="swiper-zoom-container">
+            <img src="../images/slider/trottinette-tank-m41-07.webp" data-src="../images/slider/trottinette-tank-m41-07.webp" class="swiper-lazy" alt="Trottinette TANK M41 ULTIMATE" width="600" height="750">
+            <div class="swiper-lazy-preloader"></div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="swiper-zoom-container">
+            <img src="../images/slider/trottinette-tank-m41-08.webp" data-src="../images/slider/trottinette-tank-m41-08.webp" class="swiper-lazy" alt="Trottinette TANK M41 ULTIMATE" width="600" height="750">
+            <div class="swiper-lazy-preloader"></div>
+          </div>
+        </div>
+         <div class="swiper-slide">
+          <div class="swiper-zoom-container">
+            <img src="../images/slider/trottinette-tank-m41-09.webp" data-src="../images/slider/trottinette-tank-m41-09.webp" class="swiper-lazy" alt="Trottinette TANK M41 ULTIMATE bleue" width="600" height="750">
+            <div class="swiper-lazy-preloader"></div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="swiper-zoom-container">
+            <img src="../images/slider/trottinette-tank-m41-10.webp" data-src="../images/slider/trottinette-tank-m41-10.webp" class="swiper-lazy" alt="Trottinette TANK M41 ULTIMATE" width="600" height="750">
+            <div class="swiper-lazy-preloader"></div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="swiper-zoom-container">
+            <img src="../images/slider/trottinette-tank-m41-11.webp" data-src="../images/slider/trottinette-tank-m41-11.webp" class="swiper-lazy" alt="Trottinette TANK M41 ULTIMATE" width="600" height="750">
+            <div class="swiper-lazy-preloader"></div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="swiper-zoom-container">
+            <img src="../images/slider/trottinette-tank-m41-12.webp" data-src="../images/slider/trottinette-tank-m41-12.webp" class="swiper-lazy" alt="Trottinette TANK M41 ULTIMATE" width="600" height="750">
+            <div class="swiper-lazy-preloader"></div>
+          </div>
+        </div>
+       
+     
    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
 
-      <!-- Pagination -->
-      <div class="swiper-pagination"></div>
 
-      <!-- Navigation buttons -->
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-    </div>
-
-    <!-- Thumbs Swiper -->
-<div class="swiper product-thumbs-swiper">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide">
-      <img src="../images/slider/tank-m41-ultimate-thumbs-01.webp" alt="Miniature - Trottinette électrique TANK M41 ULTIMATE vue avant" width="80" height="80">
-    </div>
-    <div class="swiper-slide">
-      <img src="../images/slider/tank-m41-ultimate-thumbs-02.webp" alt="Miniature - Trottinette TANK M41 ULTIMATE avec boît" width="80" height="80">
-    </div>
-    <div class="swiper-slide">
-      <img src="../images/slider/tank-m41-ultimate-thumbs-03.webp" alt="Miniature - Trottinette TANK M41 ULTIMATE pliable" width="80" height="80">
-    </div>
-    <div class="swiper-slide">
-      <img src="../images/slider/tank-m41-ultimate-thumbs-04.webp" alt="Miniature - Trottinette TANK M41 ULTIMATE noire" width="80" height="80">
-    </div>
-    <div class="swiper-slide">
-      <img src="../images/slider/tank-m41-ultimate-thumbs-05.webp" alt="Miniature - Trottinette TANK M41 ULTIMATE bleue" width="80" height="80">
-    </div>
-    <div class="swiper-slide">
-      <img src="../images/slider/tank-m41-ultimate-thumbs-06.webp" alt="Miniature - Trottinette TANK M41 ULTIMATE jaune" width="80" height="80">
-    </div>
+     <!-- Conteneur des miniatures -->
+  <div class="product-thumbs-container">
+    <div class="swiper product-thumbs-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="../images/slider/trottinette-tank-m41-miniature-01.webp" alt="Miniature 1">
+        </div>
+        <div class="swiper-slide">
+          <img src="../images/slider/trottinette-tank-m41-miniature-02.webp" alt="Miniature 2">
+        </div>
+        <div class="swiper-slide">
+          <img src="../images/slider/trottinette-tank-m41-miniature-03.webp" alt="Miniature 3">
+        </div>
+        <div class="swiper-slide">
+          <img src="../images/slider/trottinette-tank-m41-miniature-04.webp" alt="Miniature 4">
+        </div>
+        <div class="swiper-slide">
+          <img src="../images/slider/trottinette-tank-m41-miniature-05.webp" alt="Miniature 5">
+        </div>
+        <div class="swiper-slide">
+          <img src="../images/slider/trottinette-tank-m41-miniature-06.webp" alt="Miniature 6">
+        </div>
+        <div class="swiper-slide">
+          <img src="../images/slider/trottinette-tank-m41-miniature-07.webp" alt="Miniature 7">
+        </div>
+        <div class="swiper-slide">
+          <img src="../images/slider/trottinette-tank-m41-miniature-08.webp" alt="Miniature 8">
+        </div>
+        <div class="swiper-slide">
+          <img src="../images/slider/trottinette-tank-m41-miniature-09.webp" alt="Miniature 6">
+        </div>
+        <div class="swiper-slide">
+          <img src="../images/slider/trottinette-tank-m41-miniature-10.webp" alt="Miniature 7">
+        </div>
+        <div class="swiper-slide">
+          <img src="../images/slider/trottinette-tank-m41-miniature-11.webp" alt="Miniature 8">
+        </div>
+        <div class="swiper-slide">
+          <img src="../images/slider/trottinette-tank-m41-miniature-12.webp" alt="Miniature 8">
+        </div>
       </div>
     </div>
+    
   </div>
+</div>
 
         <div class="product-info">
-          <h1>TROTTINETTE Tank M41 Ultimate 2025</h1>
-          
-          <div class="product-rating">
-            <span class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-            </span>
-            <span class="rating-count">4.5/5 (42 avis)</span>
-          </div>
+          <h1>Trottinette Tank M41 Ultimate 2025</h1>
           
           <div class="product-price-container">
             <div class="product-price">
@@ -227,6 +306,17 @@
             </div>
           </div>
           
+          <div class="product-rating2">
+            <span class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </span>
+            <span class="rating-count">4.5/5 (38 avis)</span>
+          </div>
+          
           <div class="product-short-description">
             <p>Trottinette électrique Tank M41 Ultimate 2025 – moteur 1000–2000W, jusqu’à 68 km/h, batterie 48V 16Ah (35–60 km). Freins à disque E-ABS, suspensions, roues 11" Off-road, châssis alu IP54. Écran LCD, LED, clignotants, NFC, app mobile. Charge 150 kg. Sac offert.</p>
           </div>
@@ -235,10 +325,10 @@
             <div class="variant-group">
               <label>Couleur:</label>
               <div class="color-options">
-                <div class="color-option" style="background-color: #ffffff;" data-color="Blanc"></div>
-                <div class="color-option" style="background-color: #2e38cc;" data-color="Bleu"></div>
+                <div class="color-option" style="background-color: #f73c06;" data-color="Rouge"></div>
+                <div class="color-option" style="background-color: #353eee;" data-color="Bleu"></div>
                 <div class="color-option" style="background-color: #05d347;" data-color="Vert"></div>
-                <div class="color-option" style="background-color: #f70606;" data-color="Rouge"></div>
+                <div class="color-option" style="background-color: #ffee15;" data-color="Jaune."></div>
                 <div class="color-option" style="background-color: #000;" data-color="Noir"></div>
               </div>
               <!-- Ajout d'un élément pour afficher la couleur sélectionnée -->
@@ -290,11 +380,12 @@
         </div>
       </article>
 
-      <!-- Product Details Tabs -->
+       <!-- Product Details Tabs -->
       <div class="product-tabs">
         <div class="tabs-header">
           <button class="tab-btn active" data-tab="description">Description</button>
           <button class="tab-btn" data-tab="specifications">Caractéristiques</button>
+          <button class="tab-btn" data-tab="video">Vidéo</button>
           <button class="tab-btn" data-tab="reviews">Avis (42)</button>
         </div>
         
@@ -398,6 +489,20 @@
   </table>
 </div>
 
+<!-- Nouvel onglet pour la vidéo - sans image placeholder -->
+ <div class="tab-pane" id="video">
+  <h2>Démonstration vidéo de la trottinette électrique Tank M41 Ultimate 2025</h2>
+  <p>Découvrez la puissance et la performance de la trottinette Tank M41 Ultimate en action.</p>
+
+    <div class="video-container" id="video-container">
+      <!-- Conteneur vide qui sera rempli lors du clic sur l'onglet -->
+      <div class="video-loading-placeholder">
+        <i class="fas fa-spinner fa-spin"></i>
+        <span>Chargement de la vidéo...</span>
+      </div>
+    </div>
+  </div>
+
           <div class="tab-pane" id="reviews">
             <div class="reviews-summary">
               <div class="average-rating">
@@ -456,12 +561,36 @@
       </div>
          </div>   
 
-     <!-- Product Listing -->
+        <!-- Product Listing -->
   <section class="product-listing">
     <h2>Produits similaires</h2>
     <div class="container">
       <div class="products">
-        <div class="product-card2" data-category="scooter" data-id="trottinette-t1">
+        <div class="product-card2">
+          <span class="product-badge">Populaire</span>
+          <a href="../produits/dualtron-pop-trottinette-electrique.html">
+          <img src="../images/slider/dualtron-pop-52v-01.webp" alt="Trottinette électrique Dualtron Pop 52V - Légère et pliable, parfaite pour la ville" loading="lazy" width="250" height="200">
+            </a>
+          <div class="card-divider"></div>
+          <div class="product-info2">
+            <h3>Trottinette électrique Dualtron Pop</h3>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span>(38)</span>
+            </div>
+            <p class="product-price"><span class="old-price">6890 DH</span> 5890 DH</p>
+            <div class="product-actions2">
+              <!-- Suppression du bouton Ajouter -->
+              <a href="../produits/dualtron-pop-trottinette-electrique.html" class="btn view-details" style="width: 100%;"><i class="fas fa-eye"></i> Voir les détails</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product-card2">
           <span class="product-badge">Populaire</span>
           <a href="produits/velo-electrique-likebike-shine-s.html">
           <img src="../images/slider/likebike-shine-s-01.webp" alt="Trottinette T1 - Légère et pliable, parfaite pour la ville" loading="lazy" width="250" height="200">
@@ -485,7 +614,31 @@
           </div>
         </div>
         
-        <div class="product-card2" data-category="scooter" data-id="trottinette-t1">
+        <div class="product-card2">
+          <span class="product-badge">Populaire</span>
+          <a href="produits/velo-electrique-likebike-shine-s.html">
+          <img src="../images/slider/likebike-shine-s-01.webp" alt="Trottinette T1 - Légère et pliable, parfaite pour la ville" loading="lazy" width="250" height="200">
+            </a>
+          <div class="card-divider"></div>
+          <div class="product-info2">
+            <h3>Trottinette T1</h3>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span>(28)</span>
+            </div>
+            <p class="product-price">1800 DH</p>
+            <div class="product-actions2">
+              <!-- Suppression du bouton Ajouter -->
+              <a href="../produits/trottinette-t1.html" class="btn view-details" style="width: 100%;"><i class="fas fa-eye"></i> Voir les détails</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product-card2">
           <span class="product-badge">Populaire</span>
           <a href="produits/velo-electrique-likebike-shine-s.html">
           <img src="../images/slider/likebike-shine-s-01.webp" alt="Trottinette T1 - Légère et pliable, parfaite pour la ville" loading="lazy" width="250" height="200">
@@ -510,19 +663,14 @@
         </div>
         
          </div>
-       </div>
-      
-      
-    
+       </div> 
   </section>
-      
-  <!-- Espace supplémentaire entre les produits similaires et le footer -->
   <div style="margin-bottom: 30px; clear: both;"></div>
       
     </div>
   </main>
 
-   <!-- Newsletter -->
+  <!-- Newsletter -->
   <section class="newsletter">
     <h2>Restez Informé</h2>
     <p>Inscrivez-vous à notre newsletter pour recevoir nos offres exclusives</p>
@@ -532,28 +680,61 @@
     </form>
   </section>
 
- <!-- Footer -->
+  <!-- Footer -->
 <footer class="footer">
   <div class="footer-content">
-    <div class="footer-section">
-      <h3>À propos de JOUET MAROC</h3>
-      <p>JOUET MAROC est une entreprise leader dans la vente de jouets et de produits innovants au Maroc. Basée à Casablanca, notre mission est d'offrir des produits de haute qualité répondant aux besoins de nos clients, tout en garantissant une expérience d'achat agréable et sécurisée.</p>
-        <div class="social-icons">
-  <a href="https://www.facebook.com/jouetmaroc2" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
-  <a href="https://www.instagram.com/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-  <a href="https://twitter.com/" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
-  <a href="https://www.youtube.com/" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
-       </div>
-      </div>
+   <div class="footer-section">
+      <h3>À propos</h3>
+      <p>JOUET MAROC, basée à Casablanca, est spécialisée dans la vente de jouets innovants et de qualité, offrant à ses clients une expérience d'achat fiable et agréable au Maroc.</p>
+     <div class="social-icons">
+  <a href="https://www.facebook.com/jouetmaroc2" 
+     target="_blank" 
+     rel="noopener" 
+     aria-label="Page Facebook Jouet Maroc">
+    <i class="fab fa-facebook"></i>
+  </a>
+  
+  <a href="https://www.instagram.com/" 
+     target="_blank" 
+     rel="noopener" 
+     aria-label="Compte Instagram Jouet Maroc">
+    <i class="fab fa-instagram"></i>
+  </a>
+  
+  <a href="https://twitter.com/" 
+     target="_blank" 
+     rel="noopener" 
+     aria-label="Profil Twitter Jouet Maroc">
+    <i class="fab fa-twitter"></i>
+  </a>
+  
+  <a href="https://www.youtube.com/" 
+     target="_blank" 
+     rel="noopener" 
+     aria-label="Chaîne YouTube Jouet Maroc">
+    <i class="fab fa-youtube"></i>
+  </a>
+ </div>
+</div>
       <div class="footer-section">
-        <h3>Liens Utiles</h3>
-        <ul>
-          <li><a href="../faq.html">Questions fréquentes</a></li>
-          <li><a href="../livraison.html">Expédition et livraison</a></li>
-          <li><a href="../privacy-policy.html">Politique de confidentialité</a></li>
-          <li><a href="../about.html">À propos de nous</a></li>
-        </ul>
-      </div>
+  <h3>Liens Utiles</h3>
+  <ul>
+    <li><a href="../faq.html"><i class="fas fa-chevron-right"></i> Questions fréquentes</a></li>
+    <li><a href="../livraison.html"><i class="fas fa-chevron-right"></i> Expédition et livraison</a></li>
+    <li><a href="../privacy-policy.html"><i class="fas fa-chevron-right"></i> Politique de confidentialité</a></li>
+    <li><a href="../about.html"><i class="fas fa-chevron-right"></i> À propos de nous</a></li>
+  </ul>
+</div>
+    
+    <div class="footer-section">
+  <h3>Catégories</h3>
+  <ul>
+    <li><a href="../categories/velos-electriques.html"><i class="fas fa-chevron-right"></i> Vélos Électriques</a></li>
+    <li><a href="../categories/trottinettes.html"><i class="fas fa-chevron-right"></i> Trottinettes Électriques</a></li>
+    <li><a href="../categories/velos-classiques.html"><i class="fas fa-chevron-right"></i> Vélos Classiques</a></li>
+  </ul>
+</div>
+
       <div class="footer-section">
         <h3>Contact</h3>
         <p><i class="fas fa-map-marker-alt"></i> Riad Oulfa, Casablanca</p>
@@ -575,16 +756,63 @@
   <!-- Ajouter Swiper JS avant les autres scripts -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
-  <!-- Ajouter le script de correction des boutons avant les autres scripts -->
-  <script src="fix-buttons.js"></script>
-
-  <!-- Script spécifique pour le bouton de commande - doit être le premier -->
-  <script src="../whatsapp-order.js"></script>
+  <!-- Script spécifique pour le slider de produit -->
+  <script src="../js/product-slider.js"></script>
   
+  <!-- Script d'initialisation de la page produit (couleur et quantité) -->
+  <script src="../js/product-page-init.js"></script>
+  
+  <!-- Autres scripts -->
+  <script src="../whatsapp-order.js"></script>
   <script src="../script.js"></script>
-  <script src="product-page-init.js"></script>
- 
-  <!-- Ajouter le script du menu mobile -->
   <script src="../mobile-menu.js"></script>
+  
+  <!-- Ajouter le script des onglets avant la fermeture du body -->
+  <script src="../js/product-tabs.js"></script>
+
+  <!-- Ajouter le script pour le chargement différé de la vidéo juste avant la fermeture de la balise body -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Fonction pour charger la vidéo uniquement lorsque l'onglet est cliqué
+    const videoTab = document.querySelector('.tab-btn[data-tab="video"]');
+    let videoLoaded = false;
+    
+    if (videoTab) {
+      videoTab.addEventListener('click', function() {
+        if (!videoLoaded) {
+          const videoContainer = document.getElementById('video-container');
+          if (videoContainer) {
+            // Remplacer le placeholder par l'iframe avec une approche responsive
+            videoContainer.innerHTML = `
+              <div class="responsive-video-container">
+                <div class="fb-video-wrapper">
+                  <iframe 
+                    src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fjouetmaroc2%2Fvideos%2F4094664134151479%2F&show_text=false&width=267&t=0" 
+                    style="border:none;overflow:hidden" 
+                    scrolling="no" 
+                    frameborder="0" 
+                    allowfullscreen="true" 
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" 
+                    allowFullScreen="true">
+                  </iframe>
+                </div>
+              </div>
+            `;
+            videoLoaded = true;
+          }
+        }
+      });
+    }
+    
+    // Assurer que la vidéo est chargée si l'utilisateur accède directement à l'onglet vidéo via un lien
+    const hashValue = window.location.hash;
+    if (hashValue === '#video' && videoTab) {
+      // Simuler un clic sur l'onglet vidéo
+      setTimeout(() => {
+        videoTab.click();
+      }, 100);
+    }
+  });
+  </script>
 </body>
 </html>

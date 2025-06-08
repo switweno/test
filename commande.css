@@ -3,6 +3,7 @@
 .commande-section {
   padding: 2rem 0;
   min-height: 50vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .commande-section h1 {
@@ -25,6 +26,7 @@
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   padding: 1.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .product-summary h2 {
@@ -64,6 +66,7 @@
 
 .product-info {
   flex: 1;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .product-info h3 {
@@ -104,6 +107,7 @@
 .price {
   color: #e74c3c;
   font-weight: 700;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Formulaire client */
@@ -112,6 +116,7 @@
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   padding: 1.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .customer-info h2 {
@@ -137,6 +142,7 @@
 
 .form-group {
   margin-bottom: 1.2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .form-group label {
@@ -193,6 +199,7 @@
   font-size: 0.9rem;
   color: #777;
   text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Message d'erreur */
@@ -211,22 +218,24 @@
   display: block;
 }
 
-/* Style pour le bouton de retour */
-.back-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  transition: all 0.3s ease;
-  border: 1px solid #ddd;
+/* CSS */
+.back-btn-only {
+  background-color: #f1f1f1;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.back-btn:hover {
+.back-btn-only:hover {
   background-color: #e5e5e5;
   transform: translateY(-2px);
 }
 
-.back-btn i {
+.back-btn-only {
   font-size: 0.9rem;
 }
 
@@ -260,3 +269,4 @@
     padding: 1.2rem;
   }
 }
+

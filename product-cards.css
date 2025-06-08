@@ -31,14 +31,14 @@
 .card-divider {
   height: 1px;
   background-color: #e0e0e0;
-  margin: 10px 15px 0 15px; /* مسافة من الجوانب ومن الأعلى */
+  margin: -6px 15px 0 15px; /* مسافة من الجوانب ومن الأعلى */
 }
 
 .product-badge {
   position: absolute;
   top: 10px;
   right: 10px;
-  background-color: #FF0555;
+  background-color: #EB004A;
   color: white;
   padding: 0.3rem 0.7rem;
   border-radius: 4px;
@@ -52,12 +52,12 @@
 
 .product-card2 img {
   width: 100%;
-  height: 300px;
+  height: 320px;
   object-fit: cover;
 }
 
 .product-info2 {
-  padding: 1rem;
+  padding: 0.5rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -66,30 +66,46 @@
 .product-info2 h3 {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
+  text-align: center; /* توسيط المحتوى داخل h3 */
 }
 
-.product-rating {
-  color: #f39c12 ;
+
+.product-rating2 {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
   margin-bottom: 0.5rem;
 }
 
-.product-rating span {
-  color: #777;
-  margin-right: 0.3rem;
+.product-rating2 .stars {
+  color: #f39c12; /* برتقالي */
+}
+
+.product-rating2 .rating-count2 {
+  color: #777; /* رمادي */
   font-size: 0.9rem;
 }
+
+
 
 .product-price {
   font-size: 1.2rem;
   font-weight: bold;
   color: var(--dark-color);
   margin-bottom: 0.8rem;
+  text-align: left;
+}
+
+.product-info2 .product-price {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #000000;
   text-align: center;
 }
 
 .old-price {
   text-decoration: line-through;
-  color: #777;
+  color: #545454;
   font-size: 1rem;
   margin-left: 0.5rem;
 }

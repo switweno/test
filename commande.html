@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Finaliser votre commande - Ma Boutique de Vélos">
-  <meta name="author" content="Ma Boutique de Vélos">
-  <title>Finaliser votre commande | Ma Boutique de Vélos</title>
+  <meta name="description" content="Finaliser votre commande - Ma Boutique Jouet Maroc">
+  <meta name="author" content="Ma Boutique Jouet Maroc">
+  <title>Finaliser votre commande | Ma Boutique Jouet Maroc</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="commande.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -65,9 +66,9 @@
                 <span id="product-total" class="price"></span>
               </div>
               <!-- Bouton de retour aux détails du produit -->
-              <button id="back-to-product" class="btn back-btn" style="margin-top: 15px; background-color: #f1f1f1; color: #333; width: 100%;">
-                <i class="fas fa-arrow-left"></i> Retour aux détails du produit
-              </button>
+              <button id="back-to-product" class="back-btn-only" style="margin-top: 15px; width: 100%;">
+             <i class="fas fa-arrow-left"></i> Retour aux détails du produit
+          </button>
             </div>
           </div>
         </div>
@@ -88,7 +89,7 @@
             
             <div class="form-group">
               <label for="address">Adresse de livraison <span class="required">*</span></label>
-              <input type="text" id="address" name="address" autocomplete="street-address" required>
+              <input type="text" id="address" name="address" autocomplete="address-line1" required>
             </div>
             
             <div class="form-group">
@@ -96,10 +97,7 @@
               <input type="text" id="city" name="city" autocomplete="address-level2" required>
             </div>
             
-            <div class="form-group">
-              <label for="notes">Notes (optionnel)</label>
-              <textarea id="notes" name="orderNotes" rows="3"></textarea>
-            </div>
+            
             
             <div class="form-actions">
               <button type="submit" class="btn primary-btn" id="submit-order" name="submitOrder" style="background-color: #25d366; font-weight: bold;">
@@ -126,25 +124,58 @@
   <!-- Footer -->
 <footer class="footer">
   <div class="footer-content">
-    <div class="footer-section">
-      <h3>À propos de JOUET MAROC</h3>
-      <p>JOUET MAROC est une entreprise leader dans la vente de jouets et de produits innovants au Maroc. Basée à Casablanca, notre mission est d'offrir des produits de haute qualité répondant aux besoins de nos clients, tout en garantissant une expérience d'achat agréable et sécurisée.</p>
-        <div class="social-icons">
-  <a href="https://www.facebook.com/jouetmaroc2" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
-  <a href="https://www.instagram.com/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-  <a href="https://twitter.com/" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
-  <a href="https://www.youtube.com/" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
-       </div>
-      </div>
+   <div class="footer-section">
+      <h3>À propos</h3>
+      <p>JOUET MAROC, basée à Casablanca, est spécialisée dans la vente de jouets innovants et de qualité, offrant à ses clients une expérience d'achat fiable et agréable au Maroc.</p>
+     <div class="social-icons">
+  <a href="https://www.facebook.com/jouetmaroc2" 
+     target="_blank" 
+     rel="noopener" 
+     aria-label="Page Facebook Jouet Maroc">
+    <i class="fab fa-facebook"></i>
+  </a>
+  
+  <a href="https://www.instagram.com/" 
+     target="_blank" 
+     rel="noopener" 
+     aria-label="Compte Instagram Jouet Maroc">
+    <i class="fab fa-instagram"></i>
+  </a>
+  
+  <a href="https://twitter.com/" 
+     target="_blank" 
+     rel="noopener" 
+     aria-label="Profil Twitter Jouet Maroc">
+    <i class="fab fa-twitter"></i>
+  </a>
+  
+  <a href="https://www.youtube.com/" 
+     target="_blank" 
+     rel="noopener" 
+     aria-label="Chaîne YouTube Jouet Maroc">
+    <i class="fab fa-youtube"></i>
+  </a>
+ </div>
+</div>
       <div class="footer-section">
-        <h3>Liens Utiles</h3>
-        <ul>
-          <li><a href="faq.html">Questions fréquentes</a></li>
-          <li><a href="livraison.html">Expédition et livraison</a></li>
-          <li><a href="privacy-policy.html">Politique de confidentialité</a></li>
-          <li><a href="about.html">À propos de nous</a></li>
-        </ul>
-      </div>
+  <h3>Liens Utiles</h3>
+  <ul>
+    <li><a href="faq.html"><i class="fas fa-chevron-right"></i> Questions fréquentes</a></li>
+    <li><a href="livraison.html"><i class="fas fa-chevron-right"></i> Expédition et livraison</a></li>
+    <li><a href="privacy-policy.html"><i class="fas fa-chevron-right"></i> Politique de confidentialité</a></li>
+    <li><a href="about.html"><i class="fas fa-chevron-right"></i> À propos de nous</a></li>
+  </ul>
+</div>
+    
+    <div class="footer-section">
+  <h3>Catégories</h3>
+  <ul>
+    <li><a href="categories/velos-electriques.html"><i class="fas fa-chevron-right"></i> Vélos Électriques</a></li>
+    <li><a href="categories/trottinettes.html"><i class="fas fa-chevron-right"></i> Trottinettes Électriques</a></li>
+    <li><a href="categories/velos-classiques.html"><i class="fas fa-chevron-right"></i> Vélos Classiques</a></li>
+  </ul>
+</div>
+
       <div class="footer-section">
         <h3>Contact</h3>
         <p><i class="fas fa-map-marker-alt"></i> Riad Oulfa, Casablanca</p>

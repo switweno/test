@@ -1,6 +1,4 @@
-<!-- Script très simple pour le menu mobile -->
-
-    document.addEventListener('DOMContentLoaded', function() {
+ document.addEventListener('DOMContentLoaded', function() {
       // Sélection des éléments
       const menuBtn = document.getElementById('menu-btn');
       const mainNav = document.querySelector('.main-nav');

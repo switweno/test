@@ -8,6 +8,7 @@
   <meta name="author" content="Jouet Maroc">
   <meta name="robots" content="index, follow">
   <title>Politique de Confidentialité | Jouet Maroc</title>
+  <link rel="canonical" href="https://jouet-maroc.com/privacy-policy.html" />
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="privacy-policy.css" />
@@ -124,28 +125,61 @@
     </form>
   </section>
 
-  <!-- Footer -->
+ <!-- Footer -->
 <footer class="footer">
   <div class="footer-content">
-    <div class="footer-section">
-      <h3>À propos de JOUET MAROC</h3>
-      <p>JOUET MAROC est une entreprise leader dans la vente de jouets et de produits innovants au Maroc. Basée à Casablanca, notre mission est d'offrir des produits de haute qualité répondant aux besoins de nos clients, tout en garantissant une expérience d'achat agréable et sécurisée.</p>
-        <div class="social-icons">
-  <a href="https://www.facebook.com/jouetmaroc2" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
-  <a href="https://www.instagram.com/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-  <a href="https://twitter.com/" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
-  <a href="https://www.youtube.com/" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
-       </div>
-      </div>
+   <div class="footer-section">
+      <h3>À propos</h3>
+      <p>JOUET MAROC, basée à Casablanca, est spécialisée dans la vente de jouets innovants et de qualité, offrant à ses clients une expérience d'achat fiable et agréable au Maroc.</p>
+     <div class="social-icons">
+  <a href="https://www.facebook.com/jouetmaroc2" 
+     target="_blank" 
+     rel="noopener" 
+     aria-label="Page Facebook Jouet Maroc">
+    <i class="fab fa-facebook"></i>
+  </a>
+  
+  <a href="https://www.instagram.com/" 
+     target="_blank" 
+     rel="noopener" 
+     aria-label="Compte Instagram Jouet Maroc">
+    <i class="fab fa-instagram"></i>
+  </a>
+  
+  <a href="https://twitter.com/" 
+     target="_blank" 
+     rel="noopener" 
+     aria-label="Profil Twitter Jouet Maroc">
+    <i class="fab fa-twitter"></i>
+  </a>
+  
+  <a href="https://www.youtube.com/" 
+     target="_blank" 
+     rel="noopener" 
+     aria-label="Chaîne YouTube Jouet Maroc">
+    <i class="fab fa-youtube"></i>
+  </a>
+ </div>
+</div>
       <div class="footer-section">
-        <h3>Liens Utiles</h3>
-        <ul>
-          <li><a href="faq.html">Questions fréquentes</a></li>
-          <li><a href="livraison.html">Expédition et livraison</a></li>
-          <li><a href="privacy-policy.html">Politique de confidentialité</a></li>
-          <li><a href="about.html">À propos de nous</a></li>
-        </ul>
-      </div>
+  <h3>Liens Utiles</h3>
+  <ul>
+    <li><a href="faq.html"><i class="fas fa-chevron-right"></i> Questions fréquentes</a></li>
+    <li><a href="livraison.html"><i class="fas fa-chevron-right"></i> Expédition et livraison</a></li>
+    <li><a href="privacy-policy.html"><i class="fas fa-chevron-right"></i> Politique de confidentialité</a></li>
+    <li><a href="about.html"><i class="fas fa-chevron-right"></i> À propos de nous</a></li>
+  </ul>
+</div>
+    
+    <div class="footer-section">
+  <h3>Catégories</h3>
+  <ul>
+    <li><a href="categories/velos-electriques.html"><i class="fas fa-chevron-right"></i> Vélos Électriques</a></li>
+    <li><a href="categories/trottinettes.html"><i class="fas fa-chevron-right"></i> Trottinettes Électriques</a></li>
+    <li><a href="categories/velos-classiques.html"><i class="fas fa-chevron-right"></i> Vélos Classiques</a></li>
+  </ul>
+</div>
+
       <div class="footer-section">
         <h3>Contact</h3>
         <p><i class="fas fa-map-marker-alt"></i> Riad Oulfa, Casablanca</p>
@@ -162,39 +196,8 @@
       </div>
     </div>
   </footer>
-  
+  <script src="mobile-menu.js"></script>
   <script src="script.js"></script>
-  <!-- Script pour le menu mobile -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const menuBtn = document.getElementById('menu-btn');
-      const mainNav = document.querySelector('.main-nav');
-      
-      if (menuBtn && mainNav) {
-        menuBtn.addEventListener('click', function() {
-          this.classList.toggle('open');
-          mainNav.classList.toggle('show');
-          
-          const isExpanded = mainNav.classList.contains('show');
-          this.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
-          
-          let overlay = document.querySelector('.menu-overlay');
-          if (!overlay) {
-            overlay = document.createElement('div');
-            overlay.className = 'menu-overlay';
-            document.body.appendChild(overlay);
-            
-            overlay.addEventListener('click', function() {
-              menuBtn.classList.remove('open');
-              mainNav.classList.remove('show');
-              this.classList.remove('active');
-            });
-          }
-          
-          overlay.classList.toggle('active');
-        });
-      }
-    });
-  </script>
+ 
 </body>
 </html>
