@@ -4,8 +4,9 @@
 .product-actions .whatsapp-order-btn,
 .whatsapp-order-btn {
   width: 100%;
-  background-color: #208044 !important; /* Couleur officielle WhatsApp */
-  color: white;
+  margin: 1.5rem auto;
+  background-color: #7211af !important; /* Couleur officielle WhatsApp */
+  color: #ffffff ;
   font-size: 1.2rem !important; /* Forcer la taille de police */
   font-weight: 600;
   padding: 12px 20px;
@@ -17,14 +18,23 @@
   align-items: center;
   gap: 10px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
-  margin: 1.5rem 0;
+  box-shadow: 0 4px 10px rgba(114, 17, 175, 0.4);
+  
   position: relative;
   overflow: hidden;
   /* Ajouter ces propriétés pour garantir que le bouton fonctionne comme lien ou bouton */
   text-decoration: none;
   text-align: center;
 }
+
+/* ابتداءً من 1200px، حدد العرض الأقصى */
+@media (min-width: 1200px) {
+  .whatsapp-order-btn {
+    max-width: 400px;
+  }
+}
+
+
 
 /* Surcharger le style du bouton dans les product-actions */
 .product-actions .btn.whatsapp-order-btn {
@@ -44,9 +54,9 @@
 }
 
 .whatsapp-order-btn:hover {
-  background-color: #128C7E  ; /* Couleur plus foncée au survol */
+  background-color: #69128c  ; /* Couleur plus foncée au survol */
   transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
+  box-shadow: 0 6px 15px rgba(114, 17, 175, 0.4);
 }
 
 .whatsapp-order-btn:hover:before {
@@ -55,7 +65,7 @@
 
 .whatsapp-order-btn:active {
   transform: translateY(0);
-  box-shadow: 0 2px 5px rgba(37, 211, 102, 0.4);
+  box-shadow: 0 2px 5px rgba(114, 17, 175, 0.4);
 }
 
 .whatsapp-order-btn i {
@@ -88,7 +98,7 @@
 /* Animation de pulsation */
 @keyframes pulse {
   0% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    box-shadow: 0 0 0 0 rgba(114, 17, 175, 0.4);
   }
   70% {
     box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
