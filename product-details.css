@@ -76,25 +76,20 @@
 
 .current-price {
   font-size: 1.5rem;
-  font-weight: bold;
-  color: #e74c3c;
- 
-  background-color: rgba(246, 246, 246, 0); /* خلفية */
+  font-weight: 800;
+  color: #e74c3c; 
   
-  border-radius: 6px;         /* زوايا دائرية */
-  display: inline-flex;       /* باش نخلي المحتوى في الوسط */
-  align-items: center;        /* توسيط عمودي */
-  line-height: 1;             /* لتفادي تمدد المحتوى */
+  background-color: white;    
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+  box-shadow: 0 0 0 1px #e74c3c1a; 
 }
 
 
-
-.old-price {
-  text-decoration: line-through;
-  color: #545454;
-  font-size: 1.2rem;
-  margin-right: 0.2rem;
-}
 
 .discount-badge {
   background-color: #DA2E1B;
