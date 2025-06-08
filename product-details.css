@@ -55,6 +55,11 @@
   letter-spacing: 1px;
 }
 
+.rating-count {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
 /* Product Info */
 .product-info {
   flex: 1;
@@ -72,9 +77,9 @@
 .current-price {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #EB004A;
-  margin-right: 0.4rem;
-  background-color: rgba(255, 235, 59, 0); /* خلفية */
+  color: #e74c3c;
+ 
+  background-color: rgba(246, 246, 246, 0); /* خلفية */
   
   border-radius: 6px;         /* زوايا دائرية */
   display: inline-flex;       /* باش نخلي المحتوى في الوسط */
