@@ -79,7 +79,23 @@ img {
   text-align: center;
 }
 
+ /* Breadcrumbs */
+.breadcrumbs {
+  background-color: #f5f5f5;
+  padding: 1rem 0;
  
+  font-size: 0.9rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.breadcrumbs a {
+  color: var(--secondary-color);
+}
+
+.breadcrumbs span {
+  color: var(--text-color);
+  ;
+}
  
 .newsletter-form .btn {
   display: inline-block;
@@ -131,6 +147,7 @@ img {
     padding-top: 70px; /* عوّض حسب ارتفاع navbar باش المحتوى ما يتغطاش */
   }
 }
+
 
 /* للشاشات الصغيرة: ترجع position عادية أو sticky */
 @media (max-width: 942px) {
@@ -227,19 +244,18 @@ img {
   background-color: white;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: box-shadow 0.3s ease;
-  transition: transform 0.3s ease, !important;
+   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   display: flex;
   flex-direction: column;
 }
 
-
 .product-card:hover {
-  transform: translateY(-5px) !important;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: translateY(-5px);
+   box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
+
 
 .card-divider {
   height: 1px;
@@ -261,6 +277,10 @@ img {
 
 .product-badge.sale {
   background-color: #7211af;
+}
+
+.product-badge.new {
+  background-color: #007bff; /* Nouveau */
 }
 
 .product-card img {
@@ -318,7 +338,6 @@ img {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  
 }
 
 .product-info h3 {
@@ -350,7 +369,7 @@ img {
 .product-info .product-price {
   font-size: 1.3rem;
   font-weight: bold;
-  color: #000000;
+  color: #e74c3c;
   text-align: center;
    margin-bottom: 0.8rem;
 }

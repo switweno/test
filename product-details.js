@@ -199,3 +199,5 @@ function initOrderButton() {
     window.location.href = '../commande.html';
   });
 }
+
+

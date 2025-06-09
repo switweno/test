@@ -35,13 +35,14 @@
   height: 100%;
 }
 
-/* Style des images dans le slider principal */
 .product-swiper .swiper-slide img {
   width: 550px;
   height: 687px;
   object-fit: contain;
   display: block;
   background-color: white;
+  filter: brightness(1.15) contrast(1.05);
+  transition: filter 0.3s ease;
 }
 
 /* Container pour le zoom */
@@ -332,9 +333,11 @@
   
   .product-swiper .swiper-button-next,
   .product-swiper .swiper-button-prev {
-    width: 40px;
-    height: 40px;
+    width: 20px !important ;
+    height: 20px !important;
   }
+  
+
   
   .product-swiper .swiper-button-next:after,
   .product-swiper .swiper-button-prev:after {

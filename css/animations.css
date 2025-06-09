@@ -71,16 +71,27 @@
 
 /* Animation pour les produits de la catégorie */
 .category-products .product-card {
+  opacity: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative; /* باش يبقى الـ badge ظاهر فوق */
+}
+
+.category-products .product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.category-products .product-card .product-content {
   opacity: 0;
   animation: fadeInUp 0.6s ease forwards;
 }
 
-/* Appliquer un délai d'animation progressif pour chaque produit */
-.category-products .product-card:nth-child(1) { animation-delay: 0.1s; }
-.category-products .product-card:nth-child(2) { animation-delay: 0.2s; }
-.category-products .product-card:nth-child(3) { animation-delay: 0.3s; }
-.category-products .product-card:nth-child(4) { animation-delay: 0.4s; }
-.category-products .product-card:nth-child(5) { animation-delay: 0.5s; }
-.category-products .product-card:nth-child(6) { animation-delay: 0.6s; }
-.category-products .product-card:nth-child(7) { animation-delay: 0.7s; }
-.category-products .product-card:nth-child(8) { animation-delay: 0.8s; }
+/* التأخيرات */
+.category-products .product-card:nth-child(1) .product-content { animation-delay: 0.1s; }
+.category-products .product-card:nth-child(2) .product-content { animation-delay: 0.2s; }
+.category-products .product-card:nth-child(3) .product-content { animation-delay: 0.3s; }
+.category-products .product-card:nth-child(4) .product-content { animation-delay: 0.4s; }
+.category-products .product-card:nth-child(5) .product-content { animation-delay: 0.5s; }
+.category-products .product-card:nth-child(6) .product-content { animation-delay: 0.6s; }
+.category-products .product-card:nth-child(7) .product-content { animation-delay: 0.7s; }
+.category-products .product-card:nth-child(8) .product-content { animation-delay: 0.8s; }

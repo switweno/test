@@ -179,8 +179,7 @@ function setupLazyLoading() {
             image.removeAttribute('data-src');
           }
           
-          // Ajouter une classe pour animer l'entrée de la carte
-          card.classList.add('fade-in');
+         
           
           // Arrêter d'observer cet élément
           observer.unobserve(card);

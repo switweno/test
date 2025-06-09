@@ -30,7 +30,7 @@
 /* ابتداءً من 1200px، حدد العرض الأقصى */
 @media (min-width: 1200px) {
   .whatsapp-order-btn {
-    max-width: 400px;
+    max-width: 472px;
   }
 }
 
