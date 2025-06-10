@@ -54,7 +54,7 @@
   left: 0;
   width: 60px;
   height: 3px;
-  background-color: #EB004A;
+  background-color: #7211AF;
 }
 
 .about-text p {
@@ -101,7 +101,7 @@
   transform: translateX(-50%);
   width: 60px;
   height: 3px;
-  background-color: #EB004A;
+  background-color: #7211AF;
 }
 
 .values-grid {
@@ -138,7 +138,7 @@
 
 .value-icon i {
   font-size: 2rem;
-  color: #EB004A;
+  color: #7211AF;
 }
 
 .value-card h3 {
@@ -179,7 +179,7 @@
   transform: translateX(-50%);
   width: 60px;
   height: 3px;
-  background-color: #EB004A;
+  background-color: #7211AF;
 }
 
 .choose-header p {
@@ -224,7 +224,7 @@
 
 .advantage-icon i {
   font-size: 1.8rem;
-  color: #EB004A;
+  color: #7211AF;
 }
 
 .advantage-content h3 {
@@ -261,7 +261,7 @@
   transform: translateX(-50%);
   width: 60px;
   height: 3px;
-  background-color: #EB004A;
+  background-color: #7211AF;
 }
 
 .team-section > p {
@@ -318,7 +318,7 @@
 }
 
 .member-position {
-  color: #EB004A;
+  color: #7211AF;
   font-weight: 500;
   margin-bottom: 1rem;
 }
