@@ -108,6 +108,7 @@
   border-radius: 8px;
   max-width: 800px;
   margin: 0 auto;
+  
 }
 
 .faq-contact h2 {
@@ -124,11 +125,12 @@
   background-color: #25d366 !important;
   color: white !important;
   border-radius: 30px;
-  padding: 0.8rem 1.5rem;
+  padding: 0.8rem 1.3rem;
   font-size: 1.1rem;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .whatsapp-btn:hover {

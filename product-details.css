@@ -167,7 +167,7 @@
 }
 
 .color-option.active {
-  border-color: #EB004A;
+  border-color: #7211AF;
   transform: scale(1.1);
 }
 
@@ -182,7 +182,7 @@
 }
 
 .color-option[style*="background-color: #ffffff"].active {
-  border-color: #EB004A;
+  border-color: #7211AF;
 }
 
 /* Amélioration de l'affichage de la couleur sélectionnée */
@@ -429,8 +429,8 @@
 }
 
 .tab-btn.active {
-  color: #EB004A;
-  border-bottom-color: #EB004A;
+  color: #7211AF;
+  border-bottom-color: #7211AF;
 }
 
 /* Ajouter un effet visuel pour indiquer que les onglets sont cliquables */
@@ -441,7 +441,7 @@
   left: 50%;
   width: 0;
   height: 2px;
-  background-color: #EB004A;
+  background-color: #7211AF;
   transition: all 0.3s ease;
   transform: translateX(-50%);
 }

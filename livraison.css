@@ -52,7 +52,7 @@
 
 .intro-icon i {
   font-size: 3rem;
-  color: #EB004A;
+  color: #7211AF;
 }
 
 .intro-text h2 {
@@ -92,7 +92,7 @@
 
 .card-header i {
   font-size: 1.5rem;
-  color: #EB004A;
+  color: #7211AF;
 }
 
 .card-header h3 {
@@ -142,7 +142,7 @@
 
 .method-icon i {
   font-size: 1.5rem;
-  color: #EB004A;
+  color: #7211AF;
 }
 
 .method-details h4 {
@@ -202,7 +202,7 @@
 }
 
 .city-group h4 i {
-  color: #EB004A;
+  color: #7211AF;
 }
 
 .city-group p {
@@ -280,7 +280,7 @@
 }
 
 .contact-option:hover {
-  background-color: #EB004A;
+  background-color: #7211AF;
   color: white;
   transform: translateY(-5px);
 }

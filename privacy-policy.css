@@ -63,7 +63,7 @@
   left: 0;
   width: 40px;
   height: 3px;
-  background-color: #EB004A;
+  background-color: #7211AF;
 }
 
 .privacy-block p {
@@ -99,7 +99,7 @@
 }
 
 .data-list li i {
-  color: #EB004A;
+  color: #7211AF;
   width: 20px;
   text-align: center;
 }
@@ -147,7 +147,7 @@
 .security-item i {
   display: block;
   font-size: 2rem;
-  color: #EB004A;
+  color: #7211AF;
   margin-bottom: 0.8rem;
 }
 
@@ -175,7 +175,7 @@
 }
 
 .contact-info i {
-  color: #EB004A;
+  color: #7211AF;
   width: 20px;
   text-align: center;
 }
@@ -187,7 +187,7 @@
 }
 
 .contact-info a:hover {
-  color: #EB004A;
+  color: #7211AF;
   text-decoration: underline;
 }
 

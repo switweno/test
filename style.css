@@ -57,7 +57,7 @@ img {
 .filter-btn {
   display: inline-block;
   padding: 0.5rem 1rem;
-  background-color: #EB004A;
+  background-color: #7211AF;
   color: #000000;
   border: none;
   border-radius: 4px;
@@ -70,7 +70,7 @@ img {
 .btn {
   display: inline-block;
   padding: 0.5rem 1rem;
-  background-color: #EB004A !important ; /* إجباري */
+  background-color: #7211AF !important ; /* إجباري */
   color: #ffffff !important;
   border: none;
   border-radius: 4px;
@@ -100,7 +100,7 @@ img {
 .newsletter-form .btn {
   display: inline-block;
   padding: 0.5rem 1rem;
-  background-color: #EB004A !important;
+  background-color: #767676 !important;
   color: #ffffff;
   border: none;
   border-radius: 4px;
@@ -125,7 +125,7 @@ img {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem ;
-  background-color: #EB004A;
+  background-color: #7211AF;
   color: white;
   position: sticky;
   top: 0;
@@ -227,7 +227,7 @@ img {
 }
 
 .filter-btn.active {
-  background-color: #EB004A;
+  background-color: #7211AF;
   color: white;
 }
 
@@ -267,7 +267,7 @@ img {
   position: absolute;
   top: 10px;
   right: 10px;
-  background-color: #EB004A;
+  background-color: #7211AF;
   color: white;
   padding: 0.3rem 0.7rem;
   border-radius: 4px;
@@ -527,7 +527,7 @@ img {
 }
 
 .social-icons a:hover {
-  background-color: #EB004A;
+  background-color: #7211AF;
   transform: translateY(-3px);
 }
 
@@ -700,7 +700,7 @@ textarea:focus-visible,
     right: -280px;
     width: 280px;
     height: 100vh;
-    background-color: #EB004A;
+    background-color: #7211AF;
     padding-top: 60px;
     overflow-y: auto;
     transition: right 0.3s ease;
